@@ -1,0 +1,44 @@
+/* https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
+*/
+/*
+$c50:  #f5f7fa;// - black
+$c100: #e4e7eb;// - black
+$c200: #cbd2d9;// - black
+$c300: #7b8794;// - black
+$c500: #616e7c;// - white
+$c600: #52606d;// - white
+$c700: #3e4c59;// - white
+$c800: #232f4b;// - white
+$c900: #1f2933;// - white
+$c1000: black;// - white*/
+
+//Warm gray
+$c50:  #faf9f7;// - black
+$c100: #e8e6e1;// - black
+$c200: #d3cec4;// - black
+$c300: #b8b2a7;// - black
+$c400: #a39e93;// - black
+$c500: #857f72;// - white
+$c600: #625d52;// - white
+$c700: #504a40;// - white
+$c800: #423d33;// - white
+$c900: #27241d;// - white
+$c1000: #1b1914;// - white
+
+.sidenav-container {
+    background-color: $c900;
+    color: white;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.sidenav-bar {
+    background-color: $c1000;
+    color: white;
+    
+    min-width: 300px;
+    width: 20vw;
+}
+
+.sidenav-content {
+}
