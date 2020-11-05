@@ -1,30 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Project, Program, Language } from '../data/Project';
+
+import { ProjectComponent } from '../project/project.component';
+import { ProjectsServiceService } from '../projects-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  entryComponents: [ProjectComponent]
 })
 export class HomeComponent implements OnInit {
 
-  clickCounter: number = 0;
-  name: string = '';
+  projectsGames: Project[];
+  projectsApps: Project[];
 
-  constructor() { }
+  constructor(private projectsService: ProjectsServiceService) { }
 
   ngOnInit(): void {
-  }
-
-  countClick () {
-    this.clickCounter += 1;
-  }
-
-  setClasses() {
-    let myClasses = {
-      active: this.clickCounter > 4,
-      notActive: this.clickCounter <= 4
-    }
-
-    return myClasses;
+    this.projectsGames = this.projectsService.getProjectGames();
+    this.projectsApps = this.projectsService.getProjectApps();
   }
 }

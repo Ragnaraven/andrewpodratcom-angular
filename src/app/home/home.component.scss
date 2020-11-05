@@ -1,8 +1,25 @@
+
+//Warm gray
+$c50:  #faf9f7;// - black
+$c100: #e8e6e1;// - black
+$c200: #d3cec4;// - black
+$c300: #b8b2a7;// - black
+$c400: #a39e93;// - black
+$c500: #857f72;// - white
+$c600: #625d52;// - white
+$c700: #504a40;// - white
+$c800: #423d33;// - white
+$c900: #27241d;// - white
+$c1000: #1b1914;// - white
+
 .logoContainer {
-    margin-top: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: $c600;
 }
 
 .logoMain {
@@ -11,23 +28,20 @@
 }
 
 .logoRight {
-    margin-left: 10vw;
+    margin-left: 14vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .name {
     font-size: 2.5em;
-    letter-spacing: 0.2ch;
 }
 
 .work {
-    font-size: 1.5em;
-    letter-spacing: 0.5ch;
+    font-size: 1.4em;
 }
-
 
 /*span {
     font-weight: bold;

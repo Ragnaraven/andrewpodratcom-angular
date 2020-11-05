@@ -1,0 +1,17 @@
+[
+	{"name": "Android Studio", "icon": "assets/res/icons/as.webp"},
+	{"name": "Blender",        "icon": "assets/res/icons/blender.webp"},
+    {"name": "Brackets",       "icon": "assets/res/icons/br.webp"},
+	{"name": "CLion",          "icon": "assets/res/icons/clion.webp"},
+	{"name": "Eclipse",        "icon": "assets/res/icons/eclipse.webp"},
+	{"name": "Gimp 2",         "icon": "assets/res/icons/gimp.webp"},
+    {"name": "GitHub",         "icon": "assets/res/icons/gh.webp"},
+	{"name": "Ibis Paint",     "icon": "assets/res/icons/ibis.webp"},
+	{"name": "Illustrator",    "icon": "assets/res/icons/ai.webp"},
+	{"name": "Inkscape",       "icon": "assets/res/icons/ink.webp"},
+	{"name": "IntelliJ IDEA",  "icon": "assets/res/icons/ij.webp"},
+	{"name": "Photoshop",      "icon": "assets/res/icons/ps.webp"},
+	{"name": "Unreal Engine",  "icon": "assets/res/icons/ue.webp"},
+	{"name": "Unity",          "icon": "assets/res/icons/unity.webp"},
+    {"name": "Visual Studio",  "icon": "assets/res/icons/vs.webp"}
+]

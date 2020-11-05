@@ -1,0 +1,11 @@
+[
+    {"name": "Java",         "icon": "assets/res/languages/java.webp"},
+    {"name": "C#",           "icon": "assets/res/languages/csharp.webp"},
+    {"name": "C++",          "icon": "assets/res/languages/cpp.webp"},
+    {"name": "BluePrints",   "icon": "assets/res/languages/blueprints.webp"},
+    {"name": "HTML",         "icon": "assets/res/languages/html.webp"},
+    {"name": "CSS",          "icon": "assets/res/languages/css.webp"},
+    {"name": "JavaScript",   "icon": "assets/res/languages/js.webp"},
+    {"name": "PHP",          "icon": "assets/res/languages/php.webp"},
+    {"name": "JSON",         "icon": "assets/res/languages/json.webp"}
+]

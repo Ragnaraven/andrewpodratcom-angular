@@ -14,15 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { ListComponent } from './list/list.component';
-
-
+import { ProjectComponent } from './project/project.component';
+import { ImageTextComponent } from './image-text/image-text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    ProjectComponent,
+    ImageTextComponent
   ],
   imports: [
     AppRoutingModule,
@@ -34,7 +34,7 @@ import { ListComponent } from './list/list.component';
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

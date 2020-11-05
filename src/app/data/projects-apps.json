@@ -1,0 +1,35 @@
+[
+    {
+        "projectName": "SiegeStarterIcons.com",
+        "imageResLoc": "assets/res/projects/siegestartericons.com/siegeStarterIcons.comCard.png",
+        "programsUsed":  ["Brackets", "GIMP"],
+        "languages": ["HTML", "CSS", "JS", "PHP"],
+        "description": "SiegeStarterIcons.com is a website designed to give new players to Tom Clancy's Rainbow Six: Siege an intro-level icon representing the attacking and defending operator they enjoy most as their profile picture.",
+        "dateStart": "3/2017",
+        "dateEnd": "6/12/2020",
+        "linkTo": "projects/siegeStarterIcons.html",
+        "priority": "4"
+    },            
+    {
+        "projectName":"Modern Alarm Clock",
+        "imageResLoc": "assets/res/projects/modernalarmclock/mac_icon.svg",
+        "programsUsed": ["AndroidStudio", "Eclipse"],
+        "languages": ["Java"],
+        "description": "Modern Alarm Clock was the first Android and the first Java application I started on way back in junior year of high school. Development paused while I job search and complete another project.",
+        "dateStart": "12/2015",
+        "dateEnd": "-",
+        "linkTo": "projects/modernAlarmClock.html",
+        "priority": "5"
+    },
+    {
+        "projectName": "Style Guide Examples",
+        "imageResLoc": "assets/res/projects/styleguides/card.png",
+        "programsUsed": ["Photoshop", "Illustrator"],
+        "languages": ["HTML", "CSS", "JS"],
+        "description": "This project page is an assortment of projects that shows projects created with tyle guides.",
+        "dateStart": "2014", 
+        "dateEnd": "2020",
+        "linkTo": "projects/styleGuides.html",
+        "priority": "6"
+    }
+]

@@ -1,38 +1,13 @@
-<!--h1>Welcome!</h1>
-
-<div class="play-container">
-    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
-</div>
-
-<div class="play-container">
-    <p>
-        <input type="text" [(ngModel)]="name">
-        <br>
-        <strong>You said: </strong> {{ name }}
-    </p>
-</div>-->
-
-<!--Property Binding: <div class="play-container" [style.background-color]="clickCounter > 4 ? 'green' : 'yellow'">-->
-<!--Style Binding: <div class="play-container" [ngStyle]="{
-    'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
-    'border': clickCounter > 4 ? '4px solid black' : 'none'
-
-}">-->
-<!--Class Binding: <div class="play-container" [class.active]="clickCounter > 4">-->
-<!--<div class="play-container" [ngClass]="setClasses()">
-    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
-        <p>The click counter <strong>IS GREATER</strong> than 4.</p>
-    </ng-template>
-
-    <ng-template #none>
-        <p>The click counter <strong>IS NOT GREATER</strong> than 4.</p>
-    </ng-template>
-</div>-->
-
 <div class=logoContainer>
-    <img class="logoMain" src="assets/res/general/signature.svg"/>
+    <img class="logoMain" src="assets/res/signature.svg"/>
     <div class="logoRight">
         <span class="name">Andrew M. Podrat</span>
         <span class="work">Game Developer</span>
     </div>
 </div>
+
+<h2>Games and Mods</h2>
+<app-project [projects]="projectsGames"></app-project>
+
+<h2>Software and Web Apps</h2>
+<app-project [projects]="projectsApps"></app-project>
