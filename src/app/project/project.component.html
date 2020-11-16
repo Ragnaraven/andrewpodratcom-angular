@@ -1,37 +1,32 @@
-
-
-
-
 <ul class="projectsContainer" *ngIf="projects">
-    <li *ngFor="let project of projects">
-        <div *ngIf="project.s" [ngClass]="setMyClasses(project)" [style.background-image]="'url(' + project.imageResLoc + ')'">
-            <div class="projectContent">
-                <div class="projectMovieContainer">
-                    <video class="projectMovie" muted autoplay loop="true" *ngIf="project.isMovieShowcase">
-                        <source src="{{ project.imageResLoc }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <h3 class="projectNameShowcase">{{ project.projectName }}</h3>
-                <div class="projectDetailsContent">
-                    <h3 class="projectNameHeader">{{ project.projectName }}</h3>
-                    <p class="projectDate">{{ project.getStartEndDateFormatted() }}</p>
-                    <p>{{ project.description }}</p>
-                    <a href="{{ project.linkTo }} ">see more</a> 
+    <li *ngFor="let project of projects" [ngClass]="setMyClasses(project)" [style.background-image]="'url(' + project.imageResLoc + ')'">
+        <div class="projectContent">
 
-                    <ul class="projLangContainer">
-                        <li class="progLangItem" *ngFor="let program of project.programsUsed">
-                            <app-image-text [text]="program.name" [icon]="program.icon"></app-image-text>
-                        </li>
-                    </ul>  
-                    
-                    <ul class="projLangContainer">
-                        <li class="progLangItem" *ngFor="let language of project.languages">
-                            <app-image-text [text]="language.name" [icon]="language.icon"></app-image-text>
-                        </li>
-                    </ul>  
-                </div>
+            <div class="projectMovieContainer">
+                <video class="projectMovie" muted autoplay loop="true" *ngIf="project.isMovieShowcase">
+                    <source src="{{ project.imageResLoc }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <h3 class="projectNameShowcase">{{ project.projectName }}</h3>
+            <div class="projectDetailsContent">
+                <h3 class="projectNameHeader">{{ project.projectName }}</h3>
+                <p class="projectDate">{{ project.getStartEndDateFormatted() }}</p>
+                <p>{{ project.description }}</p>
+                <a href="{{ project.linkTo }} ">see more</a> 
+
+                <ul class="projLangContainer">
+                    <li class="progLangItem" *ngFor="let program of project.programsUsed">
+                        <app-image-text [text]="program.name" [icon]="program.icon"></app-image-text>
+                    </li>
+                </ul>  
+                
+                <ul class="projLangContainer">
+                    <li class="progLangItem" *ngFor="let language of project.languages">
+                        <app-image-text [text]="language.name" [icon]="language.icon"></app-image-text>
+                    </li>
+                </ul>  
             </div>
         </div>
     </li>

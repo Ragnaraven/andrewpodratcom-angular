@@ -12,7 +12,6 @@ export class Project {
     priority: number;
     aa: number;
     isMovieShowcase: boolean;
-    style: number;
 
     constructor(
         _projectName: string,
@@ -26,7 +25,6 @@ export class Project {
         _priority: number,
         _aa: number,
         _isMovieShowcase: boolean,
-        _style: number,
         _projectsService: ProjectsServiceService)
     { 
         this.projectName = _projectName;
@@ -39,7 +37,6 @@ export class Project {
         this.linkTo = _linkTo;
         this.priority = _priority;
         this.aa = _aa == undefined ? 1 : _aa;
-        this.style = _style == undefined ? 1 : _style;
         this.isMovieShowcase = _isMovieShowcase == undefined ? false : _isMovieShowcase;
 
         this.processProgramsUsed(_projectsService, _programsUsed);//this.programsUsed = _programsUsed; 

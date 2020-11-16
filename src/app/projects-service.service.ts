@@ -71,7 +71,6 @@ export class ProjectsServiceService {
         element.priority,
         element.aa,
         element.isMovieShowcase,
-        element.style,
         this
       );
 
@@ -93,7 +92,6 @@ export class ProjectsServiceService {
         element.priority,
         element.aa,
         element.isMovieShowcase,
-        element.style,
         this
       );
 
