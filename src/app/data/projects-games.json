@@ -8,7 +8,7 @@
         "dateStart": "June 2018",
         "dateEnd": "Current",
         "linkTo": "projects/ragnaraven.html",
-        "priority": "0"
+        "priority": 0
     },
     {
         "projectName": "Game Jams",
@@ -19,7 +19,7 @@
         "dateStart": "Oct 2020",
         "dateEnd": "-",
         "linkTo": "projects/gamejams.html",
-        "priority": "1"
+        "priority": 1
     },
     {
         "projectName": "TUZG - The Ultimate Zombie Game",
@@ -30,7 +30,8 @@
         "dateStart": "Aug 2020",
         "dateEnd": "Sep 2020",
         "linkTo":"projects/tuzg.html",
-        "priority": "2"
+        "priority": 2,
+        "style": 2
     },
     {
         "projectName": "Not Enough Combat",
@@ -41,8 +42,9 @@
         "dateStart": "Aug 2018",
         "dateEnd": "Mar 2020",
         "linkTo": "projects/notEnoughCombat.html",
-        "priority": "3",
-        "aa": "0"
+        "priority": 3,
+        "aa": "0",
+        "style": 2
     },
     {
         "projectName": "Run N' Gunner",
@@ -53,7 +55,7 @@
         "dateStart": "Aug 2019",
         "dateEnd": "Oct 2019",
         "linkTo":  "projects/runGunner.html",
-        "priority": "4",
-        "isMovieShowcase": "true"
+        "priority": 4,
+        "isMovieShowcase": true
     }
 ]
