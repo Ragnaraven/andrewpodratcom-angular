@@ -14,17 +14,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
-import { ProjectComponent } from './project/project.component';
 import { ImageTextComponent } from './image-text/image-text.component';
-import { GamesComponent } from './projects/games/games.component';
-import { ArtComponent } from './projects/art/art.component';
-import { AppsComponent } from './projects/apps/apps.component';
+import { GamesComponent } from './games/games.component';
+import { ArtComponent } from './art/art.component';
+import { AppsComponent } from './apps/apps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProjectComponent,
     ImageTextComponent,
     GamesComponent,
     ArtComponent,
