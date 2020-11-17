@@ -24,22 +24,3 @@ $c700: #504a40;// - white
 $c800: #423d33;// - white
 $c900: #27241d;// - white
 $c1000: #1b1914;// - white
-
-.sidenav-container {
-    background-color: $c900;
-    color: white;
-    min-height: 100vh;
-
-    background: linear-gradient(15deg, rgba(250,249,247,1) 0%, rgba(232,230,225,1) 10%, rgba(211,206,196,1) 20%, rgba(184,178,167,1) 30%, rgba(163,158,147,1) 40%, rgba(133,127,114,1) 50%, rgba(98,93,82,1) 60%, rgba(80,74,64,1) 70%, rgba(66,61,51,1) 80%, rgba(39,36,29,1) 90%, rgba(27,25,20,1) 100%);
-}
-
-.sidenav-bar {
-    background-color: $c1000;
-    color: white;
-    
-    min-width: 300px;
-    width: 20vw;
-}
-
-.sidenav-content {
-}
