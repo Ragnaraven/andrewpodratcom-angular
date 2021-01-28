@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+//Warm gray
+$c50:  #faf9f7;// - black
+$c100: #e8e6e1;// - black
+$c200: #d3cec4;// - black
+$c300: #b8b2a7;// - black
+$c400: #a39e93;// - black
+$c500: #857f72;// - white
+$c600: #625d52;// - white
+$c700: #504a40;// - white
+$c800: #423d33;// - white
+$c900: #27241d;// - white
+$c1000: #1b1914;// - white
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidenav-container {
+    background-color: $c900;
+    color: white;
+    min-height: 100vh;
+
+    background: linear-gradient(15deg, rgba(250,249,247,1) 0%, rgba(232,230,225,1) 10%, rgba(211,206,196,1) 20%, rgba(184,178,167,1) 30%, rgba(163,158,147,1) 40%, rgba(133,127,114,1) 50%, rgba(98,93,82,1) 60%, rgba(80,74,64,1) 70%, rgba(66,61,51,1) 80%, rgba(39,36,29,1) 90%, rgba(27,25,20,1) 100%);
+}
+
+.sidenav-bar {
+    background-color: $c1000;
+    color: white;
+    
+    min-width: 300px;
+    width: 20vw;
+}
+
+.sidenav-content {
+}
+
+.logoContainer {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $c600;
+}
+
+.logoMain {
+    filter: invert(100);
+    width: 15vw;
+}
+
+.logoRight {
+    margin-left: 14vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.name {
+    font-size: 2.5em;
+}
+
+.work {
+    font-size: 1.4em;
+}
+
+a, a:visited {
+    color: $c200;
+}
+
+a:hover {
+    color: $c400;
+}
+
+a:active {
+    color: $c50;
+}
+
+.projectsContainer {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.projectContainer {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 50vh;
+
+    background: white;
+
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.projectContainerAAOff {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 50vh;
+
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated; /* Chrome */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+      */
+}
+
+.projectContent {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.projectMovieContainer {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    overflow:hidden;
+}
+
+.projectMovie {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto;
+    z-index: 1; 
+    overflow: hidden;
+}
+
+.projectImageWrapper {
+    height: 80%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+}
+
+.projectNameShowcase {
+    position: absolute;
+    letter-spacing: 0.5ch;
+    margin: 0 0 20px 0;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 0 2px 2px 0;
+    align-self: flex-end;
+    z-index: 10; 
+
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.projectDetailsContent {
+    max-height: 100%;
+    max-width: 30%;
+    min-width: 30%;
+
+    z-index: 100;
+    margin: 0;    
+    margin-left: auto;
+    
+    padding: 30px 60px 60px 60px;
+
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.projectNameHeader {
+    margin: 0;
+    padding: 0;
+}
+
+.projectDate {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.projLangContainer {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    display: none;
+}
+
+.progLangItem {
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+/**SHOW MORE**/
+.showMore {
+    h3 {
+        font-size: 36px;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+
+    padding: 20px;
+}
+
+.showcaseImageList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.showcaseImage {
+    width: 80%;
+    max-width: 80%;
+
+    padding: 10px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showcaseMovieList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    clear: both;
+}
+
+.showcaseMovie {
+    padding: 2px;
+    width: 400px;
+}
+
+.showcaseMovieSingle {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+/*span {
+    font-weight: bold;
+    background: lightgray;
+    padding: .3em .8em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-container {
+    padding: 3em;
+
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+.active {
+    border: 3px solid black;
+}
+
+.notActive {
+    background-color: lightGray;
+}*/

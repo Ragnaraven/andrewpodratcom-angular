@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+//Warm gray
+$c50:  #faf9f7;// - black
+$c100: #e8e6e1;// - black
+$c200: #d3cec4;// - black
+$c300: #b8b2a7;// - black
+$c400: #a39e93;// - black
+$c500: #857f72;// - white
+$c600: #625d52;// - white
+$c700: #504a40;// - white
+$c800: #423d33;// - white
+$c900: #27241d;// - white
+$c1000: #1b1914;// - white
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.centeredContent {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(184,178,167);
+    background: radial-gradient(circle, $c500 0%, $c900 100%);
+}
+
+.centeredTop {
+    h1, h2, .introduction {
+        color: white;
+        margin: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        flex-grow: 1;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .introduction {
+        width: 100%;
+
+        font-size: 1.25em;
+        margin-bottom: 0;
+    }
+}
+.separationBorder {
+    width: 75%;
+    height: 2px;
+    margin: 3rem;
+
+    border-radius: 1px;
+
+    background: rgb(184,178,167);
+    background: radial-gradient(circle, $c200 0%, $c500 100%);
+}
+
+.options {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+
+    height: 35%;
+
+    li {
+        display: inline-block;
+        width: 20%;
+        margin-left: 1em;
+        margin-right: 1em;
+
+        a {
+            display: block;
+            padding: 0.5em;
+            margin: 0;
+
+            height: 100%;
+            
+            border-radius: 5px;
+            border: 2px solid $c200;
+           
+            background-color: $c400;
+            box-shadow: 0px 0px 4px $c800;
+
+            color: white;
+            font-weight: bold;
+            font-size: 1.25em;
+            text-decoration: none;
+
+            transition: transform .2s; 
+            transform: scale(1);
+        }
+
+        a:hover {
+            background-color: $c400;
+            box-shadow: 0px 0px 8px $c800;
+
+            transform: scale(1.1);
+        }
+    }
+}

@@ -15,9 +15,11 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './home/home.component';
 import { ImageTextComponent } from './image-text/image-text.component';
-import { GamesComponent } from './games/games.component';
-import { ArtComponent } from './art/art.component';
-import { AppsComponent } from './apps/apps.component';
+
+import { HomeProjectsComponent } from './home-projects/home-projects.component';
+import { GamesComponent } from './home-projects/games/games.component';
+import { ArtComponent } from './home-projects/art/art.component';
+import { AppsComponent } from './home-projects/apps/apps.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { AppsComponent } from './apps/apps.component';
     ImageTextComponent,
     GamesComponent,
     ArtComponent,
-    AppsComponent
+    AppsComponent,
+    HomeProjectsComponent
   ],
   imports: [
     AppRoutingModule,
