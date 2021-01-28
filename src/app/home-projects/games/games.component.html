@@ -15,7 +15,7 @@
         <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
       </mat-nav-list>
 
-      <mat-list>
+      <!--<mat-list>
         <h3 matSubheader>Folders</h3>
         <mat-list-item *ngFor="let folder of folders">
            <mat-icon matListIcon>folder</mat-icon>
@@ -29,8 +29,8 @@
            <h4 matLine>{{note.name}}</h4>
            <p matLine class="demo-2"> {{note.updated}} </p>
         </mat-list-item>
-     </mat-list>
-     
+     </mat-list>-->
+
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
         <div class=logoContainer>
@@ -41,9 +41,16 @@
             </div>
         </div>
         
-       
+    
         
         <h2>Games and Mods</h2>
+        
+        <ul class="projects">
+            <li *ngFor="let project of games">
+                <app-project-listing [project]="project"></app-project-listing>
+            </li>
+        </ul>
+
         <section id="ragnaraven">
             <div  class="projectContainer" style="background-image: url('assets/res/projects/ragnaraven/unity4scene.png')"> 
                 <div class="projectContent">        
@@ -51,7 +58,7 @@
                     <div class="projectDetailsContent">
                         <h3 class="projectNameHeader">Ragnaraven</h3>
                         <p class="projectDate">June 2018 - Current</p>
-                        <p>A game about nightmares, good, evil and the grey lines between choices that are blurred even further by desperation. Created originally in Unity, Ragnaraven is being ported to UE4.</p>
+                        <p>A game about nightmares, good, evil and the grey lines between choices that are blurred by desperation.</p>
                         <button class="showcase">showcase</button> 
                     </div>
                 </div>

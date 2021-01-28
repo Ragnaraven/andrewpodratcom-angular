@@ -20,6 +20,7 @@ import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
+import { ProjectListingComponent } from './home-projects/project-listing/project-listing.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppsComponent } from './home-projects/apps/apps.component';
     GamesComponent,
     ArtComponent,
     AppsComponent,
-    HomeProjectsComponent
+    HomeProjectsComponent,
+    ProjectListingComponent
   ],
   imports: [
     AppRoutingModule,
