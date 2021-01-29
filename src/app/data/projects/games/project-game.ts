@@ -6,6 +6,7 @@ export interface ProjectGame {
     id: number;
     aaOff: boolean;
     style: string;
-    styleData: string;
+    imageOrMovieBGPath: string;
+    customStyleData: string;
   }
   

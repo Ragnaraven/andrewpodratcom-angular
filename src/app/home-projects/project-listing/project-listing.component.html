@@ -1,12 +1,16 @@
 <div    [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
-        ng-attr-id="{{project.style === 'custom' ? 'project.styleData': ''}}"
-        [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.styleData + ')'} : {}">
+        [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
+        [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
     
     <div class="projectContent">     
+
+        <div *ngIf=" project.style === 'customImageWrapper' " class="projectImageWrapper">
+            <img class="projectImage" src="assets/res/projects/nec/eo.gif"/>
+        </div>
         
         <div *ngIf="project.style=='movie'" class="projectMovieContainer">
             <video muted autoplay loop="true" class="projectMovie" >
-                <source src="{{project.styleData}}" type="video/mp4">
+                <source src="{{project.imageOrMovieBGPath}}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
