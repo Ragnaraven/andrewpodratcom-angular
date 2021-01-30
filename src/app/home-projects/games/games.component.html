@@ -5,47 +5,55 @@
       [opened]="true"
       fixedInViewport="true" 
       mode="side"
-      >
-      <mat-nav-list>
-        <a *ngFor="let project of games" mat-list-item [routerLink]="'/ragnaraven'"> {{project.name}} </a>
+    >
+        <div id="menuHeader">
+            <img id="logoSide" src="assets/res/signature_legacy.svg"/>
+            <div id="identification">
+                <p id="nameSide">Andrew Podrat</p>
+                <p id="professionSide">Game Designer & Developer</p>
+            </div>
+        </div>
+
+      <mat-nav-list id="navList">
+        <a mat-list-item *ngFor="let project of games" [routerLink]="'/ragnaraven'"> {{project.name}} </a>
       </mat-nav-list>
 
-      <!--<mat-list>
-        <h3 matSubheader>Folders</h3>
-        <mat-list-item *ngFor="let folder of folders">
-           <mat-icon matListIcon>folder</mat-icon>
-           <h4 matLine>{{folder.name}}</h4>
-           <p matLine class="demo-2"> {{folder.updated}} </p>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <h3 matSubheader>Notes</h3>
-        <mat-list-item *ngFor="let note of notes">
-           <mat-icon matListIcon>note</mat-icon>
-           <h4 matLine>{{note.name}}</h4>
-           <p matLine class="demo-2"> {{note.updated}} </p>
-        </mat-list-item>
-     </mat-list>-->
-
     </mat-sidenav>
+
     <mat-sidenav-content class="sidenav-content">
-        <div class=logoContainer>
+
+        <section class="logoContainer">
             <img class="logoMain" src="assets/res/signature.svg"/>
             <div class="logoRight">
                 <span class="name">Andrew M. Podrat</span>
-                <span class="work">Game Developer</span>
+                <span class="work">Game Designer & Developer</span>
             </div>
-        </div>
-        
-    
-        
-        <h2>Games and Mods</h2>
-        
-        <ul class="projectsContainer">
-            <li *ngFor="let project of games">
-                <app-project-listing [project]="project"></app-project-listing>
-            </li>
-        </ul>
+        </section>
 
+        <section id="welcome">
+            <p>Hi there!</p>
+            <p id="pickupLine">Im a bunch of wordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswordswords</p>
+            <div id="bigThree">
+                <div>
+                    <p>One</p>
+                </div>
+                <div>
+                    <p>Two</p>
+                </div>
+                <div>
+                    <p>Three</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section id="projects">
+            <ul class="projectsContainer">
+                <li *ngFor="let project of games">
+                    <app-project-listing [project]="project"></app-project-listing>
+                </li>
+            </ul>
+        </section>
         <!--
         <section id="ragnaraven">
             <div  class="projectContainer" style="background-image: url('assets/res/projects/ragnaraven/unity4scene.png')"> 

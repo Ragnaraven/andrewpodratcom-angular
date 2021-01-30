@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectGame } from '../../data/projects/games/project-game';
+import { ProjectGame } from '../data/projects/games/project-game';
 
 @Component({
   selector: 'app-project-listing',
@@ -13,6 +13,7 @@ export class ProjectListingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(screen.width)
   }
 
 }

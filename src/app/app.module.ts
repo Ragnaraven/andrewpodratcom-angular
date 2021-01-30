@@ -13,24 +13,22 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './home/home.component';
 import { ImageTextComponent } from './image-text/image-text.component';
 
 import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
-import { ProjectListingComponent } from './home-projects/project-listing/project-listing.component';
+import { ProjectListingComponent } from './project-listing/project-listing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeProjectsComponent,
     ImageTextComponent,
     GamesComponent,
     ArtComponent,
     AppsComponent,
-    HomeProjectsComponent,
     ProjectListingComponent
   ],
   imports: [

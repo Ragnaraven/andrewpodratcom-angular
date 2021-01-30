@@ -1,36 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+$rajdhani: 'Rajdhani', sans-serif;
+// 2 - $chakrapetch: 'Chakra Petch', sans-serif;
+// 3 - $opensans: 'Open Sans', sans-serif;
+//$montserrat: 'Montserrat', sans-serif;
+//$notosans: 'Noto Sans JP', sans-serif;
+//$robotomono: 'Roboto Mono', monospace;
+//$unicaone: 'Unica One', cursive;
+//$josefin: 'Josefin Slab', serif;
 
 //Warm gray
-$c50:  #faf9f7;// - black
-$c100: #e8e6e1;// - black
-$c200: #d3cec4;// - black
-$c300: #b8b2a7;// - black
-$c400: #a39e93;// - black
-$c500: #857f72;// - white
-$c600: #625d52;// - white
-$c700: #504a40;// - white
-$c800: #423d33;// - white
-$c900: #27241d;// - white
-$c1000: #1b1914;// - white
+//$c50:  #faf9f7;// - black
+//$c100: #e8e6e1;// - black
+//$c200: #d3cec4;// - black
+//$c300: #b8b2a7;// - black
+//$c400: #a39e93;// - black
+//$c500: #857f72;// - white
+//$c600: #625d52;// - white
+//$c700: #504a40;// - white
+//$c800: #423d33;// - white
+//$c900: #27241d;// - white
+//$c1000: #1b1914;// - white*/
 
-html, body {
-    font-family: 'Montserrat', sans-serif;
+$primary: #303841;
+$secondary: #3a4750;
+$accent: #00adb5;
+$white: #eeeeee;
+
+* {
+    //font-family: 'Montserrat', sans-serif;
+    //font-family: 'Noto Sans JP', sans-serif;
+    font-family: $rajdhani;
 }
 
 .sidenav-container {
-    background-color: $c900;
-    color: white;
+    background-color: $primary;
+    color: $white;
     min-height: 100vh;
 
-    background: linear-gradient(15deg, rgba(250,249,247,1) 0%, rgba(232,230,225,1) 10%, rgba(211,206,196,1) 20%, rgba(184,178,167,1) 30%, rgba(163,158,147,1) 40%, rgba(133,127,114,1) 50%, rgba(98,93,82,1) 60%, rgba(80,74,64,1) 70%, rgba(66,61,51,1) 80%, rgba(39,36,29,1) 90%, rgba(27,25,20,1) 100%);
-}
+    .sidenav-bar {
+        background-color: darken($primary, 10%);
+        color: $white;
+        
+        min-width: 350px;
+        width: 20vw;
 
-.sidenav-bar {
-    background-color: $c1000;
-    color: white;
-    
-    min-width: 300px;
-    width: 20vw;
+        #menuHeader {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5vh;
+            padding-left: 30px;
+            
+            #logoSide {
+                max-width: 50%;
+                margin: auto;
+                margin-left: auto;
+                margin-right: auto;
+
+                -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+                filter: invert(100%);
+
+            }
+
+            #identification {
+                margin-top: 2rem;
+
+                p {
+                    letter-spacing: 0.5ch;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                #nameSide {
+                    font-size: 1.35rem;
+                }
+
+                #professionSide {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        #navList {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem;
+
+            a {
+
+            }
+        }
+    }
 }
 
 .sidenav-content {
@@ -43,7 +113,7 @@ html, body {
     justify-content: center;
     align-items: center;
 
-    background-color: $c600;
+    background-color: $secondary;
 }
 
 .logoMain {
@@ -68,15 +138,15 @@ html, body {
 }
 
 a, a:visited {
-    color: $c200;
+    color: $white;
 }
 
 a:hover {
-    color: $c400;
+    color: $accent;
 }
 
 a:active {
-    color: $c50;
+    color: darken($white, 50%);
 }
 
 .projectsContainer {

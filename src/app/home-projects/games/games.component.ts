@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectListingComponent } from '../project-listing/project-listing.component';
+import { ProjectListingComponent } from '../../project-listing/project-listing.component';
 import { GAMES } from '../../data/projects/games/project-games-list';
 
 
