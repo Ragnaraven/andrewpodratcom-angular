@@ -2,6 +2,7 @@ export interface ProjectGame {
     name: string;
     date: string;
     description: string;
+    link: string;
 
     id: number;
     aaOff: boolean;

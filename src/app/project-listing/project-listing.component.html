@@ -1,11 +1,12 @@
 <div    [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
+        class=""
         [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
         [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
     
-    <div class="projectContent">     
+    <div class="projectContent" id="item-{{project.link}}">     
 
         <div *ngIf=" project.style === 'customImageWrapper' " class="projectImageWrapper">
-            <img class="projectImage" src="assets/res/projects/nec/eo.gif"/>
+            <img class="projectImage" src="{{project.imageOrMovieBGPath}}"/>
         </div>
         
         <div *ngIf="project.style=='movie'" class="projectMovieContainer">

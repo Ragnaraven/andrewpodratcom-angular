@@ -1,3 +1,5 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -43,6 +45,7 @@ $primary: #303841;
 $secondary: #3a4750;
 $accent: #00adb5;
 $white: #eeeeee;
+$primaryDarker: darken($primary, 10%);
 
 @mixin font-size($fs-map) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -59,6 +62,16 @@ $white: #eeeeee;
 
 * {
     font-family: $rajdhani;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .accentHighlight {
@@ -93,32 +106,33 @@ $white: #eeeeee;
     min-height: 100vh;
 
     .sidenav-bar {
-        background-color: darken($primary, 10%);
-        color: $white;
+        overflow-x: hidden;
+        width: 20vw;
         
         min-width: 350px;
-        width: 20vw;
+        
+        background-color: $primaryDarker;
+        color: $white;
+        padding: 0;
 
         #menuHeader {
             max-width: 80%;
             margin-left: auto;
             margin-right: auto;
             margin-top: 5vh;
-            padding-left: 30px;
+
+            padding-left: 15px;
             
             #logoSide {
                 max-width: 50%;
-                margin: auto;
-                margin-left: auto;
-                margin-right: auto;
+                display: block;
 
                 -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
                 filter: invert(100%);
-
             }
 
             #identification {
-                margin-top: 40px;
+                margin-top: 10px;
 
                 p {
                     letter-spacing: 0.5ch;
@@ -137,78 +151,103 @@ $white: #eeeeee;
         }
 
         #navList {
+            overflow: hidden;
             max-width: 80%;
+
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
 
             a {
-
+                
             }
         }
+    }
+
+    .sideNavResumeContainer {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 40px;
+        width: 100%;
+
+        display: flex;
+        justify-items: center;
+
+        #sideNavResume {
+            margin-left: auto;
+            margin-right: auto;
+
+            font-size: 2em;
+            padding: 0.2em 0.5em;
+
+            &:active {
+                background: #ccc!important;
+                color: $accent!important;
+                text-shadow: none;
+            }
+        }
+
     }
 }
 
 .sidenav-content {
-    #welcome {
-        padding: 40px;
+    #item-welcome {
+        padding: 80px;
 
         #greeting {
             font-size: 1.5em;
-            border: 5px solid $accent;
             padding: 0.5em;            
             display: inline-block;
-            border-radius: 5px;
             margin: 0;    
         }
     
         #pickupLine {
-            font-size: 1.25em;   
+            font-size: 1.5em;   
+            margin-top: 40px;
         }
 
-        #bigThree {
+        #bigThree{
             padding: 0;
-            margin: 0;
+            margin: 0;            
 
-            width: 100%;
+            .row {
+                margin: 0;
+                width: 100%;
 
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+                .introDiv {
+                    width: 33.33%;
 
-            .introDiv {
-                width: 30%;
+                    padding-right: 40px;
 
-                padding-right: 20px;
+                    min-width: 325px;
+                    margin-top: 40px;
 
-                min-width: 325px;
-                margin-top: 40px;
-
-                .introDivImg {
-                    min-width: 100px;
-                    height: 100px;
-                }
-
-                ul {
-                    padding-left: 1em;
-                    margin: 0;
-                    list-style-type: none;
-
-                    li {
-                        font-size: 0.75em;
+                    .introDivImg {
+                        min-width: 100px;
+                        height: 100px;
                     }
 
-                    li::before { 
-                        margin-left: -10px; 
-                        padding: 0;
+                    ul {
+                        padding-left: 1em;
                         margin: 0;
-                        content: "■"; 
-                        font-family:"Arial Black";
-                        color: $accent;
-                        font-weight: bold; /* If you want it to be bold */
-                        display: inline-block; /* Needed to add space between the bullet and the text */
-                        width: 1em; /* Also needed for space (tweak if needed) */
-                        margin-left: -1em; /* Also needed for space (tweak if needed) */
+                        list-style-type: none;
+
+                        li {
+                            font-size: 0.75em;
+                        }
+
+                        li::before { 
+                            margin-left: -10px; 
+                            padding: 0;
+                            margin: 0;
+                            content: "■"; 
+                            font-family:"Arial Black";
+                            color: $accent;
+                            font-weight: bold; /* If you want it to be bold */
+                            display: inline-block; /* Needed to add space between the bullet and the text */
+                            width: 1em; /* Also needed for space (tweak if needed) */
+                            margin-left: -1em; /* Also needed for space (tweak if needed) */
+                        }
                     }
                 }
 
@@ -216,7 +255,78 @@ $white: #eeeeee;
         }
     }
 
+    #projects {
 
+    }
+
+    #item-contactMe {
+
+        padding: 100px 50px;
+
+        #contactMeHeader {
+            font-size: 2em;
+            width: auto;
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            margin-bottom: 50px;
+        }
+
+         .container {
+                .row {
+                    .col-sm {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-content: flex-end;
+
+                        .contactIcon {
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+
+                            flex-grow: 1;
+
+                            width: 75%; 
+                        }
+
+                        #fakeLinkedIn {
+                            background-color: $accent;
+                            color: $primary;
+
+                            font-size: 180px;
+                            line-height: 200px;
+
+                            font-family: sans-serif;
+
+                            width: 200px;
+                            height: 200px;
+
+                            border-radius: 50px;
+
+                            display: block;
+
+                            text-align: center;
+
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-bottom: auto;
+                            margin-top: auto;
+                        }
+                        
+
+                        a, p {
+                            margin: 0;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+
+                            font-size: 1.25em;
+                        }
+                    }
+                }
+        }
+    }
 }
 
 .logoContainer {
@@ -267,7 +377,6 @@ a:active {
     margin: 0;
     list-style: none;
 }
-
 
 /**SHOW MORE**/
 .showMore {
@@ -321,5 +430,166 @@ a:active {
     margin: auto;
 }
 
+.mainResumeContainer {
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    justify-items: center;
+
+    #mainResume {
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 2em;
+        padding: 0.2em 0.5em;
+
+        &:active {
+            background: #ccc!important;
+            color: $accent!important;
+            text-shadow: none;
+        }
+    }
+}
 
 
+
+
+
+
+
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+.gradient-border {
+  --border-width: 3px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  background: $primaryDarker;
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      rgb(48,56,65),
+      rgb(0,173,181),
+      rgb(238,238,238)
+    );
+    
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+.gradient-bg {
+  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+
+    border-radius: 5px;
+  
+    background: linear-gradient(
+        60deg,
+        rgb(48,56,65),
+        rgb(0,173,181),
+        rgb(207, 207, 207)
+    );
+
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    animation: moveGradient 4s alternate infinite;
+  }
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.resumeAnim {
+    box-sizing: border-box;
+
+    // Required, since we're setting absolute on pseudo-elements
+    position: relative;
+    vertical-align: middle;
+
+    cursor: pointer;
+  
+    transition: color 0.25s;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 3px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // This covers the top & right borders (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // And this the bottom & left borders (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  &:hover {
+    text-shadow: 0 0.05em 0.05em #111;
+  }
+
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: white; // Make borders visible
+    border-right-color: white;
+    transition:
+      width 0.25s ease-out, // Width expands first
+      height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: white; // Make borders visible
+    border-left-color: white;
+    transition:
+      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+      width 0.25s ease-out 0.5s, // And then exanding width
+      height 0.25s ease-out 0.75s; // And finally height
+
+      transition: // Animate height first, then width
+        height 0.25s ease-out,
+        width 0.25s ease-out 0.25s;
+  }
+}

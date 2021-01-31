@@ -13,7 +13,6 @@ export class ProjectListingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(screen.width)
   }
 
 }
