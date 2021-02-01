@@ -20,6 +20,10 @@ import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
 import { ProjectListingComponent } from './project-listing/project-listing.component';
+import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
+
+import { MdbModule } from 'mdb-angular-ui-kit';
+import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { ProjectListingComponent } from './project-listing/project-listing.compo
     GamesComponent,
     ArtComponent,
     AppsComponent,
-    ProjectListingComponent
+    ProjectListingComponent,
+    ShowcaseComponentComponent
   ],
   imports: [
     AppRoutingModule,
@@ -41,7 +46,10 @@ import { ProjectListingComponent } from './project-listing/project-listing.compo
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    MdbModule,
+    CrystalLightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

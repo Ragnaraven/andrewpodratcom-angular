@@ -1,3 +1,12 @@
+@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
+
+$primary: #303841;
+$secondary: #3a4750;
+$accent: #00adb5;
+$white: #eeeeee;
+
+$primaryDarker: darken($primary, 10%);
+
 
 /*******************************
 CUSTOM IDS FOR SPECIFIC PROJECTS 
@@ -31,7 +40,7 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
     display: flex;
     height: 50vh;
 
-    background: white;
+    background: $white;
 
     background-size:     cover;
     background-repeat:   no-repeat;
@@ -122,7 +131,7 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
         margin-left: auto;   
         margin-right: 5%;
     
-        color: white;
+        color: $white;
        //background: rgba(0, 0, 0, 0.719);
         //background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
       
@@ -179,7 +188,236 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
     }
 }
 
+.projectShowcaseContainer {
+    .showcaseMenu {
+        background-color: $secondary;
+        text-align: center;
+        position: relative;
 
+        .projectNameShowcaseLabel {
+            display: inline-block;
+            margin: 0;
+            width: 100%;
+            clear: both;
+
+            font-size: 3em;
+                    
+            .bitHighligherStroke {
+                font-family: pixel5;
+
+                color: $white;
+
+                font-size: 0.75em;
+
+                -webkit-animation: bitHightlightCycle linear infinite;
+                -moz-animation: bitHightlightCycle linear infinite;
+                animation: bitHightlightCycle linear infinite;
+
+                -webkit-animation-direction: forwards;
+                -moz-animation-direction: forwards;
+                animation-direction: forwards;
+
+                -webkit-animation-duration:2s;
+                -moz-animation-duration:2s;
+                animation-duration:2s;
+            }
+            
+            @keyframes bitHightlightCycle {
+                0% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                49% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                50% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+                100% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+            }
+                
+            @-moz-keyframes bitHightlightCycle {
+                0% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                49% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                50% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+                100% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+            }
+            
+            @-webkit-keyframes bitHightlightCycle {
+                0% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                49% {
+                    -webkit-text-stroke: 1px $primary;
+                    text-shadow:
+                    3px 3px 0 $primary,
+                    -1px -1px 0 $primary,  
+                    1px -1px 0 $primary,
+                    -1px 1px 0 $primary,
+                    1px 1px 0 $primary;
+                }
+                50% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+                100% {
+                    -webkit-text-stroke: 1px $accent;
+                    text-shadow:
+                    3px 3px 0 $accent,
+                    -1px -1px 0 $accent,  
+                    1px -1px 0 $accent,
+                    -1px 1px 0 $accent,
+                    1px 1px 0 $accent;
+                }
+            }        
+        }
+             
+        .closeWrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+
+            margin-right: 20px;
+            top: 0;
+            right: 0;
+
+            .hideShowcase {
+                display: inline-block;
+                font-size: 2em;
+                height: auto;
+
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/**SHOW MORE**/
+.showMore {
+    h3 {
+        font-size: 36px;
+        margin-left: 20px;
+        margin-top: 100px;
+    }
+
+    padding: 20px;
+}
+
+.showcaseImageList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.showcaseImage {
+    width: 80%;
+    max-width: 80%;
+
+    padding: 10px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showcaseMovieList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    clear: both;
+}
+
+.showcaseMovie {
+    padding: 2px;
+    width: 400px;
+}
+
+.showcaseMovieSingle {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
 
 
 

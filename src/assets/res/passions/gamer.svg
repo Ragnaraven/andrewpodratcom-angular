@@ -28,7 +28,7 @@
      inkscape:snap-global="false"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-units="mm"
      inkscape:cy="326.58097"
      inkscape:cx="527.32359"
@@ -85,17 +85,11 @@
        rx="5.7615247"
        ry="3.8160753" />
     <circle
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#303841;fill-opacity:1;fill-rule:evenodd;stroke-width:0.276561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
-       id="path905"
-       cx="187.75716"
-       cy="104.06062"
-       r="22.391382" />
-    <circle
        cy="104.06062"
        cx="187.75716"
        id="circle907"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.195695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
-       r="15.844195" />
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.283929;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       r="22.987946" />
     <circle
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#00adb5;fill-opacity:1;fill-rule:evenodd;stroke-width:0.28985;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        id="path887"
@@ -138,17 +132,11 @@
        d="M 86.317038,19.789091 C 80.025009,10.428666 77.711949,8.2821873 72.168612,7.6744593 56.505514,6.4439233 44.490606,7.4331913 40.559824,14.170084 24.318716,42.005413 13.601066,107.98717 12.477899,158.75037 c -0.840649,37.99426 36.421832,44.69201 51.224276,7.53437 1.326597,-3.33008 6.020281,-18.1485 7.844401,-32.19862"
        style="fill:#c7c7c7;fill-opacity:1;stroke:none;stroke-width:0.370364px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <circle
-       cy="104.06062"
-       cx="95.16275"
-       id="circle909"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#303841;fill-opacity:1;fill-rule:evenodd;stroke-width:0.276561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
-       r="22.391382" />
-    <circle
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.195695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#1c1c1c;fill-opacity:1;fill-rule:evenodd;stroke-width:0.310072;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        id="circle911"
        cx="95.16275"
        cy="104.06062"
-       r="15.844195" />
+       r="25.104612" />
     <path
        sodipodi:nodetypes="cccczc"
        id="path919"
@@ -161,14 +149,6 @@
        id="ellipse925"
        cx="-69.09864"
        cy="132.21829"
-       transform="rotate(-90)" />
-    <ellipse
-       ry="3.8160753"
-       rx="5.7615247"
-       cy="113.13792"
-       cx="-69.09864"
-       id="ellipse923"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#171717;fill-opacity:1;fill-rule:evenodd;stroke-width:0.301418;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        transform="rotate(-90)" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#3a4750;fill-opacity:1;fill-rule:evenodd;stroke-width:0.620868;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"

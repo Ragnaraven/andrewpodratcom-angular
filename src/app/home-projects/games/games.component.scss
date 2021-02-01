@@ -9,16 +9,6 @@
 //@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
 
-//@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-//@font-face { font-family: pixel1;  src: url("/assets/fonts/pixel1.ttf") format("truetype"); }
-//@font-face { font-family: pixel2;  src: url("/assets/fonts/pixel2.ttf") format("truetype"); }
-//@font-face { font-family: pixel3;  src: url("/assets/fonts/pixel3.ttf") format("truetype"); }
-//@font-face { font-family: pixel4;  src: url("/assets/fonts/pixel4.ttf") format("truetype"); }
-@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
-//@font-face { font-family: pixel6;  src: url("/assets/fonts/pixel6.ttf") format("truetype"); }
-
-
-
 $rajdhani: 'Rajdhani', sans-serif;
 // 2 - $chakrapetch: 'Chakra Petch', sans-serif;
 // 3 - $opensans: 'Open Sans', sans-serif;
@@ -28,24 +18,22 @@ $rajdhani: 'Rajdhani', sans-serif;
 //$unicaone: 'Unica One', cursive;
 //$josefin: 'Josefin Slab', serif;
 
-//Warm gray
-//$c50:  #faf9f7;// - black
-//$c100: #e8e6e1;// - black
-//$c200: #d3cec4;// - black
-//$c300: #b8b2a7;// - black
-//$c400: #a39e93;// - black
-//$c500: #857f72;// - white
-//$c600: #625d52;// - white
-//$c700: #504a40;// - white
-//$c800: #423d33;// - white
-//$c900: #27241d;// - white
-//$c1000: #1b1914;// - white*/
+
+@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
 
 $primary: #303841;
 $secondary: #3a4750;
 $accent: #00adb5;
 $white: #eeeeee;
+
 $primaryDarker: darken($primary, 10%);
+
+.accentHighlight {
+    color: $accent;
+    font-size: inherit;
+    font-family: inherit;
+}
+
 
 @mixin font-size($fs-map) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -62,6 +50,18 @@ $primaryDarker: darken($primary, 10%);
 
 * {
     font-family: $rajdhani;
+}
+
+a, a:visited {
+    color: $white;
+}
+
+a:hover {
+    color: $accent;
+}
+
+a:active {
+    color: darken($white, 50%);
 }
 
 .noselect {
@@ -98,6 +98,37 @@ $primaryDarker: darken($primary, 10%);
 
 .bitLabel {
     font-size: 0.75em;
+}
+
+.logoContainer {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $secondary;
+
+    .logoMain {
+        filter: invert(100);
+        width: 15vw;
+    }
+
+    .logoRight {
+        margin-left: 14vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+        
+    .name {
+        font-size: 2.5em;
+    }
+
+    .work {
+        font-size: 1.4em;
+    }
 }
 
 .sidenav-container {
@@ -182,11 +213,13 @@ $primaryDarker: darken($primary, 10%);
 
             &:active {
                 background: #ccc!important;
-                color: $accent!important;
                 text-shadow: none;
             }
+    
+            &:hover {
+                color: white;
+            }
         }
-
     }
 }
 
@@ -256,7 +289,10 @@ $primaryDarker: darken($primary, 10%);
     }
 
     #projects {
-
+        .projectsLabel {
+            font-size: 4em;
+            margin: 0.5em;
+        }
     }
 
     #item-contactMe {
@@ -265,7 +301,6 @@ $primaryDarker: darken($primary, 10%);
 
         #contactMeHeader {
             font-size: 2em;
-            width: auto;
             display: inline-block;
             padding: 0.25em 0.5em;
             margin-bottom: 50px;
@@ -327,107 +362,19 @@ $primaryDarker: darken($primary, 10%);
                 }
         }
     }
-}
 
-.logoContainer {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: $secondary;
-}
-
-.logoMain {
-    filter: invert(100);
-    width: 15vw;
-}
-
-.logoRight {
-    margin-left: 14vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.name {
-    font-size: 2.5em;
-}
-
-.work {
-    font-size: 1.4em;
-}
-
-a, a:visited {
-    color: $white;
-}
-
-a:hover {
-    color: $accent;
-}
-
-a:active {
-    color: darken($white, 50%);
+    #oldSite {
+        display: block;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        color: #aaa;
+    }
 }
 
 .projectsContainer {
     padding: 0;
     margin: 0;
     list-style: none;
-}
-
-/**SHOW MORE**/
-.showMore {
-    h3 {
-        font-size: 36px;
-        margin-left: 20px;
-        margin-top: 100px;
-    }
-
-    padding: 20px;
-}
-
-.showcaseImageList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.showcaseImage {
-    width: 80%;
-    max-width: 80%;
-
-    padding: 10px;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.showcaseMovieList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    align-items: center;
-    justify-content: center;
-    clear: both;
-}
-
-.showcaseMovie {
-    padding: 2px;
-    width: 400px;
-}
-
-.showcaseMovieSingle {
-    display: block;
-    width: 80%;
-    margin: auto;
 }
 
 .mainResumeContainer {
@@ -447,14 +394,14 @@ a:active {
 
         &:active {
             background: #ccc!important;
-            color: $accent!important;
             text-shadow: none;
+        }
+
+        &:hover {
+            color: white;
         }
     }
 }
-
-
-
 
 
 

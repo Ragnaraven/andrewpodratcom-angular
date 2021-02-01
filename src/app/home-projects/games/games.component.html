@@ -19,7 +19,7 @@
             <a mat-list-item *ngFor="let project of games" (click)='scrollToElement(project.link)'> {{project.name}} </a>
             <a mat-list-item (click)="scrollToElement('contactMe')"> Contact Me </a></mat-nav-list>
         <div class="sideNavResumeContainer noselect">
-           <div id="sideNavResume" class="gradient-bg resumeAnim noselect"><a href="assets/res/NO_INFO_Andrew_Podrat_CV.pdf" target="_blank">Resume</a></div>
+            <a id="sideNavResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
         </div>
 
     </mat-sidenav>
@@ -31,18 +31,14 @@
                 <span class="work">Game Designer & Developer</span>
             </div>
         </section>
-        
-
-        <p class="wow fadeInUp" data-wow-delay="0.6s">TEMP WORDS FADE IN</p>
-
 
         <section id="item-welcome">
             <p class="gradient-border" id="greeting">Hey there!</p>
             <p id="pickupLine">
-                <span style="color: white; font-weight: 500; font-size: 1.25em;">I'm Andrew!</span><br/>
+                <span style="color: white; font-weight: 500; font-size: 1.25em;">I'm Andrew.</span><br/>
                 I am a highly motivated designer and developer with an always expanding versatile technical skillset. <br/>
-                I like to keep my code and my designs both clean and highly resuable.<br/>
-                I am diplomatic team player who is not afraid to take initiative or work indepently.</p>
+                I like to keep my code and my designs both clean and highly reusable.<br/>
+                I am diplomatic team player who is not afraid to take initiative or work independently.</p>
             <div class=".container-fluid" id="bigThree">
                 <div class="row">
                     <div class="col-sm- introDiv">
@@ -53,9 +49,9 @@
                         <p class="introDivParagraph">
                             I have created and designed a few Android apps,
                             3D modeled in Blender for just over 10 years,
-                            and recently, designed this site with Angular 11 and Bootstrap 4!</p>
+                            and recently, designed this site with Angular 11 and Bootstrap 4.</p>
                         <p class="introDivParagraph">Over the years, I have developed gameplay systems, levels, user interfaces, characters, and more.</p>
-                        <p class="introDivParagraph bitLabel">The <span class="accentHighlight">projects below</span> and most of their assets are my <span class="accentHighlight">original designs</span>!</p>
+                        <p class="introDivParagraph bitLabel">The <span class="accentHighlight">projects below</span> and most of their assets are my <span class="accentHighlight">original designs</span>.</p>
                                     
                     </div>
                     <div class="col-sm- introDiv">
@@ -82,7 +78,7 @@
                         <img class="introDivImg" src="assets/res/passions/gamer.svg"/>
                         <p class="introDivHeader bitHeader">Of course, <span class="accentHighlight">I'm a gamer!</span> I play a wide array of genres.</p>
                         <p class="introDivParagraph">
-                            I have been playing games since I was a kid! 
+                            I have been playing games since I was a kid. 
                             There is a picture of me when I was 2, playing a PC game sitting on my dad's lap. 
                             I have enjoyed most major consoles, as well as PC.</p>
                         <p class="introDivParagraph">Below, you will see that none of the projects I am working on share the same genre!</p>
@@ -105,7 +101,7 @@
                     </div>
 
                     <div class="mainResumeContainer noselect">
-                        <div id="mainResume" class="gradient-bg resumeAnim noselect"><a href="assets/res/NO_INFO_Andrew_Podrat_CV.pdf" target="_blank">Resume</a></div>
+                        <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
                     </div>
                 </div>
             </div>
@@ -113,6 +109,7 @@
         </section>
         
         <section id="projects">
+            <p class="projectsLabel">Projects</p>
             <ul class="projectsContainer">
                 <li *ngFor="let project of games">
                     <app-project-listing [project]="project"></app-project-listing>
@@ -121,146 +118,26 @@
         </section>
 
         <section id="item-contactMe">
+            <p id="contactMeHeader" class=" wow bounceInLeft gradient-border">Contact Me</p>
             <div class="container">
-                <p id="contactMeHeader" class="gradient-border">Contact Me</p>
                 <div class="row">
                     <a class="col-sm noselect" href="mailto:andrew@andrewpodrat.com">
-                        <img class="contactIcon" src="assets/res/material.io/mail-white-18dp.svg"/>
+                        <img class="contactIcon hvr-grow-rotate" src="assets/res/material.io/mail-white-18dp.svg"/>
                         <p>andrew@andrewpodrat.com</p>
                     </a>
-                    <a class="col-sm noselect" href="https://www.linkedin.com/in/andrewpodrat/">
+                    <a class="col-sm noselect hvr-float" href="https://www.linkedin.com/in/andrewpodrat/">
                         <p class="noselect" id="fakeLinkedIn">in</p>
                         <p>LinkedIn</p>
                     </a>
                     <div class="col-sm">
-                        <img class="contactIcon noselect" src="assets/res/material.io/place-white-18dp.svg"/>
+                        <img class="contactIcon noselect hvr-bob" src="assets/res/material.io/place-white-18dp.svg"/>
                         <p>Pittsburgh, PA</p>  
                     </div>
                 </div>
             </div>
         </section>
-        <!--
-        <section id="ragnaraven">
-            <div  class="projectContainer" style="background-image: url('assets/res/projects/ragnaraven/unity4scene.png')"> 
-                <div class="projectContent">        
-                    <h3 class="projectNameShowcase">Ragnaraven</h3>
-                    <div class="projectDetailsContent">
-                        <h3 class="projectNameHeader">Ragnaraven</h3>
-                        <p class="projectDate">June 2018 - Current</p>
-                        <p>A game about nightmares, good, evil and the grey lines between choices that are blurred by desperation.</p>
-                        <button class="showcase">showcase</button> 
-                    </div>
-                </div>
-            </div>
-            <div class="showMore">
-                <a class="hideShowcase">hide showcase</a>
 
-                <h3>Scenery Showcase</h3>
-                <ul class="showcaseImageList">
-                    <li> <img class="showcaseImage" src="assets/res/projects/ragnaraven/unity4scene.png" /> </li>
-                    <li> <img class="showcaseImage" src="assets/res/projects/ragnaraven/unity3snow.webp" /> </li>
-                    <li> <img class="showcaseImage" src="assets/res/projects/ragnaraven/unity2temple.webp" /> </li>
-                </ul>
-
-                <h3>Gameplay Showcase</h3>
-                <video muted autoplay loop="true" class="showcaseMovieSingle"> <source  src="assets/res/projects/ragnaraven/graphics.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
-                    
-                <ul class="showcaseMovieList">
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source src="assets/res/projects/ragnaraven/earthProjectile2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source src="assets/res/projects/ragnaraven/earthquake2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source src="assets/res/projects/ragnaraven/earthrise2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source src="assets/res/projects/ragnaraven/earthWhip2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source  src="assets/res/projects/ragnaraven/takingDamageAndHealing2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source  src="assets/res/projects/ragnaraven/healDemo2.mp4" type="video/mp4"> Your browser does not support the video tag.  </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source  src="assets/res/projects/ragnaraven/lightningDamage2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovie"> <source  src="assets/res/projects/ragnaraven/lightningShowcase2.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                </ul>
-
-                <video muted autoplay loop="true" class="showcaseMovieSingle"> <source  src="assets/res/projects/ragnaraven/moveShowcase.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
-                
-                <section class="breweries" id="breweries">
-                    <ul>
-                    </ul>
-                </section>
-
-                <h3>Blueprints and C++ Showcase</h3>
-                <ul class="showcaseImageList">
-                    <li> <img class="showcaseImage" src="assets/res/projects/ragnaraven/celShading.webp" /> </li>
-                    <li> <img class="showcaseImage" src="assets/res/projects/ragnaraven/frrcpp.webp" /> </li>
-                    <li> <video muted autoplay loop="true" class="showcaseMovieSingle"> <source  src="assets/res/projects/ragnaraven/materialFloor.mp4" type="video/mp4"> Your browser does not support the video tag. </video> </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="gamejams" class="projectContainer" style="background-image: url('assets/res/projects/gamejams/gameJamsCard.png')">
-            <div class="projectContent">        
-                <h3 class="projectNameShowcase">Game Jams</h3>
-                <div class="projectDetailsContent">
-                    <h3 class="projectNameHeader">Game Jams</h3>
-                    <p class="projectDate">Since Oct 2020</p>
-                    <p>A list of the game jams I have participated in.</p>
-                    <a href="project.linkTo">see more</a> 
-                </div>
-            </div>
-        </section>
-
-        <section id="tuzg" class="projectContainer">
-            <div class="projectContent">
-                
-                <div class="projectMovieContainer">
-                    <video muted autoplay loop="true" class="projectMovie" >
-                        <source  src="assets/res/projects/tuzg/tuzg.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <h3 class="projectNameShowcase">TUZG - The Ultimate Zombie Game</h3>
-                <div class="projectDetailsContent">
-                    <h3 class="projectNameHeader">TUZG - The Ultimate Zombie Game</h3>
-                    <p class="projectDate">Since Aug 2020</p>
-                    <p>TUZG is a game I created to test whether or not a multiplayer game could be created in mostly Blueprints in UE4; It can. I ended up creating guns, ballistics systems and a world item interface to interact with objects.</p>
-                    <a href="project.linkTo">see more</a> 
-                </div>
-            </div>
-        </section>
-
-        <section id="nec" class="projectContainerAAOff" style="
-        background: rgb(183,248,237);
-        background: radial-gradient(circle, rgba(183,248,237,1) 0%, rgba(44,205,177,1) 12%, rgba(34,129,113,1) 28%, rgba(51,52,82,1) 45%, rgba(53,60,89,1) 71%, rgba(25,29,44,1) 100%);">
-            <div class="projectContent">        
-                <div class="projectImageWrapper">
-                    <img class="projectImage" src="assets/res/projects/nec/eo.gif"/>
-                </div>
-
-                <h3 class="projectNameShowcase">Not Enough Combat</h3>
-                <div class="projectDetailsContent">
-                    <h3 class="projectNameHeader">Not Enough Combat</h3>
-                    <p class="projectDate">Aug 2018 - Mar 2020</p>
-                    <p>Not Enough Combat is a mod for Minecraft (versions 1.7.10 - 1.12.2 that adds in armor for other mod added ores. Obsidian and Ender Obsidian armor and tools provide a unique vanilla end game experience.</p>
-                    <a href="project.linkTo">see more</a> 
-                </div>
-            </div>
-        </section>
-
-        <section id="runngunner" class="projectContainer">
-            <div class="projectContent">       
-                <div class="projectMovieContainer">
-                    <video muted autoplay loop="true" class="projectMovie">
-                        <source src="assets/res/projects/runngunner/bg.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <h3 class="projectNameShowcase">Run N' Gunner</h3>
-                <div class="projectDetailsContent">
-                    <h3 class="projectNameHeader">Run N' Gunner</h3>
-                    <p class="projectDate">Aug 2019 - Oct 2019</p>
-                    <p>Run N' Gunner is a school project where I was both the lead designer and project lead.</p>
-                    <a href="project.linkTo">see more</a> 
-                </div>
-            </div>
-        </section>
-        -->
+        <a id="oldSite" class="wow fadeInUp" data-wow-delay="0.5s" href="https://andrewpodrat.com/lagacy.html">Looking for the old site?</a>
 
     </mat-sidenav-content>
   </mat-sidenav-container>

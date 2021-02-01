@@ -1,0 +1,56 @@
+.showcaseContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-bottom: 30px;
+    
+    .showcaseHeader {
+        font-size: 3em;
+        line-height: 2em;
+        display: block;
+        text-align: center;
+        margin: 0;
+        text-shadow: 3px 3px #111;
+    }
+
+    .showcaseImageContainer {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .showcaseImage {
+            width: 25%;
+            min-width: 200px;
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover {
+                z-index: 1000;                
+            }
+
+        }
+    }
+
+    .projectMovieContainer { 
+        width: 100%;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .mediaMovie {
+            width: 50%;
+            min-width: 300px;   
+            max-width: 550px;         
+        }
+
+        .mediaMovieBig {
+            width: 100%;
+        }
+    }
+}

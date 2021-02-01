@@ -1,0 +1,51 @@
+<!--images-->
+<div *ngIf="showcase.type == 'images'" class="showcaseContainer images">
+
+    <p class="showcaseHeader">{{ showcase.header }}</p>
+
+    <p *ngIf="showcase.textAbove != ''" class="showcaseText">{{ showcase.textAbove }}</p>
+
+    <div class="showcaseImageContainer" lightbox-group>
+        <img *ngFor="let media of showcase.media" class="showcaseImage hvr-grow" src="{{ media }}" lightbox />
+    </div>
+    
+    <p *ngIf="showcase.textBelow != ''" class="showcaseText">{{ showcase.textBelow }}</p>
+
+</div>
+
+<!--movie-->
+<div *ngIf="showcase.type == 'movie'" class="showcaseContainer movie">
+
+    <p class="showcaseHeader">{{ showcase.header }}</p>
+
+    <p *ngIf="showcase.textAbove != ''" class="showcaseText">{{ showcase.textAbove }}</p>
+
+    <div class="projectMovieContainer">
+        <video *ngFor="let media of showcase.media" class="mediaMovieBig" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
+            <source src="{{ media }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <p *ngIf="showcase.textBelow != ''" class="showcaseText">{{ showcase.textBelow }}</p>
+
+</div>
+
+
+<!--moviegrid-->
+<div *ngIf="showcase.type == 'moviegrid'" class="showcaseContainer moviegrid">
+
+    <p class="showcaseHeader">{{ showcase.header }}</p>
+
+    <p *ngIf="showcase.textAbove != ''" class="showcaseText">{{ showcase.textAbove }}</p>
+
+    <div class="projectMovieContainer">
+        <video *ngFor="let media of showcase.media" class="mediaMovie" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
+            <source src="{{ media }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <p *ngIf="showcase.textBelow != ''" class="showcaseText">{{ showcase.textBelow }}</p>
+
+</div>
