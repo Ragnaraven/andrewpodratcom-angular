@@ -34,383 +34,350 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
             STANDARD 
 ********************************/
 
-.projectContainer {
+.toggleShowcase {
+    cursor: pointer;
+    pointer-events: all;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+mat-expansion-panel {
     padding: 0;
     margin: 0;
-    display: flex;
-    height: 50vh;
 
-    background: $white;
+    mat-expansion-panel-header {
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
 
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-}
+      mat-panel-description {
+        padding: 0;
+        margin: 0;
 
-.projectContainerAAOff {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    height: 50vh;
-
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-
-    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
-    image-rendering: -moz-crisp-edges;          /* Firefox                        */
-    image-rendering: -o-crisp-edges;            /* Opera                          */
-    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-    image-rendering: pixelated; /* Chrome */
-    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-    -ms-interpolation-mode: nearest-neighbor;   /* IE8+      */
-}
-
-.projectContent {
-    position: relative;
-    display: flex;
-    width: 100%;
-
-    .projectImageWrapper {
-        height: 80%;
-        width: 100%;
-        margin-top: 20px;
-
-        .projectImage {
-            width: 100%;
-            height: 100%; 
-            object-fit: contain;
-        }
-    }
-
-    .projectMovieContainer {
-        position: absolute;
-        width: 100%; 
-        height: 100%; 
-        overflow:hidden;
-    }
-
-    .projectMovie {
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
-        min-width: 100%; 
-        min-height: 100%; 
-        width: auto; 
-        height: auto;
-        z-index: 1; 
-        overflow: hidden;
-    }
-    
-    .projectNameShowcase {
-        position: absolute;
-        letter-spacing: 0.5ch;
-        margin: 0 0 20px 0;
-        padding: 5px;
-        padding-left: 20px;
-        border-radius: 0 2px 2px 0;
-        align-self: flex-end;
-        z-index: 10; 
-        font-size: 1.5rem;
-
-        display: none; //TODO: Unhide and animate in. Anim disabled on mobile
-
-        background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
-    }
-
-    .projectDetailsWrapper {
-        max-height: 100%;
-        max-width: 30%;
-        width: 100%;
-        min-width: 300px;
-    
-        z-index: 100;
-        margin: 0;    
-        margin-left: auto;   
-        margin-right: 5%;
-    
-        color: $white;
-       //background: rgba(0, 0, 0, 0.719);
-        //background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
-      
-        display: flex;
-        justify-content: center;
-        align-items: center;        /* for single line flex container */
-        align-content: center;      /* for multi-line flex container */
-
-        $p-font-sizes-details: (
-            null  : 0.9rem,
-            640px : 0.9rem,
-            1280px: 1rem,
-            1920px: 1.25rem
-        );
-
-        @include font-size($p-font-sizes-details);
-
-        .projectDetailsContent {
-            margin-left: 15%;
-            margin-right: 15%;
-
-            .projectNameHeader {
-                margin: 0;
+            .projectContainer, .projectContainerAAOff {
                 padding: 0;
-                
-                $p-font-sizes-title: (
-                    null  : 1rem,
-                    640px : 1rem,
-                    1280px: 1.5rem,
-                    1600px: 3rem
-                );
-
-                @include font-size($p-font-sizes-title);
-            }
-
-            .projectDate {
                 margin: 0;
-                padding: 0;
-                
-                $p-font-sizes-date: (
-                    null  : 0.8rem,
-                    640px : 0.8rem,
-                    1280px: 0.9rem,
-                    1920px: 1rem
-                );
+                display: flex;
+                height: 50vh;
+                width: 100%;
 
-                @include font-size($p-font-sizes-date);
+                background: $white;
+
+                background-size:     cover;
+                background-repeat:   no-repeat;
+                background-position: center center;
             }
 
-            .projectDescription {
+            .projectContainerAAOff {
+                image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+                image-rendering: -moz-crisp-edges;          /* Firefox                        */
+                image-rendering: -o-crisp-edges;            /* Opera                          */
+                image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+                image-rendering: pixelated; /* Chrome */
+                image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+                -ms-interpolation-mode: nearest-neighbor;   /* IE8+      */
+            }
 
+            .projectContent {
+                position: relative;
+                display: flex;
+                width: 100%;
+
+                .projectImageWrapper {
+                    height: 80%;
+                    width: 100%;
+                    margin-top: 20px;
+
+                    .projectImage {
+                        width: 100%;
+                        height: 100%; 
+                        object-fit: contain;
+                    }
+                }
+
+                .projectMovieContainer {
+                    position: absolute;
+                    width: 100%; 
+                    height: 100%; 
+                    overflow:hidden;
+                }
+
+                .projectMovie {
+                    position: absolute;
+                    top: 50%; 
+                    left: 50%;
+                    -webkit-transform: translateX(-50%) translateY(-50%);
+                    transform: translateX(-50%) translateY(-50%);
+                    min-width: 100%; 
+                    min-height: 100%; 
+                    width: auto; 
+                    height: auto;
+                    z-index: 1; 
+                    overflow: hidden;
+                }
+                
+                .projectNameShowcase {
+                    position: absolute;
+                    letter-spacing: 0.5ch;
+                    margin: 0 0 20px 0;
+                    padding: 5px;
+                    padding-left: 20px;
+                    border-radius: 0 2px 2px 0;
+                    align-self: flex-end;
+                    z-index: 10; 
+                    font-size: 1.5rem;
+
+                    display: none; //TODO: Unhide and animate in. Anim disabled on mobile
+
+                    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+                }
+
+                .projectDetailsWrapper {
+                    max-height: 100%;
+                    max-width: 30%;
+                    width: 100%;
+                    min-width: 300px;
+                
+                    z-index: 100;
+                    margin: 0;    
+                    margin-left: auto;   
+                    margin-right: 5%;
+                
+                    color: $white;
+                //background: rgba(0, 0, 0, 0.719);
+                    //background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%);
+                
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;        /* for single line flex container */
+                    align-content: center;      /* for multi-line flex container */
+
+                    $p-font-sizes-details: (
+                        null  : 0.6em,
+                        640px : 0.7em,
+                        1280px: 0.8em,
+                        1920px: 1.15em
+                    );
+
+                    @include font-size($p-font-sizes-details);
+
+                    .projectDetailsContent {
+                        margin-left: 15%;
+                        margin-right: 15%;
+
+                        .projectNameHeader {
+                            margin: 0;
+                            padding: 0;
+                            
+                            $p-font-sizes-title: (
+                                null  : 0.5em,
+                                640px : 1.5em,
+                                1280px: 1.85em,
+                                1600px: 2em
+                            );
+
+                            @include font-size($p-font-sizes-title);
+                        }
+
+                        .projectDate {
+                            margin: 0;
+                            padding: 0;
+                            
+                            $p-font-sizes-date: (
+                                null  : 0.6rem,
+                                640px : 0.6rem,
+                                1280px: 0.7rem,
+                                1920px: 0.8rem
+                            );
+
+                            @include font-size($p-font-sizes-date);
+                        }
+
+                        .projectDescription {
+
+                        }
+                    }
+                }
             }
         }
     }
-}
 
-.projectShowcaseContainer {
-    .showcaseMenu {        
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        top: 0;
-        z-index: 100;      
-        
-        background-color: $secondary;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-content: center;
+    .projectShowcaseContainer {
+        padding: 0;
+        margin:  0px -25px;
 
-        padding: 0 20px;
-
-        .projectNameShowcaseLabel {
-            flex-grow: 1;
-            font-size: 3em;
-                    
-            .bitHighligherStroke {
-                font-family: pixel5;
-
-                color: $white;
-
-                font-size: 0.75em;
-
-                -webkit-animation: bitHightlightCycle linear infinite;
-                -moz-animation: bitHightlightCycle linear infinite;
-                animation: bitHightlightCycle linear infinite;
-
-                -webkit-animation-direction: forwards;
-                -moz-animation-direction: forwards;
-                animation-direction: forwards;
-
-                -webkit-animation-duration:2s;
-                -moz-animation-duration:2s;
-                animation-duration:2s;
-            }
+        .showcaseMenu {        
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            z-index: 100;      
             
-            @keyframes bitHightlightCycle {
-                0% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                49% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                50% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-                100% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-            }
-                
-            @-moz-keyframes bitHightlightCycle {
-                0% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                49% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                50% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-                100% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-            }
-            
-            @-webkit-keyframes bitHightlightCycle {
-                0% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                49% {
-                    -webkit-text-stroke: 1px $primary;
-                    text-shadow:
-                    3px 3px 0 $primary,
-                    -1px -1px 0 $primary,  
-                    1px -1px 0 $primary,
-                    -1px 1px 0 $primary,
-                    1px 1px 0 $primary;
-                }
-                50% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-                100% {
-                    -webkit-text-stroke: 1px $accent;
-                    text-shadow:
-                    3px 3px 0 $accent,
-                    -1px -1px 0 $accent,  
-                    1px -1px 0 $accent,
-                    -1px 1px 0 $accent,
-                    1px 1px 0 $accent;
-                }
-            }        
-        }
-             
-        .closeWrapper {
+            background-color: $secondary;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: flex-end;
             align-content: center;
-            justify-content: center;
 
-            .hideShowcase {
+            padding: 0 20px;
+
+            .projectNameShowcaseLabel {
+                flex-grow: 1;
                 font-size: 2em;
-                cursor: pointer;
+                        
+                .bitHighligherStroke {
+                    font-family: pixel5;
 
-                &:hover {
-                    text-decoration: underline;
+                    color: $white;
+
+                    font-size: 0.65em;
+
+                    -webkit-animation: bitHightlightCycle linear infinite;
+                    -moz-animation: bitHightlightCycle linear infinite;
+                    animation: bitHightlightCycle linear infinite;
+
+                    -webkit-animation-direction: forwards;
+                    -moz-animation-direction: forwards;
+                    animation-direction: forwards;
+
+                    -webkit-animation-duration:2s;
+                    -moz-animation-duration:2s;
+                    animation-duration:2s;
                 }
+                
+                @keyframes bitHightlightCycle {
+                    0% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    49% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    50% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                    100% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                }
+                    
+                @-moz-keyframes bitHightlightCycle {
+                    0% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    49% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    50% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                    100% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                }
+                
+                @-webkit-keyframes bitHightlightCycle {
+                    0% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    49% {
+                        -webkit-text-stroke: 1px $primary;
+                        text-shadow:
+                        3px 3px 0 $primary,
+                        -1px -1px 0 $primary,  
+                        1px -1px 0 $primary,
+                        -1px 1px 0 $primary,
+                        1px 1px 0 $primary;
+                    }
+                    50% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                    100% {
+                        -webkit-text-stroke: 1px $accent;
+                        text-shadow:
+                        3px 3px 0 $accent,
+                        -1px -1px 0 $accent,  
+                        1px -1px 0 $accent,
+                        -1px 1px 0 $accent,
+                        1px 1px 0 $accent;
+                    }
+                }        
+            }
+                
+            .closeWrapper {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
             }
         }
     }
-}
-
-/**SHOW MORE**/
-.showMore {
-    h3 {
-        font-size: 36px;
-        margin-left: 20px;
-        margin-top: 100px;
-    }
-
-    padding: 20px;
-}
-
-.showcaseImageList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.showcaseImage {
-    width: 80%;
-    max-width: 80%;
-
-    padding: 10px;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.showcaseMovieList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    align-items: center;
-    justify-content: center;
-    clear: both;
-}
-
-.showcaseMovie {
-    padding: 2px;
-    width: 400px;
-}
-
-.showcaseMovieSingle {
-    display: block;
-    width: 80%;
-    margin: auto;
 }

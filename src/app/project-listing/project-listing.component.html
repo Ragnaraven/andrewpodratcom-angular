@@ -1,57 +1,55 @@
-<div    [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
-        class="wow fadeInUp" data-wow-delay="0.3s"
-        [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
-        [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
-    
-    <div class="projectContent" id="item-{{project.link}}">     
-
-        <div *ngIf=" project.style === 'customImageWrapper' " class="projectImageWrapper">
-            <img class="projectImage" src="{{project.imageOrMovieBGPath}}"/>
-        </div>
+<mat-expansion-panel hideToggle #mep="matExpansionPanel">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        <div 
+            [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
+            class="wow fadeInUp" data-wow-delay="0.3s"
+            [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
+            [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
         
-        <div *ngIf="project.style=='movie'" class="projectMovieContainer">
-            <video class="projectMovie" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
-                <source src="{{project.imageOrMovieBGPath}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+            <div class="projectContent" id="item-{{project.link}}">     
 
-        <h3 class="projectNameShowcase wow slideInleft" data-wow-delay="0.5s">{{project.name}}</h3>
-        <div class="projectDetailsWrapper">
-            <div class="projectDetailsContent">
-                <h3 class="projectNameHeader wow fadeInRight" data-wow-delay="0.7s">{{project.name}}</h3>
-                <p class="projectDate wow fadeInRight" data-wow-delay="0.95s">{{project.date}}</p>
-                <p class="projectDescription wow fadeInRight" data-wow-delay="1.1s">{{project.description}}</p>
-                <!--<button class="showcase">showcase</button>--> 
+                <div *ngIf=" project.style === 'customImageWrapper' " class="projectImageWrapper">
+                    <img class="projectImage" src="{{project.imageOrMovieBGPath}}"/>
+                </div>
+                
+                <div *ngIf="project.style=='movie'" class="projectMovieContainer">
+                    <video class="projectMovie" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
+                        <source src="{{project.imageOrMovieBGPath}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <h3 class="projectNameShowcase wow slideInleft" data-wow-delay="0.5s">{{project.name}}</h3>
+                <div class="projectDetailsWrapper">
+                    <div class="projectDetailsContent">
+                        <h3 class="projectNameHeader wow fadeInRight" data-wow-delay="0.7s">{{project.name}}</h3>
+                        <p class="projectDate wow fadeInRight" data-wow-delay="0.95s">{{project.date}}</p>
+                        <p class="projectDescription wow fadeInRight" data-wow-delay="1.1s">{{project.description}}</p>
+                        <span class="toggleShowcase wow fadeIn" data-wow-delay="1.5s">showcase</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!--
-<div #boundary class="projectShowcaseContainer some-stickybits-parent">
-    <div #spacer></div>
-    <div class="showcaseMenu" stickyThing [spacer]="spacer" [boundary]="boundary">
-        <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
-        <div class="closeWrapper">
-            <span class="hideShowcase">hide</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+        
+    <div #boundary class="projectShowcaseContainer some-stickybits-parent">
+        <div #spacer></div>
+        <div class="showcaseMenu" stickyThing [spacer]="spacer" [boundary]="boundary">
+            <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
+            <div class="closeWrapper">
+                <span class="toggleShowcase" (click)="mep.expanded = !mep.expanded" style="font-size: 1.5em;">hide</span>
+            </div>
         </div>
+
+        <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
     </div>
 
-    <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
-</div>-->
-<div  class="projectShowcaseContainer some-stickybits-parent">
-    <div class="showcaseMenu some-stickybits-element" stickybits>
-        <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
-        <div class="closeWrapper">
-            <span class="hideShowcase">hide</span>
-        </div>
+    <div class="footer">
+        <a *ngIf="project.source != ''" class="footerText">{{ project.sourceText }}</a>
+        <a *ngIf="project.linkTo != ''" class="extLink">{{ project.linkToText }}</a>
     </div>
 
-    <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
-</div>
-
-<div class="footer">
-    <a *ngIf="project.source != ''" class="footerText">{{ project.sourceText }}</a>
-    <a *ngIf="project.linkTo != ''" class="extLink">{{ project.linkToText }}</a>
-</div>
+</mat-expansion-panel>

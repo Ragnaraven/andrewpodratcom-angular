@@ -24,8 +24,8 @@ import { ShowcaseComponentComponent } from './showcase-component/showcase-compon
 
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
-//import { AngularStickyThingsModule}  from '@w11k/angular-sticky-things';
-import { StickybitsModule } from 'ngx-stickybits';
+import { AngularStickyThingsModule}  from '@w11k/angular-sticky-things';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -52,8 +52,8 @@ import { StickybitsModule } from 'ngx-stickybits';
 
     MdbModule,
     CrystalLightboxModule,
-    StickybitsModule,
-    //AngularStickyThingsModule,
+    AngularStickyThingsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
