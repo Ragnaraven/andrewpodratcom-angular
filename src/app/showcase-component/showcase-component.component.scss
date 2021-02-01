@@ -1,6 +1,21 @@
+@mixin font-size($fs-map) {
+    @each $fs-breakpoint, $fs-font-size in $fs-map {
+      @if $fs-breakpoint == null {
+        font-size: $fs-font-size;
+      }
+      @else {
+        @media screen and (min-width: $fs-breakpoint) {
+          font-size: $fs-font-size;
+        }
+      }
+    }
+  }
+
+
 .showcaseContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 
     margin-bottom: 30px;
@@ -12,6 +27,21 @@
         text-align: center;
         margin: 0;
         text-shadow: 3px 3px #111;
+    }
+
+    .showcaseText {
+        display: inline-block;
+        margin: 20px 40px;
+        max-width: 800px;
+
+        $p-font-sizes-showcaseText: (
+            null  : 0.6rem,
+            640px : 0.8rem,
+            1280px: 1rem,
+            1920px: 1.25rem
+        );
+
+        @include font-size($p-font-sizes-showcaseText);
     }
 
     .showcaseImageContainer {
@@ -31,7 +61,6 @@
             &:hover {
                 z-index: 10;                
             }
-
         }
     }
 
@@ -53,4 +82,4 @@
             width: 100%;
         }
     }
-}
+}   

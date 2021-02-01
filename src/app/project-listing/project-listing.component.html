@@ -1,9 +1,9 @@
-<mat-expansion-panel hideToggle #mep="matExpansionPanel">
+<mat-expansion-panel hideToggle #mep="matExpansionPanel" 
+                     class="wow fadeInUp" data-wow-delay="0.3s">
     <mat-expansion-panel-header>
       <mat-panel-description>
         <div 
             [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
-            class="wow fadeInUp" data-wow-delay="0.3s"
             [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
             [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
         
@@ -26,7 +26,7 @@
                         <h3 class="projectNameHeader wow fadeInRight" data-wow-delay="0.7s">{{project.name}}</h3>
                         <p class="projectDate wow fadeInRight" data-wow-delay="0.95s">{{project.date}}</p>
                         <p class="projectDescription wow fadeInRight" data-wow-delay="1.1s">{{project.description}}</p>
-                        <span class="toggleShowcase wow fadeIn" data-wow-delay="1.5s">showcase</span>
+                        <span class="toggleShowcase wow fadeIn" data-wow-delay="1.75s">showcase</span>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
         
-    <div #boundary class="projectShowcaseContainer some-stickybits-parent">
+    <div #boundary class="projectShowcaseContainer">
         <div #spacer></div>
         <div class="showcaseMenu" stickyThing [spacer]="spacer" [boundary]="boundary">
             <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>

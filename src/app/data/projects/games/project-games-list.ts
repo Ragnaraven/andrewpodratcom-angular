@@ -14,7 +14,14 @@ export const GAMES: ProjectGame[] = [
     imageOrMovieBGPath: "assets/res/projects/ghostgame/gg-bg.mp4", 
     customStyleData: "", 
     description: "GhostGame is a cooperative, multiplayer game about ghost hunting. I will reveal more information about the idea and progress on request,but as this is my most recent project, I am opting to protect my idea and not provide a full description. Made with UE4, Blender, Mixamo and Quixel.",
-    showcases: []
+    showcases: [{
+        header: "Backstory and Demo",
+        textAbove: "GhostGame is my most recent current project. I wanted to learn about making FP/TP animations and controllers, as well as AI systems and mod support in UE4. For only 2 weeks of work, there has been substantial progress and the idea is taking on a life of it's own! As per usual, I have basic coop implemented as well as various lighting systems. Check out the video to see the progress! I will reveal more (including my private Trello) once more progress is made.",   
+        textBelow: "",       
+        type: "movie",
+        media: ["assets/res/projects/ghostgame/gg-showcase.mp4"],
+      },
+    ]
   },
 
   { id: 6, 
@@ -30,7 +37,13 @@ export const GAMES: ProjectGame[] = [
     imageOrMovieBGPath: "assets/res/projects/citybuilder/cb-bg.mp4", 
     customStyleData: "", 
     description: "CityBuilder is a co-op, citybuilding economic sim with a RTS elements. At the moment, the basic features of a city builder are in place: place, move, delete, rotate. Currently working on a decal-based road system.",
-    showcases: []
+    showcases: [{
+      header: "Backstory and Demo",
+      textAbove: "I am a huge fan of city builders. CityBuilder is a side project I started to reinforce my understanding of multiplayer in UE4, as well as try out a new form of development. Various states and managers are syncronized and replciated to keep the game in sync. Like GhostGame, CityBuilder has taken on it's own idea, and I have detailed plans for it that would make it a unique city builder complete with elements from games I have enjoyed in the past.",   
+      textBelow: "",       
+      type: "movie",
+      media: ["assets/res/projects/citybuilder/cb-showcase.mp4"],
+    },]
   },
 
   {id: 4, 
@@ -93,7 +106,7 @@ export const GAMES: ProjectGame[] = [
     style: "standard", 
     imageOrMovieBGPath: "assets/res/projects/ragnaraven/unity4scene.png", 
     customStyleData: "", 
-    description: "Work in progress, open world UE4 game. Set in an alternate, naturalistic world, humankind is threatened by an alien being that is invading the world. Story draft available on request.",
+    description: "Work in progress, open world UE4 game. Set in an alternate, ecoistic world, humankind is threatened by an alien being that is invading the world. Story draft available on request.",
     showcases: [
       { header: "Scenery",
         textAbove: "",   
@@ -127,7 +140,12 @@ export const GAMES: ProjectGame[] = [
             "assets/res/projects/ragnaraven/lightningShowcase2.mp4",
         ],
       },
-      
+      { header: "Background", 
+        textAbove: "My work on Ragnaraven is best described in two parts: Learning and writing. I learned as much of Unreal Engine as I could to start development. That process took about a year. The year after that, I began planning a world, a story and gameplay mechanics. While I am not ready to fully reveal the story, below, you can see the beginnings of my low poly art style and the some of the gameplay mechanics. <br/> <br/> I breifly paused development to create \"The Ultimate Zombie Game\" to take on the behometh of multiplayer development. When I finished that project, I realized that I care too much about the story to botch the execution of Ragnaraven. I have decided to continue my writing and design so that once I am well experienced I will be able to make Ragnaraven the game it deserves to be. Since then, I have decided to dabble with City Builder and Ghost Game to continue learning and gaining game development wisdom from these smaller scope projects.",   
+        textBelow: "",       
+        type: "html",
+        media: [ ],
+      },
     ]
   },
 ];
