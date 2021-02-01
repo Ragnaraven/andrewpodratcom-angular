@@ -24,8 +24,8 @@ import { ShowcaseComponentComponent } from './showcase-component/showcase-compon
 
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
-import { AngularStickyThingsModule}  from '@w11k/angular-sticky-things';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { AngularStickyThingsModule }  from '@w11k/angular-sticky-things';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
