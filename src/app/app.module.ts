@@ -23,7 +23,9 @@ import { ProjectListingComponent } from './project-listing/project-listing.compo
 import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
 
 import { MdbModule } from 'mdb-angular-ui-kit';
-import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
+import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
+//import { AngularStickyThingsModule}  from '@w11k/angular-sticky-things';
+import { StickybitsModule } from 'ngx-stickybits';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import {CrystalLightboxModule} from '@crystalui/angular-lightbox';
     MatToolbarModule,
 
     MdbModule,
-    CrystalLightboxModule
+    CrystalLightboxModule,
+    StickybitsModule,
+    //AngularStickyThingsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,12 +28,24 @@
     </div>
 </div>
 
-<div class="projectShowcaseContainer">
-    <div class="showcaseMenu">
+<!--
+<div #boundary class="projectShowcaseContainer some-stickybits-parent">
+    <div #spacer></div>
+    <div class="showcaseMenu" stickyThing [spacer]="spacer" [boundary]="boundary">
+        <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
         <div class="closeWrapper">
             <span class="hideShowcase">hide</span>
         </div>
+    </div>
+
+    <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
+</div>-->
+<div  class="projectShowcaseContainer some-stickybits-parent">
+    <div class="showcaseMenu some-stickybits-element" stickybits>
         <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
+        <div class="closeWrapper">
+            <span class="hideShowcase">hide</span>
+        </div>
     </div>
 
     <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
