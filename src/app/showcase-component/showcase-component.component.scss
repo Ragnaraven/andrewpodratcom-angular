@@ -11,6 +11,9 @@
     }
   }
 
+.heightLimited {
+    max-height: 500px; 
+}   
 
 .showcaseContainer {
     display: flex;
@@ -21,12 +24,25 @@
     margin-bottom: 30px;
     
     .showcaseHeader {
-        font-size: 3em;
+        $p-font-sizes-headers: (
+            null  : 1.5rem,
+            640px : 1.5rem,
+            1280px: 2.5rem,
+            1920px: 3rem
+        );
+        @include font-size($p-font-sizes-headers);
+
         line-height: 2em;
         display: block;
         text-align: center;
         margin: 0;
         text-shadow: 3px 3px #111;
+    }
+
+    .showcaseMediaHeaderContainer {
+        .showcaseMediaHeaderImage{
+
+        }
     }
 
     .showcaseText {
@@ -40,7 +56,6 @@
             1280px: 1rem,
             1920px: 1.25rem
         );
-
         @include font-size($p-font-sizes-showcaseText);
     }
 

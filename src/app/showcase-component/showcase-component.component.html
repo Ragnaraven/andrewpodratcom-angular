@@ -2,6 +2,10 @@
 
     <p class="showcaseHeader">{{ showcase.header }}</p>
 
+    <div *ngIf="showcase.mediaHeader != ''" class="showcaseMediaHeaderContainer">
+        <img class="showcaseMediaHeaderImage" src="{{ showcase.mediaHeader  }}"/>
+    </div>
+
     <div *ngIf="showcase.textAbove != ''" class="showcaseText" [innerHTML]="showcase.textAbove"></div>
 
     <div *ngIf="showcase.type == 'images'" class="showcaseImageContainer" lightbox-group>
@@ -18,9 +22,16 @@
     </div>
 
     <!-- movie-->
-    <div *ngIf="showcase.type == 'movie'" class="projectMovieContainer">
+    <div *ngIf="showcase.type.includes('singlemovie') && !showcase.type.includes('notMuted')" class="projectMovieContainer">
         <!--movie-->
-        <video *ngFor="let media of showcase.media" class="mediaMovieBig" playsinline playsinline loop muted onloadedmetadata="this.muted = true" controls autoplay>
+        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" playsinline playsinline loop muted onloadedmetadata="this.muted = true" controls autoplay>
+            <source src="{{ media }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+        
+    <div *ngIf="showcase.type.includes('singlemovie') && showcase.type.includes('notMuted') " class="projectMovieContainer">
+        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" controls>
             <source src="{{ media }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
