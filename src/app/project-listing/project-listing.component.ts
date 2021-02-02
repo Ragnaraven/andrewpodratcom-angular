@@ -14,8 +14,4 @@ export class ProjectListingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  test() {
-    console.log("TEST")
-  }
 }

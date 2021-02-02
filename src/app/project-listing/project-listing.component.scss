@@ -29,7 +29,6 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
     }
   }
 
-
 /*******************************
             STANDARD 
 ********************************/
@@ -58,7 +57,6 @@ mat-expansion-panel {
     mat-expansion-panel-header {
         padding: 0;
         margin: 0;
-        pointer-events: none;
 
       mat-panel-description {
         padding: 0;
@@ -213,13 +211,19 @@ mat-expansion-panel {
     }
 
     .projectShowcaseContainer {
-        padding: 0;
-        margin:  0px -25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+        padding: 0;
+        margin:  0px -15px;
+        
         .showcaseMenu {    
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
 
             background-color: $primaryDarker;
-            border-left: 5px solid $accent;
 
             display: flex;
             flex-direction: row;
@@ -381,3 +385,72 @@ mat-expansion-panel {
         }
     }
 }
+
+
+/*******************************
+            ANIMATIONS 
+********************************/
+/***SIDES ONLY***/
+.gradient-border-sides {
+    --borderWidth: 10px;
+    background: $secondary;
+    position: relative;
+  }
+
+  .gradient-border-sides:after {
+    content: '';
+    position: absolute;
+    top: calc(0 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth));
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+        60deg,
+        rgb(162, 191, 224),
+        rgb(0, 242, 255),
+        rgb(255, 255, 255)
+    );
+    z-index: -1;
+    animation: animatedgradientSides 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradientSides {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

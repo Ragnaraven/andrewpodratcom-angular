@@ -115,7 +115,6 @@ a:active {
     min-height: 100vh;
 
     .sidenav-bar {
-        overflow: hidden;
         width: 20vw;
         
         min-width: 350px;
@@ -161,7 +160,6 @@ a:active {
         }
 
         #navList {
-            overflow: hidden;
             max-width: 80%;
 
             margin-left: auto;
@@ -418,6 +416,7 @@ a:active {
         }
 
         #projects {
+
             .projectsLabel {
                 $p-font-sizes-projectsLabel: (
                     null  : 1em,

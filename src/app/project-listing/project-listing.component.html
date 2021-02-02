@@ -35,9 +35,8 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
         
-    <div #boundary class="projectShowcaseContainer">
-        <div #spacer></div>
-        <div class="showcaseMenu" stickyThing [spacer]="spacer" [boundary]="boundary" [enable]="true">
+    <div class="projectShowcaseContainer gradient-border-sides">
+        <div class="showcaseMenu">
             <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
             <div class="closeWrapper">
                 <span class="toggleShowcase" (click)="mep.expanded = !mep.expanded" style="font-size: 1.5em;">hide</span>
