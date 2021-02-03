@@ -15,8 +15,9 @@ import { ArtComponent } from './home-projects/art/art.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 const routes: Routes = [
-  { path: '', component: HomeProjectsComponent },
-  
+  //DISABLED FOR NOW{ path: '', component: HomeProjectsComponent },  
+  { path: '', component: GamesComponent },
+
   { path: 'games', component: GamesComponent },
   { path: 'apps', component: AppsComponent },
   { path: 'art', component: ArtComponent },

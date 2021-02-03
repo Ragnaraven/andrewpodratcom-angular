@@ -16,7 +16,7 @@ $rajdhani: 'Rajdhani', sans-serif;
 //$unicaone: 'Unica One', cursive;
 //$josefin: 'Josefin Slab', serif;
 
-@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
+@font-face { font-family: pixel5;  src: url('~src/assets/fonts/pixel5.ttf') format("truetype"); }
 
 $primary: #303841;
 $secondary: #3a4750;
@@ -518,19 +518,30 @@ mat-sidenav-container {
             }
 
             .flex-row-container {
+                    align-items: stretch;
+
                 #fakeLinkedInWrapper {
                     text-decoration: none;
-                    align-items: stretch;
 
                     display: flex;
                     flex-direction: column;
+                    align-items: stretch;
                 }
 
                 .flex-row-item {
-
                     text-decoration: none;
 
+                    margin: 15px;
+                    width: 20%;
+                    max-width: 20%;
+                    min-width: 200px;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-content: flex-end;
+
                     .contactIcon {
+                        flex: 1;
                         display: block;
                         margin-left: auto;
                         margin-right: auto;
@@ -577,6 +588,14 @@ mat-sidenav-container {
                         margin-right: auto;
                         text-align: center;
 
+                        $p-font-sizes-text: (
+                            null  : 1em,
+                            640px : 1em,
+                            1280px: 1em,
+                            1920px: 1.25em
+                        );
+                        @include font-size($p-font-sizes-text);
+        
                         font-size: 1.25em;
                     }
                 }

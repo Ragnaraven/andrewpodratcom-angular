@@ -4,6 +4,8 @@ $accent: #00adb5;
 $white: #eeeeee;
 
 $primaryDarker: darken($primary, 10%);
+$primaryDarker2: darken($primary, 20%);
+$primaryLighter: lighten($primary, 20%);
 
 a, a:visited {
     color: $white;
