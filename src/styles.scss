@@ -1,22 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
-
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '~@fortawesome/fontawesome-free/scss/solid.scss';
-@import '~@fortawesome/fontawesome-free/scss/regular.scss';
-@import '~@fortawesome/fontawesome-free/scss/brands.scss';
- 
-@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
-
 $primary: #303841;
 $secondary: #3a4750;
 $accent: #00adb5;
 $white: #eeeeee;
 
 $primaryDarker: darken($primary, 10%);
-
-a {
-    text-decoration: underline;
-}
 
 a, a:visited {
     color: $white;
@@ -28,4 +15,9 @@ a:hover {
 
 a:active {
     color: darken($white, 50%);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
 }

@@ -21,6 +21,7 @@ const routes: Routes = [
   { path: 'apps', component: AppsComponent },
   { path: 'art', component: ArtComponent },
   { path: 'under-construction', component: UnderConstructionComponent },
+ // { path: 'project-showcase', loadChildren: "app/showcase-component/showcase-component.module#ShowcaseComponentComponent" },
 ];
 
 @NgModule({

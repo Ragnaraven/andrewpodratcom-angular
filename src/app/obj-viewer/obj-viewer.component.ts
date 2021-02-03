@@ -1,12 +1,11 @@
 import { Component, OnInit, HostListener, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Model3D } from '../data/projects/models/model3d';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 import * as THREE from            'three';
 import { OrbitControls } from     'three/examples/jsm/controls/OrbitControls';
-import { TransformControls } from 'three/examples/jsm/controls/TransformControls';
-import { FBXLoader } from         'three/examples/jsm/loaders/FBXLoader.js';
 import { GLTFLoader } from         'three/examples/jsm/loaders/GLTFLoader.js';
-import { Camera, OrthographicCamera, PerspectiveCamera } from 'three';
+import { OrthographicCamera, PerspectiveCamera } from 'three';
 
 @Component({
   selector: 'app-obj-viewer',
@@ -21,7 +20,11 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
   @Input()
   model3Ds: Model3D[];  
 
-  constructor() { }
+  deviceInfo = null;
+
+  constructor(private deviceService: DeviceDetectorService) {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+  }
 
   ngOnInit(): void {
     if(this.model3D == null)
@@ -29,7 +32,12 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
-    this.previewModel(this.model3D);
+    if(!this.mobileCheck())
+      this.previewModel(this.model3D);
+  }
+
+  mobileCheck () {
+    return this.deviceService.isMobile();
   }
 
   @ViewChild('objWindow')
@@ -50,6 +58,7 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
   private directionalLight: THREE.DirectionalLight
   private isWireframe = false;
   tipsHidden = false;
+  loaded = false;
 
   startPreview() {
     this.previewModel(this.model3D);
@@ -74,7 +83,7 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
     if(this.model3D.directionalLightPower == null)
       this.model3D.directionalLightPower = 1;
 
-    this.initPreviewScene(this.model3D.loadSrc, this.model3D.cameraX, this.model3D.cameraY, this.model3D.cameraZ, this.model3D.ambientLightPower, this.model3D.directionalLightPower);     
+    this.initPreviewScene(this.model3D.loadSrc, this.model3D.cameraX, this.model3D.cameraY, this.model3D.cameraZ, this.model3D.ambientLightPower, this.model3D.directionalLightPower);    
   }
 
   initPreviewScene(loadSrc, cameraX, cameraY, cameraZ, ambientLightPower, directionLightPower) {
@@ -173,6 +182,8 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
               console.error( 'An error happened', error );
           },
           );
+
+    this.loaded = true;
   }
 
   @HostListener('window:keyup', ['$event'])

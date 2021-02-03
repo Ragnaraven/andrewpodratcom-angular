@@ -1,5 +1,3 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -27,13 +25,13 @@ $white: #eeeeee;
 
 $primaryDarker: darken($primary, 10%);
 $primaryDarker2: darken($primary, 20%);
+$primaryLighter: lighten($primary, 20%);
 
 .accentHighlight {
     color: $accent;
     font-size: inherit;
     font-family: inherit;
 }
-
 
 @mixin font-size($fs-map) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -94,9 +92,9 @@ a:active {
 
 .bitHeader {
     $p-font-sizes-bitHeader: (
-        null  : 0.5em,
-        640px : 0.6em,
-        1280px: 0.8em,
+        null  : 1em,
+        640px : 1em,
+        1280px: 1em,
         1920px: 1em
     );
     @include font-size($p-font-sizes-bitHeader);
@@ -106,15 +104,28 @@ a:active {
     font-size: 0.75em;
 }
 
+.flex-row-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .flex-row-item {
+        flex: 1 1;
+    }
+}
 /******************
         PAGE
 *******************/
-.sidenav-container {
+mat-sidenav-container {
     background-color: $primary;
     color: $white;
     min-height: 100vh;
 
-    .sidenav-bar {
+    mat-sidenav {
         width: 20vw;
         
         min-width: 350px;
@@ -123,6 +134,13 @@ a:active {
         background-color: $primaryDarker;
         color: $white;
         padding: 0;
+        
+        .closeIcon {
+            float: right;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
 
         #menuHeader {
             max-width: 80%;
@@ -166,19 +184,42 @@ a:active {
             margin-right: auto;
             margin-top: 20px;
 
-            @media only screen and (max-width: 1280px) {
+            list-style-type: none;
+            padding-left: 15px;
+
+            li {
+                padding: 0.75em;
+                padding-left: 0;
+                margin: 0;
+
                 a {
-                   font-size: 0.9em;
-                    
+                    padding: 0;
                     margin: 0;
-                    padding: 5px 0;
-                    height: auto;
+                }
+                
+                .projectListingNavItem {
+                    margin-left: 1.5em;
+                }
+            }
+
+            @media only screen and (max-width: 1280px) {
+                li {
+                    padding: 0.15em;
+                    padding-left: 0;
+
+                    a {
+                        font-size: 0.9em;
+                        
+                        margin: 0;
+                        padding: 5px 0;
+                        height: auto;
+                    }
                 }
             }
         }
 
         .sideNavResumeContainer {
-            padding-top: 20px;
+            padding-top: 10px;
             width: 100%;
 
             display: flex;
@@ -187,6 +228,8 @@ a:active {
             #sideNavResume {
                 margin-left: auto;
                 margin-right: auto;
+
+                text-decoration: none;
 
                 font-size: 2em;
                 padding: 0.2em 0.5em;
@@ -211,17 +254,22 @@ a:active {
         .sidenavLinksWrapper {
             position: absolute;
             bottom: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
 
-            padding: 20px;  
+            box-sizing: border-box;
+            padding: 10px;  
 
-            .sidenavLink {
-                flex-grow: 1;
-                display: inline-block;
+            .sidenavLink {                
+                $p-font-sizes-links: (
+                    null  : 0.5em,
+                    640px : 0.6em,
+                    1280px: 0.8em,
+                    1920px: 1em
+                );
+                @include font-size($p-font-sizes-links);
+
+                flex: 0;
                 text-decoration: underline;
+                margin: 1em;
             }
         }
 
@@ -235,7 +283,34 @@ a:active {
     }
 
     .sidenav-content {
+        mat-toolbar {
+            padding: 10px;
+            position: fixed;
+            background-color: $primaryLighter;
+            height: 50px;
+            z-index: 10000;
+
+            span {
+                margin-right: 2em;
+            }
+
+            .icon {
+                margin-right: 1em;
+                cursor: pointer;
+            }
+
+            .name {
+                font-size: 20px;                
+            }
+
+            .work {
+                font-size: 14px;
+            }
+        }
+
         .logoContainer {
+            margin-top: 50px;
+            
             padding-top: 5vh;
             padding-bottom: 5vh;
             display: flex;
@@ -273,7 +348,7 @@ a:active {
 
             #greeting {
                 $p-font-sizes-greeting: (
-                    null  : 1m,
+                    null  : 1em,
                     640px : 1em,
                     1280px: 1em,
                     1920px: 1.5em
@@ -309,9 +384,6 @@ a:active {
             }
 
             #bigThree{
-                padding: 0;
-                margin: 0;    
-
                 $p-font-sizes-bigThree: (
                     null  : 0.8em,
                     640px : 0.8em,
@@ -320,16 +392,10 @@ a:active {
                 );
                 @include font-size($p-font-sizes-bigThree);
         
-                .row {
-                    margin: 0;
-                    width: 100%;
-
-                    .introDiv {
-                        width: 33.33%;
-
+                    .flex-row-item {
                         padding-right: 40px;
 
-                        min-width: 325px;
+                        min-width: 250px;
                         margin-top: 40px;
 
                         .introDivImg {
@@ -375,7 +441,6 @@ a:active {
                             display: none;
                         }
                     }
-                }
             }
      
             .textLinksWrapper {
@@ -387,7 +452,7 @@ a:active {
 
                 .textLink {
                     font-size: 1.25em;
-                    padding: 20px;  
+                    margin: 20px 40px;  
                     display: inline-block;
                     text-decoration: underline;
                 }
@@ -396,6 +461,8 @@ a:active {
                     margin-right: 40px;
                     font-size: 1.5em;
                     padding: 0em 1em;
+
+                    text-decoration: none;
 
                     &:active {
                         background: #ccc!important;
@@ -415,7 +482,7 @@ a:active {
             }
         }
 
-        #projects {
+        #item-projects {
 
             .projectsLabel {
                 $p-font-sizes-projectsLabel: (
@@ -450,65 +517,67 @@ a:active {
                 margin-bottom: 50px;
             }
 
-            .container {
-                    .row {
-                    .col-sm {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-content: flex-end;
+            .flex-row-container {
+                #fakeLinkedInWrapper {
+                    text-decoration: none;
+                    align-items: stretch;
 
-                        .contactIcon {
-                            display: block;
-                            margin-left: auto;
-                            margin-right: auto;
+                    display: flex;
+                    flex-direction: column;
+                }
 
-                            flex-grow: 1;
+                .flex-row-item {
 
-                            width: 75%; 
-                        }
+                    text-decoration: none;
 
+                    .contactIcon {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+
+                        width: 75%; 
+                    }
+
+                    #fakeLinkedIn {
+                        background-color: $accent;
+                        color: $primary;
+
+                        font-size: 140px;
+                        line-height: 160px;
+
+                        font-family: sans-serif;
+
+                        width: 150px;
+                        height: 150px;
+
+                        border-radius: 30px;
+
+                        display: block;
+
+                        text-align: center;
+
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin-bottom: auto;
+                        margin-top: auto;
+                    }      
+                    @media only screen and (max-width: 1280px) {
                         #fakeLinkedIn {
-                            background-color: $accent;
-                            color: $primary;
-
-                            font-size: 140px;
-                            line-height: 160px;
-
-                            font-family: sans-serif;
-
-                            width: 150px;
-                            height: 150px;
-
-                            border-radius: 30px;
-
-                            display: block;
-
-                            text-align: center;
-
-                            margin-left: auto;
-                            margin-right: auto;
-                            margin-bottom: auto;
-                            margin-top: auto;
-                        }                        
-                        @media only screen and (max-width: 1280px) {
-                            #fakeLinkedIn {
-                                width: 100px;
-                                height: 100px;
-                                font-size: 100px;
-                                line-height: 110px;
-                            }
-                        }                        
-
-                        a, p {
-                            margin: 0;
-                            display: block;
-                            margin-left: auto;
-                            margin-right: auto;
-                            text-align: center;
-
-                            font-size: 1.25em;
+                            width: 100px;
+                            height: 100px;
+                            font-size: 100px;
+                            line-height: 110px;
                         }
+                    }                        
+
+                    a, p {
+                        margin: 0;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        text-align: center;
+
+                        font-size: 1.25em;
                     }
                 }
             }

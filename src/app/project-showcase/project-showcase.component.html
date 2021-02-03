@@ -1,0 +1,19 @@
+<div class="projectShowcaseContainer">
+    <div class="projectShowcaseContainerContent"> <!-- gradient-border-sides -->
+        <div class="showcaseMenu">
+            <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
+            <div class="closeWrapper">
+                <span class="toggleShowcase" (click)="mep.expanded = !mep.expanded" style="font-size: 1.5em;">hide</span>
+            </div>
+        </div>
+
+        <div class="showcasesContainer">
+            <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
+        </div>
+
+        <div class="links">
+            <a *ngIf="project.source != ''" class="source" href="{{ project.source }}">{{ project.sourceText }}</a>
+            <a *ngIf="project.linkTo != ''" class="linkTo" href="{{ project.linkTo }}">{{ project.linkToText }}</a>
+        </div>
+    </div>
+</div>

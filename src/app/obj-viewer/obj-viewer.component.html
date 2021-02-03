@@ -20,5 +20,5 @@
         </div>
     </div>
 
-    <!--<button (click)="startPreview()">Reload Model</button>-->
+    <button *ngIf="mobileCheck()" class="loadModel" (click)="startPreview()">Load Model</button>
 </div>

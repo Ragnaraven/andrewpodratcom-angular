@@ -1,11 +1,12 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
     <mat-sidenav 
-      class="sidenav-bar"
       #sidenav 
       [opened]="true"
       fixedInViewport="true" 
       mode="side"
     >
+        <span *ngIf="mobileCheck()" class="closeIcon" (click)="sidenav.opened = false">[X]</span>
+
         <div id="menuHeader">
         <img id="logoSide" src="assets/res/signature_legacy.svg"/>
         <div id="identification">
@@ -14,24 +15,31 @@
         </div>
         </div>
 
-        <mat-nav-list id="navList" class="noselect">
-            <a mat-list-item (click)="scrollToElement('welcome')"> Welcome </a>
-            <a mat-list-item *ngFor="let project of games" (click)='scrollToElement(project.link)'> {{project.name}} </a>
-            <a mat-list-item (click)="scrollToElement('contactMe')"> Contact </a>
-        </mat-nav-list>
+        <ul id="navList" class="noselect">
+            <li><a (click)="scrollToElement('welcome')"> Welcome </a></li>
+            <li><a (click)="scrollToElement('projects')"> Projects </a></li>
+            <li *ngFor="let project of games"><a class="projectListingNavItem" (click)='scrollToElement(project.link)'> {{project.name}} </a></li>
+            <li><a (click)="scrollToElement('contactMe')"> Contact </a></li>
+        </ul>
      
         <div class="sideNavResumeContainer noselect">
             <a id="sideNavResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
         </div>
 
-        <div class="sidenavLinksWrapper">
-            <a class="sidenavLink" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
-            <a class="sidenavLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
-            <a class="sidenavLink" href="https://github.com/Ragnaraven">GitHub</a>
+        <div class="flex-row-container sidenavLinksWrapper">
+            <a class="sidenavLink flex-row-item" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
+            <a class="sidenavLink flex-row-item" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
+            <a class="sidenavLink flex-row-item" href="https://github.com/Ragnaraven">GitHub</a>
         </div>
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
+        <mat-toolbar *ngIf="mobileCheck()">
+            <img class="icon" src="assets/res/material.io/menu-white-18dp.svg" (click)="sidenav.opened = !sidenav.opened"/>
+            <span class="name">Andrew M. Podrat</span>
+            <span class="work">Game Designer & Developer</span>
+        </mat-toolbar>
+    
         <section class="logoContainer">
             <img class="logoMain" src="assets/res/signature.svg"/>
             <div class="logoRight">
@@ -47,79 +55,78 @@
                 I am a highly motivated designer and developer with an always expanding and versatile technical skillset. <br/>
                 I like to keep my code and designs both clean and highly reusable.<br/>
                 I am diplomatic team player who is not afraid to take initiative or work independently.</p>
-            <div class=".container-fluid" id="bigThree">
-                <div class="row">
-                    <div class="col-sm- introDiv">
-                        <img class="introDivImg" src="assets/res/passions/design.svg"/>
-                        <p class="introDivHeader bitHeader">I am a <span class="accentHighlight">game designer</span> with skills that extend into many disciplines.</p>
-                        <p class="introDivParagraph">I enjoy dreaming up scenarios and then bringing them to life. Mechanics and gameplay are often the focus of my design.</p>
-                        <p class="introDivParagraph">My work extends beyond games however!</p>
-                        <p class="introDivParagraph">
-                            I have created and designed a few Android apps,
-                            3D modeled in Blender for just over 10 years,
-                            and recently, designed this site with Angular 11 and Bootstrap 4.</p>
-                        <p class="introDivParagraph">Over the years, I have developed gameplay systems, levels, user interfaces, characters, and more.</p>
-                        <p class="introDivParagraph bitLabel">The <span class="accentHighlight">projects below</span> and most of their assets are my <span class="accentHighlight">original designs</span>.</p>
-                                    
-                    </div>
-                    <div class="col-sm- introDiv">
-                        <img class="introDivImg" src="assets/res/passions/developer.svg"/>
-                        <p class="introDivHeader bitHeader">As a <span class="accentHighlight">software developer</span> many programs, skills and languages are at my disposal.</p>
-                        <p class="introDivParagraph">I create games in Unreal Engine primarily (projects below).</p>
-                        <p class="introDivParagraph bitLabel">I have had the pleasure of using many 
-                            <span class="accentHighlight">lanaguages</span>,
-                            <span class="accentHighlight">programs</span> and 
-                            <span class="accentHighlight">tools</span>, 
-                            including:</p>
-                        <ul>
-                            <li><span class="bitLabel">Languages:</span>Java, C#, C++, Blueprint (UE4), HTML, CSS, JS, Angular (framework), JQuery (library), Bootstrap (library), Python</li>
-                            <li><span class="bitLabel">Programs:</span>Unreal Engine, Unity, Android Studio</li>
-                            <li><span class="bitLabel">IDEs:</span>Visual Studio, VS Code, JetBrains Suite</li>
-                            <li><span class="bitLabel">Tools:</span>Microsoft Office, Google Apps</li>
-                            <li><span class="bitLabel">Source Control:</span>Github, Sourcetree, Bitbucket</li>
-                            <li><span class="bitLabel">Communication:</span>Slack, MS Teams, Zoom, Skype, Discord</li>
-                            <li><span class="bitLabel">Graphic Design:</span>Photoshop, Illustrator, Inkscape</li>
-                            <li><span class="bitLabel">3D Modeling:</span>Blender, 3DS Max, Maya, Quixel Mixer</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm- introDiv">
-                        <img class="introDivImg" src="assets/res/passions/gamer.svg"/>
-                        <p class="introDivHeader bitHeader">Of course, <span class="accentHighlight">I'm a gamer!</span> I play a wide array of genres.</p>
-                        <p id="additionalContentLargeScreenOnly" class="introDivParagraph">
-                            I have been playing games since I was a kid. 
-                            There is a picture of me when I was 2, playing a PC game sitting on my dad's lap. 
-                            To date, I have enjoyed most major consoles, as well as PC.</p>
-                        <p class="introDivParagraph">In my projects below, you will see that none of them share the same genre!</p>
-                        <p class="introDivParagraph bitLabel">Some of the <span class="accentHighlight">genres</span> I enjoy include:</p>
-                        <ul>
-                            <li><span class="bitLabel">Adventure:</span> Zelda, Uncharted, Halo, Pokemon</li>
-                            <li><span class="bitLabel">Open World:</span> Grand Theft Auto V, Far Cry </li>
-                            <li><span class="bitLabel">Creative Survival:</span> Minecraft, Ark: Survival Evolved</li>
-                            <li><span class="bitLabel">City Building:</span> Anno, Sim City, Cities Skylines</li>
-                            <li><span class="bitLabel">Strategy:</span> Age of Mythology, Company of Heroes</li>
-                            <li><span class="bitLabel">Indie:</span> Ori and the Blind Forest, Limbo, The Forest, Cuphead</li>
-                            <li><span class="bitLabel">FPS:</span> Rainbow Six, Call of Duty, Payday 2, Left 4 Dead</li>
-                            <li><span class="bitLabel">Racing:</span> Forza, Mario Kart</li>
-                            <li><span class="bitLabel">Puzzles:</span> Visage, Portal</li>
-                            <li><span class="bitLabel">Social:</span> Among Us, scribbl.io, Jackbox, Stick Fight</li>
-                            <li><span class="bitLabel">Platformer:</span> Ratchet & Clank, Jak & Daxter, Spyro</li>
-                            <li><span class="bitLabel">Flash & Mobile:</span> Boxhead, The Last Stand, Motherload</li>
-                            <li><span class="bitLabel">Other:</span> Diablo, Dead Space, Yu-Gi-Oh Duel Links</li>
-                        </ul>
-                    </div>
-
-                    <div class="textLinksWrapper">
-                        <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
-                        <a class="textLink" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
-                        <a class="textLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
-                        <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
-                    </div>
+            <div id="bigThree" class="flex-row-container">
+                <div class="flex-row-item">
+                    <img class="introDivImg" src="assets/res/passions/design.svg"/>
+                    <p class="introDivHeader bitHeader">I am a <span class="accentHighlight">game designer</span> with skills that extend into many disciplines.</p>
+                    <p class="introDivParagraph">I enjoy dreaming up scenarios and then bringing them to life. Mechanics and gameplay are often the focus of my design.</p>
+                    <p class="introDivParagraph">My work extends beyond games however!</p>
+                    <p class="introDivParagraph">
+                        I have created and designed a few Android apps,
+                        3D modeled in Blender for just over 10 years,
+                        and recently, designed this site with Angular 11 and Bootstrap 4.</p>
+                    <p class="introDivParagraph">Over the years, I have developed gameplay systems, levels, user interfaces, characters, and more.</p>
+                    <p class="introDivParagraph bitLabel">The <span class="accentHighlight">projects below</span> and most of their assets are my <span class="accentHighlight">original designs</span>.</p>
+                                
+                </div>
+                <div class="flex-row-item">
+                    <img class="introDivImg" src="assets/res/passions/developer.svg"/>
+                    <p class="introDivHeader bitHeader">As a <span class="accentHighlight">software developer</span> many programs, skills and languages are at my disposal.</p>
+                    <p class="introDivParagraph">I create games in Unreal Engine primarily (projects below).</p>
+                    <p class="introDivParagraph bitLabel">I have had the pleasure of using many 
+                        <span class="accentHighlight">lanaguages</span>,
+                        <span class="accentHighlight">programs</span> and 
+                        <span class="accentHighlight">tools</span>, 
+                        including:</p>
+                    <ul>
+                        <li><span class="bitLabel">Languages:</span>Java, C#, C++, Blueprint (UE4), HTML, CSS, JS, Angular (framework), JQuery (library), Bootstrap (library), Python</li>
+                        <li><span class="bitLabel">Programs:</span>Unreal Engine, Unity, Android Studio</li>
+                        <li><span class="bitLabel">IDEs:</span>Visual Studio, VS Code, JetBrains Suite</li>
+                        <li><span class="bitLabel">Tools:</span>Microsoft Office, Google Apps</li>
+                        <li><span class="bitLabel">Source Control:</span>Github, Sourcetree, Bitbucket</li>
+                        <li><span class="bitLabel">Communication:</span>Slack, MS Teams, Zoom, Skype, Discord</li>
+                        <li><span class="bitLabel">Graphic Design:</span>Photoshop, Illustrator, Inkscape</li>
+                        <li><span class="bitLabel">3D Modeling:</span>Blender, 3DS Max, Maya, Quixel Mixer</li>
+                    </ul>
+                </div>
+                <div class="flex-row-item">
+                    <img class="introDivImg" src="assets/res/passions/gamer.svg"/>
+                    <p class="introDivHeader bitHeader">Of course, <span class="accentHighlight">I'm a gamer!</span> I play a wide array of genres.</p>
+                    <p id="additionalContentLargeScreenOnly" class="introDivParagraph">
+                        I have been playing games since I was a kid. 
+                        There is a picture of me when I was 2, playing a PC game sitting on my dad's lap. 
+                        To date, I have enjoyed most major consoles, as well as PC.</p>
+                    <p class="introDivParagraph">In my projects below, you will see that none of them share the same genre!</p>
+                    <p class="introDivParagraph bitLabel">Some of the <span class="accentHighlight">genres</span> I enjoy include:</p>
+                    <ul>
+                        <li><span class="bitLabel">Adventure:</span> Zelda, Uncharted, Halo, Pokemon</li>
+                        <li><span class="bitLabel">Open World:</span> Grand Theft Auto V, Far Cry </li>
+                        <li><span class="bitLabel">Creative Survival:</span> Minecraft, Ark: Survival Evolved</li>
+                        <li><span class="bitLabel">City Building:</span> Anno, Sim City, Cities Skylines</li>
+                        <li><span class="bitLabel">Strategy:</span> Age of Mythology, Company of Heroes</li>
+                        <li><span class="bitLabel">Indie:</span> Ori and the Blind Forest, Limbo, The Forest, Cuphead</li>
+                        <li><span class="bitLabel">FPS:</span> Rainbow Six, Call of Duty, Payday 2, Left 4 Dead</li>
+                        <li><span class="bitLabel">Racing:</span> Forza, Mario Kart</li>
+                        <li><span class="bitLabel">Puzzles:</span> Visage, Portal</li>
+                        <li><span class="bitLabel">Social:</span> Among Us, scribbl.io, Jackbox, Stick Fight</li>
+                        <li><span class="bitLabel">Platformer:</span> Ratchet & Clank, Jak & Daxter, Spyro</li>
+                        <li><span class="bitLabel">Flash & Mobile:</span> Boxhead, The Last Stand, Motherload</li>
+                        <li><span class="bitLabel">Other:</span> Diablo, Dead Space, Yu-Gi-Oh Duel Links</li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="textLinksWrapper">
+                <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
+                <a class="textLink" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
+                <a class="textLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
+                <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
+            </div>
+
             
         </section>
         
-        <section id="projects">
+        <section id="item-projects">
             <p class="projectsLabel">Projects</p>
             <ul class="projectsContainer">
                 <li *ngFor="let project of games">
@@ -130,25 +137,23 @@
 
         <section id="item-contactMe">
             <p id="contactMeHeader" class=" wow bounceInLeft gradient-border">Contact Me</p>
-            <div class="container">
-                <div class="row">
-                    <a class="col-sm noselect" href="mailto:andrew@andrewpodrat.com">
-                        <img class="contactIcon hvr-grow-rotate" src="assets/res/material.io/mail-white-18dp.svg"/>
-                        <p>andrew@andrewpodrat.com</p>
-                    </a>
-                    <a class="col-sm noselect hvr-float" href="https://www.linkedin.com/in/andrewpodrat/">
-                        <p class="noselect" id="fakeLinkedIn">in</p>
-                        <p>LinkedIn</p>
-                    </a>
-                    <div class="col-sm">
-                        <img class="contactIcon noselect hvr-bob" src="assets/res/material.io/place-white-18dp.svg"/>
-                        <p>Pittsburgh, PA</p>  
-                    </div>
-                    <a class="col-sm noselect hvr-pulse" href="https://github.com/Ragnaraven">
-                        <img class="contactIcon hvr-grow-rotate" src="assets/res/github/github-big.svg"/>
-                        <p>GitHub</p>
-                    </a>
+            <div class="flex-row-container">
+                <a class="flex-row-item noselect" href="mailto:andrew@andrewpodrat.com">
+                    <img class="contactIcon hvr-grow-rotate" src="assets/res/material.io/mail-white-18dp.svg"/>
+                    <p>andrew@andrewpodrat.com</p>
+                </a>
+                <a class="flex-row-item noselect hvr-float" href="https://www.linkedin.com/in/andrewpodrat/">
+                    <p class="noselect" id="fakeLinkedIn">in</p>
+                    <p>LinkedIn</p>
+                </a>
+                <div class="flex-row-item">
+                    <img class="contactIcon noselect hvr-bob" src="assets/res/material.io/place-white-18dp.svg"/>
+                    <p>Pittsburgh, PA</p>  
                 </div>
+                <a class="flex-row-item noselect hvr-pulse" href="https://github.com/Ragnaraven">
+                    <img class="contactIcon hvr-grow-rotate" src="assets/res/github/github-big.svg"/>
+                    <p>GitHub</p>
+                </a>
             </div>
         </section>
 

@@ -19,13 +19,12 @@ import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
 import { ProjectListingComponent } from './project-listing/project-listing.component';
 import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
-import { MdbModule } from 'mdb-angular-ui-kit';
 import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
-import { UnderConstructionComponent } from './under-construction/under-construction.component';
-import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +50,6 @@ import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
     MatSidenavModule,
     MatToolbarModule,
 
-    MdbModule,
     CrystalLightboxModule,
     MatExpansionModule,
     AngularStickyThingsModule
