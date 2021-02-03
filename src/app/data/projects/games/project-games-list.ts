@@ -1,4 +1,5 @@
 import { ProjectGame } from './project-game';
+import { WYVERN_MODELS } from '../models/wyvern-models';
 
 export const GAMES: ProjectGame[] = [
   { id: 3, 
@@ -21,6 +22,7 @@ export const GAMES: ProjectGame[] = [
         textBelow: "",       
         type: "singlemovie",
         media: ["assets/res/projects/ghostgame/gg-showcase.mp4"],
+        extras: []
       },
     ]
   },
@@ -45,6 +47,7 @@ export const GAMES: ProjectGame[] = [
       textBelow: "",       
       type: "singlemovie",
       media: ["assets/res/projects/citybuilder/cb-showcase.mp4"],
+      extras: []
     },]
   },
 
@@ -68,6 +71,7 @@ export const GAMES: ProjectGame[] = [
       textBelow: '<p>The Ultimate Zombie Game is a proof of concept game designed with the following features:</p><ul><li>Data-driven game data; weapons and related are processed and loaded from spreadsheets</li><li>Simultaneous split screen and online Steam Multiplayer</li><li>Drop in, drop out split screen</li><li>Controller support</li><li>Different ballistic mechanics: Hitscan, Travel Time, Travel Time and Drop</li><li>Text chat (Not demonstrated in video, but is visible in bottom right corner)</li><li>Multimap, multi character selection (irrelevant to project, implemented identically from <a href="https://www.youtube.com/watch?v=abmzWUWxy1U&list=PLZlv_N0_O1gYqSlbGQVKsRg6fpxWndZqZ">Epic\'s 24 part web-series)</a></li></ul>',       
       type: "singlemovie-notMuted",
       media: ["assets/res/projects/tuzg/tuzg-walkthrough.mp4"],
+      extras: []
     },]
   },
   
@@ -91,6 +95,7 @@ export const GAMES: ProjectGame[] = [
       textBelow: '',
       type: "singlemovie-heightLimited",
       media: ["assets/res/projects/gamejams/gamejam-2020-bitbridge-demon.mp4"],
+      extras: []
     },]
   },
 
@@ -114,6 +119,7 @@ export const GAMES: ProjectGame[] = [
       textBelow: '',
       type: "singlemovie-notMuted",
       media: ["assets/res/projects/nec/nec-walkthrough.mp4"],
+      extras: []
     },]
   },
  
@@ -140,6 +146,7 @@ export const GAMES: ProjectGame[] = [
           "assets/res/projects/ragnaraven/unity4scene.png",
           "assets/res/projects/ragnaraven/unity3snow.webp",
           "assets/res/projects/ragnaraven/unity2temple.webp"],
+        extras: []
       },
       { header: "Shading and Graphics",
         mediaHeader: "",
@@ -149,6 +156,7 @@ export const GAMES: ProjectGame[] = [
         media: [
             "assets/res/projects/ragnaraven/moveShowcase.mp4",
         ],
+        extras: []
       },
       { header: "Gameplay",
         mediaHeader: "",
@@ -165,6 +173,15 @@ export const GAMES: ProjectGame[] = [
             "assets/res/projects/ragnaraven/lightningDamage2.mp4",
             "assets/res/projects/ragnaraven/lightningShowcase2.mp4",
         ],
+        extras: []
+      },
+      { header: "The Yin Yang Wyvern",
+        mediaHeader: "",
+        textAbove: "",   
+        textBelow: "A model I created and rigged for the game.",       
+        type: "3dmodel",
+        media: [],
+        extras: WYVERN_MODELS,
       },
       { header: "Background", 
         mediaHeader: "",
@@ -172,6 +189,7 @@ export const GAMES: ProjectGame[] = [
         textBelow: "",       
         type: "html",
         media: [ ],
+        extras: []
       },
     ]
   },

@@ -30,6 +30,7 @@
         </video>
     </div>
         
+    <!-- unmuted movie -->
     <div *ngIf="showcase.type.includes('singlemovie') && showcase.type.includes('notMuted') " class="projectMovieContainer">
         <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" controls>
             <source src="{{ media }}" type="video/mp4">
@@ -37,6 +38,13 @@
         </video>
     </div>
     
+    <!-- 3d model ONLY VIEWS FIRST IN LIST!-->
+    <div *ngIf="showcase.type == '3dmodel'" class="projectModelContainer">
+        <app-obj-viewer [model3Ds]="showcase.extras "></app-obj-viewer> 
+    </div>
+
+    <p> {{ showcase.extras }} </p>
+
     <div *ngIf="showcase.textBelow != ''" class="showcaseText" [innerHTML]="showcase.textBelow"></div>
 
 </div>

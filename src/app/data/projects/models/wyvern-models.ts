@@ -1,6 +1,6 @@
 import { Model3D } from './model3d';
 
-export const MODELS: Model3D[] = [  
+export const WYVERN_MODELS: Model3D[] = [  
     
   {
     name: "Yin Yang Wyvern Mesh Only",

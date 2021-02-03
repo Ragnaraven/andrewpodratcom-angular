@@ -1,10 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input, ElementRef, ViewChild } from '@angular/core';
 import { Model3D } from '../data/projects/models/model3d';
 
 import * as THREE from            'three';
 import { OrbitControls } from     'three/examples/jsm/controls/OrbitControls';
 import { TransformControls } from 'three/examples/jsm/controls/TransformControls';
-import { FBXLoader } from        "three/examples/jsm/loaders/FBXLoader.js";
+import { FBXLoader } from         'three/examples/jsm/loaders/FBXLoader.js';
+import { GLTFLoader } from         'three/examples/jsm/loaders/GLTFLoader.js';
+import { Camera, OrthographicCamera, PerspectiveCamera } from 'three';
 
 @Component({
   selector: 'app-obj-viewer',
@@ -13,53 +15,67 @@ import { FBXLoader } from        "three/examples/jsm/loaders/FBXLoader.js";
 })
 export class ObjViewerComponent implements OnInit {
 
+  @Input()
+  model3D: Model3D;   
+
+  @Input()
+  model3Ds: Model3D[];  
+
   constructor() { }
 
   ngOnInit(): void {
+    if(this.model3D == null)
+      this.model3D = this.model3Ds[0];
   }
 
-  model;   
+  @ViewChild('objWindow')
+  objWindow: ElementRef;
 
-  cameraPersp;
-  cameraOrtho; 
-  currentCamera;
+  private cameraPersp: PerspectiveCamera;
+  private cameraOrtho: OrthographicCamera
+  private currentCamera: Camera;
 
-  control;
-  scene;
-  renderer; 
-  orbit;
+  private control;
+  private scene: THREE.Scene;
+  private renderer: THREE.WebGLRenderer; 
+  private orbit;
 
-  hlight;
-  directionalLight;
-  object;
-  tipsHidden = false;
-  isWireframe = false;
+  private model;
+  private hlight;
+  private directionalLight;
+  private object;
+  private tipsHidden = false;
+  private isWireframe = false;
 
-  previewModel (model)
+  previewModel2() {
+    this.previewModel(this.model3D)
+  }
+
+  previewModel(model3D: Model3D)
   {
-    this.model = model;
+    this.model3D = model3D;
 
-    if(this.model.cameraX == null)
-      this.model.cameraX = 10;
+    if(this.model3D.cameraX == null)
+      this.model3D.cameraX = 10;
     
-    if(this.model.cameraY == null)
-      this.model.cameraY = 5;
+    if(this.model3D.cameraY == null)
+      this.model3D.cameraY = 5;
     
-    if(this.model.cameraZ == null)
-      this.model.cameraZ = 10;
+    if(this.model3D.cameraZ == null)
+      this.model3D.cameraZ = 10;
     
-    if(this.model.ambientLightPower == null)
-      this.model.ambientLightPower = 1;
+    if(this.model3D.ambientLightPower == null)
+      this.model3D.ambientLightPower = 1;
     
-    if(this.model.this.directionalLightPower == null)
-      this.model.this.directionalLightPower = 1;
+    if(this.model3D.directionalLightPower == null)
+      this.model3D.directionalLightPower = 1;
 
-    this.initPreviewScene(this.model.loadSrc, this.model.cameraX, this.model.cameraY, this.model.cameraZ, this.model.ambientLightPower, this.model.this.directionalLightPower);     
+    this.initPreviewScene(this.model3D.loadSrc, this.model3D.cameraX, this.model3D.cameraY, this.model3D.cameraZ, this.model3D.ambientLightPower, this.model3D.directionalLightPower);     
   }
 
   initPreviewScene(loadSrc, cameraX, cameraY, cameraZ, ambientLightPower, directionLightPower) {
       /*Camera setup*/
-      const aspect = window.innerWidth / window.innerHeight;
+      const aspect = this.objWindow.nativeElement.offsetWidth / this.objWindow.nativeElement.offsetHeight;
 
       this.cameraPersp = new THREE.PerspectiveCamera( 50, aspect, 0.01, 30000 );
       this.cameraOrtho = new THREE.OrthographicCamera( - 600 * aspect, 600 * aspect, 600, - 600, 0.01, 30000 );
@@ -87,8 +103,10 @@ export class ObjViewerComponent implements OnInit {
       Rendering
       ********/
       this.renderer = new THREE.WebGLRenderer({antialias: true});
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(this.renderer.domElement)
+      this.renderer.setSize(this.objWindow.nativeElement.offsetWidth, this.objWindow.nativeElement.offsetHeight);
+      this.objWindow.nativeElement.appendChild(this.renderer.domElement)
+
+      console.log(this.renderer);
 
       /*Axes*/
       var axesHelper = new THREE.AxesHelper( 10 );
@@ -106,18 +124,19 @@ export class ObjViewerComponent implements OnInit {
       this.orbit.addEventListener( 'change', this.render );
 
       this.control = new TransformControls( this.currentCamera, this.renderer.domElement );
-      this.control.addEventListener( 'change', this.render );
+      this.control.addEventListener( 'change', () => { this.render(); } );
+      this.control.addEventListener( 'dragging-changed', function ( event ) { this.orbit.enabled = ! event.value;  } );
 
-      this.control.addEventListener( 'dragging-changed', function ( event ) {
-
-          this.orbit.enabled = ! event.value;
-
-      } );
-
-      let loader = new FBXLoader()
+      /*let loader = new FBXLoader()
       loader.load(loadSrc, function(fbx) {
-          //this.scene.add( fbx );
-          this.object = fbx;
+          this.scene.add( fbx );
+          this.object = fbx;*/
+          
+    let loader = new GLTFLoader();
+    loader.load(loadSrc, 
+      ( gltf ) => {
+          console.log("LOADED!")
+          this.object = gltf.scene;
           this.scene.add( this.object );
 
           this.model = this.object.children[0];
@@ -125,13 +144,23 @@ export class ObjViewerComponent implements OnInit {
 
           this.control.attach( this.object );
           this.scene.add( this.control );
-      });
+      },
+      ( xhr ) => {
+          // called while loading is progressing
+          console.log( `${( xhr.loaded / xhr.total * 100 )}% loaded` );
+      },
+      ( error ) => {
+          // called when loading has errors
+          console.error( 'An error happened', error );
+      },
+      );
   }
 
   @HostListener('window:keyup', ['$event'])
-  keyup ( event ) {
-    switch ( event.keyCode ) {
-
+  keyup ( event ) 
+  {
+    switch ( event.keyCode )
+    {
         case 16: // Shift
             this.control.setTranslationSnap( null );
             this.control.setRotationSnap( null );
@@ -142,9 +171,10 @@ export class ObjViewerComponent implements OnInit {
   }
 
   @HostListener('window:keydown', ['$event'])
-  keydown ( event ) {
-
-    switch ( event.keyCode ) {
+  keydown ( event )
+  {
+    switch ( event.keyCode ) 
+    {
 
         case 81: // Q
             this.control.setSpace( this.control.space === "local" ? "world" : "local" );
@@ -174,11 +204,11 @@ export class ObjViewerComponent implements OnInit {
             this.currentCamera = this.currentCamera.isPerspectiveCamera ? this.cameraOrtho : this.cameraPersp;
             this.currentCamera.position.copy( position );
 
-            this.orbit.this.object = this.currentCamera;
+            this.orbit.object = this.currentCamera;
             this.control.camera = this.currentCamera;
 
             this.currentCamera.lookAt( this.orbit.target.x, this.orbit.target.y, this.orbit.target.z );
-            onWindowResize();
+            this.onWindowResize();
             break;
 
         case 86: // V
@@ -191,7 +221,7 @@ export class ObjViewerComponent implements OnInit {
 
             this.cameraPersp.zoom = randomZoom * 5;
             this.cameraOrtho.zoom = randomZoom * 5;
-            onWindowResize();
+            this.onWindowResize();
             break;
 
         case 187:
@@ -221,11 +251,11 @@ export class ObjViewerComponent implements OnInit {
             break;
 
         case 70:
-            toggleWireframe();
+            this.toggleWireframe();
             break;
 
         case 72:
-            toggleTips();
+          this.toggleTips();
             break;
 
     }
@@ -244,15 +274,11 @@ export class ObjViewerComponent implements OnInit {
   toggleTips ()
   {
       this.tipsHidden = !this.tipsHidden;
-      if(this.tipsHidden)
-          $(".hidable").css("display", "none");
-      else
-          $(".hidable").css("display", "inherit");
   }
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-      const aspect = window.innerWidth / window.innerHeight;
+      const aspect = this.objWindow.nativeElement.offsetWidth /this.objWindow.nativeElement.offsetHeight;
 
       this.cameraPersp.aspect = aspect;
       this.cameraPersp.updateProjectionMatrix();
@@ -261,7 +287,7 @@ export class ObjViewerComponent implements OnInit {
       this.cameraOrtho.right = this.cameraOrtho.top * aspect;
       this.cameraOrtho.updateProjectionMatrix();
 
-      this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.renderer.setSize( this.objWindow.nativeElement.offsetWidth,this.objWindow.nativeElement.offsetHeight );
 
       this.render();
   }
@@ -269,5 +295,4 @@ export class ObjViewerComponent implements OnInit {
   render() {
       this.renderer.render( this.scene, this.currentCamera );
   }
-    
 }

@@ -1,22 +1,27 @@
-body {
-	margin: 0;
+.modelPreviewContainer {
+    margin: auto;
+    width: 800px;
+    height: 800px;
+    border: 1px solid red;
+
 	background-color: #000;
 	color: #fff;
 	font-family: Monospace;
 	font-size:  1rem;
-	line-height: 24px;
+    line-height: 24px;
+    
+    ul {
+        margin: 1rem;
+        padding: 10px;
+        list-style-type: none;
+        
+        position: absolute;
+        border: 1px solid #ccc;
+        background-color: #00000055;
+        border-radius: 10px;
+    }
 }
 
-ul {
-    margin: 1rem;
-    padding: 10px;
-    list-style-type: none;
-    
-    position: absolute;
-    border: 1px solid #ccc;
-    background-color: #00000055;
-    border-radius: 10px;
-}
 
 
 @media (pointer:none), (pointer:coarse) {
@@ -41,6 +46,6 @@ ul {
     font-size: 1rem;
 }
 
-.hidden {
+.modelHiddenTip {
     display: none;
 }
