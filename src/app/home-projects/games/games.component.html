@@ -5,7 +5,7 @@
       fixedInViewport="true" 
       mode="side"
     >
-        <span *ngIf="mobileCheck()" class="closeIcon" (click)="sidenav.opened = false">[X]</span>
+        <span *ngIf="smallScreenCheck()" class="closeIcon" (click)="sidenav.opened = false">[X]</span>
 
         <div id="menuHeader">
         <img id="logoSide" src="assets/res/signature_legacy.svg"/>
@@ -34,7 +34,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav-content">
-        <mat-toolbar *ngIf="mobileCheck()">
+        <mat-toolbar *ngIf="smallScreenCheck()">
             <img class="icon" src="assets/res/material.io/menu-white-18dp.svg" (click)="sidenav.opened = !sidenav.opened"/>
             <span class="name">Andrew M. Podrat</span>
             <span class="work">Game Designer & Developer</span>

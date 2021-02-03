@@ -32,4 +32,7 @@ export class GamesComponent implements OnInit {
     return this.deviceService.isMobile();
   }
 
+  smallScreenCheck () {
+    return this.deviceService.isMobile() || window.innerWidth < 800 || window.innerHeight < 500;
+  }
 }

@@ -15,7 +15,7 @@
     <!--moviegrid-->
     <div *ngIf="showcase.type == 'moviegrid'" class="projectMovieContainer">
         <!--moviegrid-->
-        <video *ngFor="let media of showcase.media" class="mediaMovie" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
+        <video *ngFor="let media of showcase.media" class="mediaMovie" autoplay playsinline controls loop muted onloadedmetadata="this.muted = true" autoplay>
             <source src="{{ media }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -24,7 +24,7 @@
     <!-- movie-->
     <div *ngIf="showcase.type.includes('singlemovie') && !showcase.type.includes('notMuted')" class="projectMovieContainer">
         <!--movie-->
-        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" playsinline playsinline loop muted onloadedmetadata="this.muted = true" controls autoplay>
+        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" playsinline loop muted onloadedmetadata="this.muted = true" controls autoplay>
             <source src="{{ media }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
