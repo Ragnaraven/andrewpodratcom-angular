@@ -40,10 +40,8 @@
     
     <!-- 3d model ONLY VIEWS FIRST IN LIST!-->
     <div *ngIf="showcase.type == '3dmodel'" class="projectModelContainer">
-        <app-obj-viewer [model3Ds]="showcase.extras "></app-obj-viewer> 
+        <app-obj-viewer [model3Ds]="showcase.extras" class="projectModelObj"></app-obj-viewer> 
     </div>
-
-    <p> {{ showcase.extras }} </p>
 
     <div *ngIf="showcase.textBelow != ''" class="showcaseText" [innerHTML]="showcase.textBelow"></div>
 

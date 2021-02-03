@@ -16,12 +16,9 @@ export class GamesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-
   }
 
   scrollToElement($elementName): void {
-    console.log($elementName)
     var temp = document.getElementById('item-' + $elementName);
     temp.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }

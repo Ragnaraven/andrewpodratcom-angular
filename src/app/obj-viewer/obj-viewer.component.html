@@ -1,33 +1,24 @@
 <div #objWindow class="modelPreviewContainer">
-    <ul>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Left Click" rotate</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Right Click" pan</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Middle Mouse" zoom</li>
-        <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"W" translate</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"E" rotate </li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"R" scale</li>
-        <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"+/-" widget size adjustment</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Q" toggle world/local space</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Shift" snap to grid</li>
-        <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"X" toggle X</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Y" toggle Y</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Z" toggle Z</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Spacebar" toggle enabled</li>
-        <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"C" toggle camera</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"V" random zoom</li>
-        <li [ngClass]="{'modelHiddenTip': tipsHidden}">"F" toggle wireframe</li>
-        <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
-        <li>"H" toggle controls and tips</li>            
-    </ul>
 
-    <div id="modelBreakDown" [ngClass]="{'modelHiddenTip': tipsHidden}">
-        <p class="modelInfo" id="modelNameArea">Model Name: {{ model3D.name }}</p>
-        <p class="modelInfo" id="modelSourceTextWrapper"><a id="modelSource" download="{{ model3D.source }}"> {{ model3D.sourceText }} </a></p>
-        <p class="modelInfo" id="modelNote">Model Note: {{ model3D.note }}</p>
-        <button (click)="previewModel2()">TEST</button>
+    <div class="hud">
+        <ul>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Left Click" rotate</li>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Right Click" pan</li>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Middle Mouse" zoom</li>
+            <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"C" toggle camera</li>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"V" random zoom</li>
+            <li [ngClass]="{'modelHiddenTip': tipsHidden}">"F" toggle wireframe</li>
+            <br [ngClass]="{'modelHiddenTip': tipsHidden}"/>
+            <li>"H" toggle controls and tips</li>            
+        </ul>
+
+        <div id="modelBreakDown" [ngClass]="{'modelHiddenTip': tipsHidden}">
+            <p class="modelInfo" id="modelNameArea">{{ model3D.name }}</p>
+            <p *ngIf="model3D.sourceText != ''" class="modelInfo" id="modelSourceTextWrapper"><a id="modelSource" download="{{ model3D.source }}"> Source: {{ model3D.sourceText }} </a></p>
+            <p *ngIf="model3D.note != ''"  class="modelInfo" id="modelNote">{{ model3D.note }}</p>
+        </div>
     </div>
+
+    <!--<button (click)="startPreview()">Reload Model</button>-->
 </div>

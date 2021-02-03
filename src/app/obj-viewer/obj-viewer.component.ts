@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener, Input, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Model3D } from '../data/projects/models/model3d';
 
 import * as THREE from            'three';
@@ -13,7 +13,7 @@ import { Camera, OrthographicCamera, PerspectiveCamera } from 'three';
   templateUrl: './obj-viewer.component.html',
   styleUrls: ['./obj-viewer.component.scss']
 })
-export class ObjViewerComponent implements OnInit {
+export class ObjViewerComponent implements OnInit, AfterViewInit  {
 
   @Input()
   model3D: Model3D;   
@@ -28,27 +28,31 @@ export class ObjViewerComponent implements OnInit {
       this.model3D = this.model3Ds[0];
   }
 
+  ngAfterViewInit(): void {
+    this.previewModel(this.model3D);
+  }
+
   @ViewChild('objWindow')
   objWindow: ElementRef;
 
   private cameraPersp: PerspectiveCamera;
   private cameraOrtho: OrthographicCamera
-  private currentCamera: Camera;
+  private currentCamera;
 
-  private control;
   private scene: THREE.Scene;
   private renderer: THREE.WebGLRenderer; 
-  private orbit;
+  //private control: TransformControls;
+  private orbit: OrbitControls;
 
   private model;
-  private hlight;
-  private directionalLight;
   private object;
-  private tipsHidden = false;
+  private hlight: THREE.AmbientLight;
+  private directionalLight: THREE.DirectionalLight
   private isWireframe = false;
+  tipsHidden = false;
 
-  previewModel2() {
-    this.previewModel(this.model3D)
+  startPreview() {
+    this.previewModel(this.model3D);
   }
 
   previewModel(model3D: Model3D)
@@ -87,6 +91,11 @@ export class ObjViewerComponent implements OnInit {
       this.scene = new THREE.Scene()
       this.scene.background = new THREE.Color(0x555555)
 
+
+      /*******
+      Hide Grid
+      *******/
+
       /*******
       Lighting
       *******/
@@ -97,7 +106,7 @@ export class ObjViewerComponent implements OnInit {
       this.directionalLight.position.set( 1, 1, 1 );
       this.directionalLight.target.position.set( 0, 0, 0 );
       this.directionalLight.castShadow = true;
-      this.scene.add(this.directionalLight)
+      this.scene.add(this.directionalLight);
 
       /********
       Rendering
@@ -106,54 +115,64 @@ export class ObjViewerComponent implements OnInit {
       this.renderer.setSize(this.objWindow.nativeElement.offsetWidth, this.objWindow.nativeElement.offsetHeight);
       this.objWindow.nativeElement.appendChild(this.renderer.domElement)
 
-      console.log(this.renderer);
-
-      /*Axes*/
+      /********
+      Axes and Grid
+      ********/
+      /* 
       var axesHelper = new THREE.AxesHelper( 10 );
       this.scene.add( axesHelper );
 
       //(size, divisions)
       var gridHelper = new THREE.GridHelper( 10, 10 );
-      this.scene.add( gridHelper );
+      this.scene.add( gridHelper );*/
 
       /*******
       controls
       *******/
       this.orbit = new OrbitControls( this.currentCamera, this.renderer.domElement );
       this.orbit.update();
-      this.orbit.addEventListener( 'change', this.render );
+      this.orbit.addEventListener( 'change', this.render.bind(this));
 
+      /*
       this.control = new TransformControls( this.currentCamera, this.renderer.domElement );
-      this.control.addEventListener( 'change', () => { this.render(); } );
-      this.control.addEventListener( 'dragging-changed', function ( event ) { this.orbit.enabled = ! event.value;  } );
+      this.control.addEventListener( 'change', this.render.bind(this));
+      this.control.addEventListener( 'dragging-changed', function ( event ) { this.orbit.enabled = ! event.value;  } );*/
 
-      /*let loader = new FBXLoader()
+     /* let loader = new FBXLoader()
       loader.load(loadSrc, function(fbx) {
           this.scene.add( fbx );
-          this.object = fbx;*/
-          
-    let loader = new GLTFLoader();
-    loader.load(loadSrc, 
-      ( gltf ) => {
-          console.log("LOADED!")
-          this.object = gltf.scene;
-          this.scene.add( this.object );
+          this.object = fbx;
 
           this.model = this.object.children[0];
           this.model.scale.set(1, 1, 1);
 
           this.control.attach( this.object );
           this.scene.add( this.control );
-      },
-      ( xhr ) => {
-          // called while loading is progressing
-          console.log( `${( xhr.loaded / xhr.total * 100 )}% loaded` );
-      },
-      ( error ) => {
-          // called when loading has errors
-          console.error( 'An error happened', error );
-      },
-      );
+      });*/
+          
+        let loader = new GLTFLoader();
+        loader.load(loadSrc, 
+          ( gltf ) => {
+              //console.log("LOADED!")
+              this.object = gltf.scene;
+              this.scene.add( this.object );
+
+              this.model = this.object.children[0];
+              this.model.scale.set(1, 1, 1);
+
+              /*this.control.attach( this.object );
+              this.scene.add( this.control );*/
+              this.render();
+          },
+          ( xhr ) => {
+              // called while loading is progressing
+              //console.log( `${( xhr.loaded / xhr.total * 100 )}% loaded` );
+          },
+          ( error ) => {
+              // called when loading has errors
+              console.error( 'An error happened', error );
+          },
+          );
   }
 
   @HostListener('window:keyup', ['$event'])
@@ -162,9 +181,9 @@ export class ObjViewerComponent implements OnInit {
     switch ( event.keyCode )
     {
         case 16: // Shift
-            this.control.setTranslationSnap( null );
+            /*this.control.setTranslationSnap( null );
             this.control.setRotationSnap( null );
-            this.control.setScaleSnap( null );
+            this.control.setScaleSnap( null );*/
             break;
 
     }
@@ -175,29 +194,6 @@ export class ObjViewerComponent implements OnInit {
   {
     switch ( event.keyCode ) 
     {
-
-        case 81: // Q
-            this.control.setSpace( this.control.space === "local" ? "world" : "local" );
-            break;
-
-        case 16: // Shift
-            this.control.setTranslationSnap( 100 );
-            this.control.setRotationSnap( THREE.MathUtils.degToRad( 15 ) );
-            this.control.setScaleSnap( 0.25 );
-            break;
-
-        case 87: // W
-            this.control.setMode( "translate" );
-            break;
-
-        case 69: // E
-            this.control.setMode( "rotate" );
-            break;
-
-        case 82: // R
-            this.control.setMode( "scale" );
-            break;
-
         case 67: // C
             const position = this.currentCamera.position.clone();
 
@@ -205,7 +201,7 @@ export class ObjViewerComponent implements OnInit {
             this.currentCamera.position.copy( position );
 
             this.orbit.object = this.currentCamera;
-            this.control.camera = this.currentCamera;
+            //this.control.camera = this.currentCamera;
 
             this.currentCamera.lookAt( this.orbit.target.x, this.orbit.target.y, this.orbit.target.z );
             this.onWindowResize();
@@ -222,32 +218,6 @@ export class ObjViewerComponent implements OnInit {
             this.cameraPersp.zoom = randomZoom * 5;
             this.cameraOrtho.zoom = randomZoom * 5;
             this.onWindowResize();
-            break;
-
-        case 187:
-        case 107: // +, =, num+
-            this.control.setSize( this.control.size + 0.1 );
-            break;
-
-        case 189:
-        case 109: // -, _, num-
-            this.control.setSize( Math.max( this.control.size - 0.1, 0.1 ) );
-            break;
-
-        case 88: // X
-            this.control.showX = ! this.control.showX;
-            break;
-
-        case 89: // Y
-            this.control.showY = ! this.control.showY;
-            break;
-
-        case 90: // Z                                
-            this.control.showZ = ! this.control.showZ;
-            break;
-
-        case 32: // Spacebar
-            this.control.enabled = ! this.control.enabled;
             break;
 
         case 70:
