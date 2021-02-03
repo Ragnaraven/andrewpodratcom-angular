@@ -12,8 +12,7 @@ import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
 import { ArtComponent } from './home-projects/art/art.component';
-
-import { ImageTextComponent } from './image-text/image-text.component';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 const routes: Routes = [
   { path: '', component: HomeProjectsComponent },
@@ -21,8 +20,7 @@ const routes: Routes = [
   { path: 'games', component: GamesComponent },
   { path: 'apps', component: AppsComponent },
   { path: 'art', component: ArtComponent },
-
-  { path: 'imageText', component: ImageTextComponent },
+  { path: 'under-construction', component: UnderConstructionComponent },
 ];
 
 @NgModule({

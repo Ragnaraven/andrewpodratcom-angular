@@ -1,0 +1,30 @@
+<ul>
+    <li [ngClass]="hidden: tipsHidden">"Left Click" rotate</li>
+    <li [ngClass]="hidden: tipsHidden">"Right Click" pan</li>
+    <li [ngClass]="hidden: tipsHidden">"Middle Mouse" zoom</li>
+    <br [ngClass]="hidden: tipsHidden"/>
+    <li [ngClass]="hidden: tipsHidden">"W" translate</li>
+    <li [ngClass]="hidden: tipsHidden">"E" rotate </li>
+    <li [ngClass]="hidden: tipsHidden">"R" scale</li>
+    <br [ngClass]="hidden: tipsHidden"/>
+    <li [ngClass]="hidden: tipsHidden">"+/-" widget size adjustment</li>
+    <li [ngClass]="hidden: tipsHidden">"Q" toggle world/local space</li>
+    <li [ngClass]="hidden: tipsHidden">"Shift" snap to grid</li>
+    <br [ngClass]="hidden: tipsHidden"/>
+    <li [ngClass]="hidden: tipsHidden">"X" toggle X</li>
+    <li [ngClass]="hidden: tipsHidden">"Y" toggle Y</li>
+    <li [ngClass]="hidden: tipsHidden">"Z" toggle Z</li>
+    <li [ngClass]="hidden: tipsHidden">"Spacebar" toggle enabled</li>
+    <br [ngClass]="hidden: tipsHidden"/>
+    <li [ngClass]="hidden: tipsHidden">"C" toggle camera</li>
+    <li [ngClass]="hidden: tipsHidden">"V" random zoom</li>
+    <li [ngClass]="hidden: tipsHidden">"F" toggle wireframe</li>
+    <br [ngClass]="hidden: tipsHidden"/>
+    <li>"H" toggle controls and tips</li>            
+</ul>
+
+<div id="modelBreakDown" [ngClass]="hidden: tipsHidden">
+    <p class="modelInfo" id="modelNameArea">Model Name: {{ model.name }}</p>
+    <p class="modelInfo" id="modelSourceTextWrapper"><a id="modelSource" src="{{ model.source }}"> {{ model.sourceText }} </a></p>
+    <p class="modelInfo" id="modelNote">Model Note: {{ model.note }}</p>
+</div>

@@ -13,8 +13,6 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ImageTextComponent } from './image-text/image-text.component';
-
 import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
@@ -26,17 +24,20 @@ import { MdbModule } from 'mdb-angular-ui-kit';
 import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeProjectsComponent,
-    ImageTextComponent,
     GamesComponent,
     ArtComponent,
     AppsComponent,
     ProjectListingComponent,
     ShowcaseComponentComponent,
+    UnderConstructionComponent,
+    ObjViewerComponent,
   ],
   imports: [
     AppRoutingModule,

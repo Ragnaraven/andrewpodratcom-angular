@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: Monospace;
+	font-size:  1rem;
+	line-height: 24px;
+}
+
+ul {
+    margin: 1rem;
+    padding: 10px;
+    list-style-type: none;
+    
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #00000055;
+    border-radius: 10px;
+}
+
+
+@media (pointer:none), (pointer:coarse) {
+    ul { 
+        display: none;
+    }
+}
+
+#modelBreakDown {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+    background-color: #00000055;
+    
+    padding: 1rem;
+}
+
+.modelInfo {
+    display: inline-block;
+    margin-right: 5rem;
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectGame } from '../../data/projects/games/project-game';
-import { GAMES } from '../../data/projects/games/project-games-list';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-art',
@@ -10,22 +8,12 @@ import { GAMES } from '../../data/projects/games/project-games-list';
 })
 export class ArtComponent implements OnInit {
 
-  games = GAMES;
-
-  project = this.games[0]; 
-
-  constructor() { 
-  }
-
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-  }
 
+    this.router.navigate(['/under-construction']);
 
-  scrollToElement($elementName): void {
-    console.log($elementName)
-    var temp = document.getElementById('item-' + $elementName);
-    temp.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
 }
