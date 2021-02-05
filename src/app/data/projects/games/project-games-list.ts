@@ -12,7 +12,8 @@ export const GAMES: ProjectGame[] = [
     date: "Since June 2018 ", 
     aaOff: false, 
     style: "standard", 
-    imageOrMovieBGPath: "assets/res/projects/ragnaraven/unity4scene.png", 
+    imageOrMovieBGPath: "assets/res/projects/ragnaraven/unity4scene.jpg", 
+    fallbackImage: "assets/res/projects/ragnaraven/unity4scene.webp", 
     customStyleData: "", 
     description: "Work in progress, open world UE4 game. Set in an alternate, ecoistic world, humankind is threatened by an alien being that is invading the world. Story draft available on request.",
     showcases: [
@@ -84,6 +85,7 @@ export const GAMES: ProjectGame[] = [
     aaOff: false, 
     style: "movie", 
     imageOrMovieBGPath: "assets/res/projects/ghostgame/gg-bg.mp4", 
+    fallbackImage: "assets/res/projects/ghostgame/gg-bg.webp", 
     customStyleData: "", 
     description: "GhostGame is a cooperative, multiplayer game about hunting the supernatural across the world. Made with UE4, Blender, Mixamo and Quixel.",
     showcases: [{
@@ -91,8 +93,8 @@ export const GAMES: ProjectGame[] = [
         mediaHeader: "",
         textAbove: "GhostGame is my most recent project. I wanted to learn about making FP/TP animations and controllers, as well as AI systems and mod support in UE4. For only 2 weeks of work (as of 1/28/2021), there has been substantial progress and the idea is taking on a life of it's own! I have general mechanics implemented as well as basic coop and various lighting systems. Check out the video to see the progress!",   
         textBelow: "",       
-        type: "singlemovie",
-        media: ["assets/res/projects/ghostgame/gg-showcase.mp4"],
+        type: "youtube",
+        media: ['czVUCb_4Gkg'],
         extras: []
       },
     ]
@@ -109,6 +111,7 @@ export const GAMES: ProjectGame[] = [
     aaOff: false, 
     style: "movie", 
     imageOrMovieBGPath: "assets/res/projects/citybuilder/cb-bg.mp4", 
+    fallbackImage: "assets/res/projects/citybuilder/cb-bg.webp", 
     customStyleData: "", 
     description: "CityBuilder is a co-op, citybuilding economic sim with real time strategy elements. At the moment, the basic features of a city builder are in place: place, move, delete, rotate. Currently, I am working on a decal-based road system.",
     showcases: [{
@@ -116,8 +119,8 @@ export const GAMES: ProjectGame[] = [
       mediaHeader: "",
       textAbove: "I am a huge fan of city builders. CityBuilder is a side project I started to reinforce my understanding of multiplayer in UE4, as well as try out a new form of development. Various states and managers use UE4 replication to keep the game in sync. Like GhostGame, CityBuilder has taken on it's own idea, and I have detailed plans for it that would make it a unique city builder complete with elements from games I have enjoyed in the past.",   
       textBelow: "",       
-      type: "singlemovie",
-      media: ["assets/res/projects/citybuilder/cb-showcase.mp4"],
+      type: "youtube",
+      media: ['xU7SdGuVlNQ'],
       extras: []
     },]
   },
@@ -133,6 +136,7 @@ export const GAMES: ProjectGame[] = [
     aaOff: false, 
     style: "movie", 
     imageOrMovieBGPath: "assets/res/projects/tuzg/tuzg.mp4", 
+    fallbackImage: "assets/res/projects/tuzg/tuzg-bg.webp", 
     customStyleData: "", 
     description: "The Ultimate Zombie Game (TUZG) is a game I created to test whether or not a multiplayer game could be created exclusively Blueprints in UE4; It mostly can. I ended up creating guns, ballistics systems and a world item interface to interact with objects.",
     showcases: [{
@@ -140,8 +144,8 @@ export const GAMES: ProjectGame[] = [
       mediaHeader: "",
       textAbove: "I have always wanted to make a zombie shooter. This project <em>was</em> in some way the start of that, but its true purpose was for me to learn multiplayer fundementals in UE4. I created a bunch of cool mechanics that will be helpful if I decide to pursue a shooter in the future. <br/><br/> Overall, the project went great! A month after I started it, the progress culminated with my Bare Multiplayer Fundamentals remote Guest Lecture at Southern New Hampshire University, where I gave a demonstration and complete walkthrough designed to help new students understand the ways that UE4 handles multiplayer without overhwhelming them. I also provided resources for students to learn, similar to how I did. <br/><br/>  In the video below, I narrate a detailed walkthrough of the project if you'd like to see it in action.",   
       textBelow: '<p>The Ultimate Zombie Game is a proof of concept game designed with the following features:</p><ul><li>Data-driven game data; weapons and related are processed and loaded from spreadsheets</li><li>Simultaneous split screen and online Steam Multiplayer</li><li>Drop in, drop out split screen</li><li>Controller support</li><li>Different ballistic mechanics: Hitscan, Travel Time, Travel Time and Drop</li><li>Text chat (Not demonstrated in video, but is visible in bottom right corner)</li><li>Multimap, multi character selection (irrelevant to project, implemented identically from <a href="https://www.youtube.com/watch?v=abmzWUWxy1U&list=PLZlv_N0_O1gYqSlbGQVKsRg6fpxWndZqZ">Epic\'s 24 part web-series)</a></li></ul>',       
-      type: "singlemovie-notMuted",
-      media: ["assets/res/projects/tuzg/tuzg-walkthrough.mp4"],
+      type: "youtube",
+      media: ['g1fEk56P0sA'],
       extras: []
     },]
   },
@@ -156,7 +160,8 @@ export const GAMES: ProjectGame[] = [
     date: "Since Oct 2020", 
     aaOff: false, 
     style: "standard", 
-    imageOrMovieBGPath: "assets/res/projects/gamejams/gameJamsCard.png", 
+    fallbackImage: "assets/res/projects/gamejams/gameJamsCard.webp", 
+    imageOrMovieBGPath: "assets/res/projects/gamejams/gameJamsCard.jpg", 
     customStyleData: "", 
     description: "A showcase of the Game Jams I have completed.",
     showcases: [{
@@ -164,8 +169,8 @@ export const GAMES: ProjectGame[] = [
       mediaHeader: "assets/res/projects/gamejams/2020BitBridgeGameJam.png",
       textAbove: "This was my first game jam! I acted as co-designer and 3D modeler in a team of 9. <br/> <br/> My largest contribution to this game was the demon you can see below. I modeled, rigged, animated and created the material. Finally, I also added the animation state machine that controls it. There was a small amount of visual scripting, but this was mostly an art role. I elected to this art role because I felt it was a great experience to <em>not</em> code and to learn something new. <br/> <br/>Additionally, I co-drafted the game concept and the way the demon interacts with the player at the brain-storming stage. You can check out the <a href='https://github.com/peck2703/Halloween-GameJam'>source files here</a> and <a href='https://peck2703.itch.io/the-ritual'>the final result here.</a>",
       textBelow: '',
-      type: "singlemovie-heightLimited",
-      media: ["assets/res/projects/gamejams/gamejam-2020-bitbridge-demon.mp4"],
+      type: "youtube",
+      media: ['MAGjUBtF2vw'],
       extras: []
     },]
   },
@@ -180,6 +185,7 @@ export const GAMES: ProjectGame[] = [
     date: "Aug 2018 - Mar 2020", 
     aaOff: true, 
     style: "customImageWrapper", 
+    fallbackImage: "assets/res/projects/nec/eo.gif",
     imageOrMovieBGPath: "assets/res/projects/nec/eo.gif", 
     customStyleData: "nec", 
     description: "Not Enough Combat is a mod for Minecraft (versions 1.7.10 - 1.12.2) that adds in armor for other mod added ores. Obsidian and Ender Obsidian armor and tools provide a unique vanilla end game experience.",
@@ -188,8 +194,8 @@ export const GAMES: ProjectGame[] = [
       mediaHeader: "",
       textAbove: "Written in Java on the back of the Minecraft Forge API, Not Enough Combat (NEC) was my first mod for any game. It was originally designed for my friend who wanted more weapons to craft to give him something else to do. While I was developing the basic tools and armor, I had another idea: a special type of armor that gave you powers like those of the Enderman. Thus, I designed and created Ender Obsidian armor and tools which are a great end-game reward. <br/> <br/> Below is a video walkthrough for the mod that I made for any users.",
       textBelow: '',
-      type: "singlemovie-notMuted",
-      media: ["assets/res/projects/nec/nec-walkthrough.mp4"],
+      type: "youtube",
+      media: ['M4dsktHFay4'],
       extras: []
     },]
   },

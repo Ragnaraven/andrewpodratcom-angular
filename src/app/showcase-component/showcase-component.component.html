@@ -37,6 +37,16 @@
             Your browser does not support the video tag.
         </video>
     </div>
+
+    <!--youtube video -->
+    <div *ngIf="showcase.type == 'youtube'" class="projectMovieContainer">
+        <youtube-player 
+            videoId="{{ showcase.media[0] }}" 
+            suggestedQuality="medium" 
+            class="youtubeFrame">
+        </youtube-player>
+    </div>
+    
     
     <!-- 3d model ONLY VIEWS FIRST IN LIST!-->
     <div *ngIf="showcase.type == '3dmodel'" class="projectModelContainer">

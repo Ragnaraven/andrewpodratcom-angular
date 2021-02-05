@@ -1,19 +1,25 @@
 <mat-expansion-panel hideToggle #mep="matExpansionPanel" 
-                     class="wow fadeInUp" data-wow-delay="0.3s">
+                     class="wow fadeInUp" data-wow-delay="0.3s"
+                     [id]="project.link">
     <mat-expansion-panel-header>
     <div 
         [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
         [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
-        [ngStyle]= "project.style === 'standard' ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} : {}">
-    
+        [ngStyle]= "mobileCheck()
+                    ? project.style === 'customImageWrapper' 
+                        ? {}
+                        : {'background-image': 'url(' + project.fallbackImage + ')'}
+                    : project.style === 'standard' 
+                        ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} 
+                        : {}">
         <div class="projectContent" id="item-{{project.link}}">     
 
-            <div *ngIf=" project.style === 'customImageWrapper' " class="projectImageWrapper">
+            <div *ngIf="project.style === 'customImageWrapper' " class="projectImageWrapper">
                 <img class="projectImage" src="{{project.imageOrMovieBGPath}}"/>
             </div>
             
-            <div *ngIf="project.style=='movie'" class="projectMovieContainer">
-                <video class="projectMovie" autoplay playsinline playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
+            <div *ngIf="!mobileCheck() && project.style=='movie'" class="projectMovieContainer">
+                <video class="projectMovie" autoplay playsinline loop muted onloadedmetadata="this.muted = true" autoplay>
                     <source src="{{project.imageOrMovieBGPath}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -32,6 +38,7 @@
     </div>
     </mat-expansion-panel-header>
         
+    <!--SHOWCASES-->
     <div class="projectShowcaseContainer">
         <div class="projectShowcaseContainerContent"> <!-- gradient-border-sides -->
             <div class="showcaseMenu">

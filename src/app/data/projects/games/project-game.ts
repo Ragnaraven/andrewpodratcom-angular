@@ -14,6 +14,7 @@ export interface ProjectGame {
     aaOff: boolean;
     style: string;
     imageOrMovieBGPath: string;
+    fallbackImage: string;
     customStyleData: string;
 
     showcases: Showcase[];

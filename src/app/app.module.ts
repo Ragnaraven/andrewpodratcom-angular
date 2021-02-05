@@ -25,6 +25,7 @@ import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 
     CrystalLightboxModule,
     MatExpansionModule,
-    AngularStickyThingsModule
+    AngularStickyThingsModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

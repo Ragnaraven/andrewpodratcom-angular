@@ -59,8 +59,10 @@ export class ObjViewerComponent implements OnInit, AfterViewInit  {
   private isWireframe = false;
   tipsHidden = false;
   loaded = false;
+  pressed = false;
 
   startPreview() {
+    this.pressed = true;
     this.previewModel(this.model3D);
   }
 
