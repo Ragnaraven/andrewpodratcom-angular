@@ -135,7 +135,7 @@ export const GAMES: ProjectGame[] = [
     date: "Since Aug 2020", 
     aaOff: false, 
     style: "movie", 
-    imageOrMovieBGPath: "assets/res/projects/tuzg/tuzg.mp4", 
+    imageOrMovieBGPath: "assets/res/projects/tuzg/tuzg-bg.mp4", 
     fallbackImage: "assets/res/projects/tuzg/tuzg-bg.webp", 
     customStyleData: "", 
     description: "The Ultimate Zombie Game (TUZG) is a game I created to test whether or not a multiplayer game could be created exclusively Blueprints in UE4; It mostly can. I ended up creating guns, ballistics systems and a world item interface to interact with objects.",
