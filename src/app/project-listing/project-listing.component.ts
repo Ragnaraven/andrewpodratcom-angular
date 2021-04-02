@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectGame } from '../data/projects/games/project-game';
+import { Project } from '../data/projects/project';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
@@ -9,7 +9,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 })
 export class ProjectListingComponent implements OnInit {
 
-  @Input() project: ProjectGame;  
+  @Input() project: Project;  
 
   deviceInfo = null;
 

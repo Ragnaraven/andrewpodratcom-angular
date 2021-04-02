@@ -1,6 +1,6 @@
-import { Showcase} from '../../showcase'
+import { Showcase} from '../showcase'
 
-export interface ProjectGame {
+export interface Project {
     name: string;
     date: string;
     description: string;

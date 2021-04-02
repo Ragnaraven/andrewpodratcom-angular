@@ -16,6 +16,17 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
     background: radial-gradient(circle, rgba(183,248,237,1) 0%, rgba(44,205,177,1) 12%, rgba(34,129,113,1) 28%, rgba(51,52,82,1) 45%, rgba(53,60,89,1) 71%, rgba(25,29,44,1) 100%);
 }
 
+#apcom {
+    background: $accent; 
+
+    img {
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        filter: invert(100%);
+    }
+}
+
 @mixin font-size($fs-map) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
       @if $fs-breakpoint == null {

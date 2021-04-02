@@ -99,6 +99,7 @@
                     <p class="introDivParagraph">In my projects below, you will see that none of them share the same genre!</p>
                     <p class="introDivParagraph bitLabel">Some of the <span class="accentHighlight">genres</span> I enjoy include:</p>
                     <ul>
+                        <li><span class="bitLabel">Story:</span>The Last of Us Part I & II</li>
                         <li><span class="bitLabel">Adventure:</span> Zelda, Uncharted, Halo, Pokemon</li>
                         <li><span class="bitLabel">Open World:</span> Grand Theft Auto V, Far Cry </li>
                         <li><span class="bitLabel">Creative Survival:</span> Minecraft, Ark: Survival Evolved</li>
@@ -122,12 +123,11 @@
                 <a class="textLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
                 <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
             </div>
-
-            
         </section>
         
         <section id="item-projects">
-            <p class="projectsLabel">Projects</p>
+            <p class="projectsLabel">Projects -<span class="projectHighlight">Current Focus: GhostGame. Expand project for dev blog.</span></p>
+            
             <ul class="projectsContainer">
                 <li *ngFor="let project of games">
                     <app-project-listing [project]="project"></app-project-listing>
@@ -158,7 +158,10 @@
         </section>
 
         <footer>
-            <!--<a id="oldSite" class="wow fadeInUp" data-wow-delay="0.5s" href="https://andrewpodrat.com/lagacy.html">Looking for the old site?</a>-->
+            <h4>Changelog:</h4>
+            <ul>
+                <li>2/27/2021: Added a new MainMenu showcase to GhostGame.</li>
+            </ul>
         </footer>
 
     </mat-sidenav-content>

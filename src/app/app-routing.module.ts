@@ -16,7 +16,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
 
 const routes: Routes = [
   //DISABLED FOR NOW{ path: '', component: HomeProjectsComponent },  
-  { path: '', component: GamesComponent },
+  { path: '', component: HomeProjectsComponent },
 
   { path: 'games', component: GamesComponent },
   { path: 'apps', component: AppsComponent },

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProjectListingComponent } from '../../project-listing/project-listing.component';
-import { GAMES } from '../../data/projects/games/project-games-list';
+import { GAMES } from '../../data/projects/project-games-list';
 import { DeviceDetectorService } from 'ngx-device-detector';
 
 

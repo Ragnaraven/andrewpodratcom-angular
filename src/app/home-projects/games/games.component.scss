@@ -391,8 +391,8 @@ mat-sidenav-container {
 
             #bigThree{
                 $p-font-sizes-bigThree: (
-                    null  : 0.8em,
-                    640px : 0.8em,
+                    null  : 1em,
+                    640px : 1em,
                     1280px: 1em,
                     1920px: 1.25em
                 );
@@ -504,6 +504,10 @@ mat-sidenav-container {
                 margin-left: 0.5em;
             }
 
+            .projectHighlight {
+                margin-left: 0.5em;
+            }
+
             .projectsContainer {
                 padding: 0;
                 margin: 0;
@@ -609,20 +613,12 @@ mat-sidenav-container {
         }
         
         footer {
-            display: none;
-
             box-sizing: border-box;
             border: 1px solid transparent;
             margin: none;
             padding: 10px;
-            background-color: $secondary;
-
-            #oldSite {
-                display: block;
-                margin-left: 20px;
-                margin-bottom: 20px;
-                color: #aaa;
-            }
+            background-color: $primaryDarker;
+            width: 100%;
         }
 
     }
