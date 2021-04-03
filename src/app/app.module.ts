@@ -26,6 +26,7 @@ import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { ProjectListingMACComponent } from './project-listing-mac/project-listing-mac.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     ShowcaseComponentComponent,
     UnderConstructionComponent,
     ObjViewerComponent,
+    ProjectListingMACComponent,
   ],
   imports: [
     AppRoutingModule,
