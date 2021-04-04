@@ -1,19 +1,30 @@
 <div class="centeredContent">
-  <div class="centeredTop">
-    <h1>Hello!</h1>
-    <h2>I am Andew Podrat!</h2>
-    <p class="introduction">Welcome to my portfolio. What kind of projects are you here to see?</p>
+  <div class="video-background">
+    <div class="video-foreground">
+      <iframe src="https://www.youtube.com/embed/3l0N_7o6a_U?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=3l0N_7o6a_U" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
   
-  <ul class="options"> 
-    <li>
-      <a [routerLink]="'/games'" routerLinkActive="active"> Games & Mods </a>
-    </li>
-    <li>
-      <a [routerLink]="'/apps'" routerLinkActive="active"> Web & Apps  </a>
-    </li>
-    <!--<li>
-      <a [routerLink]="'/art'" routerLinkActive="active"> Art </a>
-    </li>-->
-  </ul>
+  <div id="vidtop-content">
+    <img class="logoMain" src="assets/res/signature.svg"/>
+
+    <div class="centeredTop">
+      <h1>Hello!</h1>
+      <h2>I am Andew Podrat.</h2>
+      <p class="introduction">Welcome to my portfolio. What kind of projects are you here to see?</p>
+    </div>
+
+    <ul class="options"> 
+      <li class="hvr-skew-backward">
+        <a [routerLink]="'/games'" routerLinkActive="active"> Games & Mods </a>
+      </li>
+      <li class="hvr-skew-forward">
+        <a [routerLink]="'/apps'" routerLinkActive="active"> Web & Apps  </a>
+      </li>
+      <!--<li>
+        <a [routerLink]="'/art'" routerLinkActive="active"> Art </a>
+      </li>-->
+    </ul>
+  </div>
+    
 </div>
