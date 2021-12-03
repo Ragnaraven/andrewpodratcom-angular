@@ -1,2 +1,2 @@
-# AndrewpodratcomAngular
-This is a remake of my old site in angular. Contains my portfolio of projects.
+# AndrewPodrat.com-Angular
+This is the source for my portfolio of projects!
