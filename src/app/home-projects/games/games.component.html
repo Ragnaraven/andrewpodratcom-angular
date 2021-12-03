@@ -11,7 +11,7 @@
         <img id="logoSide" src="assets/res/signature_legacy.svg"/>
         <div id="identification">
             <p id="nameSide">Andrew Podrat</p>
-            <p id="professionSide">Game Designer & Developer</p>
+            <p id="professionSide">Enthusiast Game Developer</p>
         </div>
         </div>
 
@@ -23,7 +23,7 @@
         </ul>
      
         <div class="sideNavResumeContainer noselect">
-            <a id="sideNavResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
+            <a id="sideNavResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing" target="_blank">Resume</a>
         </div>
 
         <div class="flex-row-container sidenavLinksWrapper">
@@ -37,15 +37,25 @@
         <mat-toolbar *ngIf="smallScreenCheck()">
             <img class="icon" src="assets/res/material.io/menu-white-18dp.svg" (click)="sidenav.opened = !sidenav.opened"/>
             <span class="name">Andrew M. Podrat</span>
-            <span class="work">Game Designer & Developer</span>
+            <span class="work">Enthusiast Game Developer</span>
         </mat-toolbar>
     
         <section class="logoContainer">
             <img class="logoMain" src="assets/res/signature.svg"/>
             <div class="logoRight">
                 <span class="name">Andrew M. Podrat</span>
-                <span class="work">Game Designer & Developer</span>
+                <span class="work">Enthusiast Game Developer</span>
             </div>
+        </section>
+
+        <section id="item-projects">
+            <p class="projectsLabel">Projects -<span class="projectHighlight">Current Focus: GhostGame. Expand project for dev blog.</span></p>
+            
+            <ul class="projectsContainer">
+                <li *ngFor="let project of games">
+                    <app-project-listing [project]="project"></app-project-listing>
+                </li>
+            </ul>
         </section>
 
         <section id="item-welcome">
@@ -118,23 +128,13 @@
             </div>
 
             <div class="textLinksWrapper">
-                <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing" target="_blank">Resume</a>
+                <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing" target="_blank">Resume</a>
                 <a class="textLink" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
                 <a class="textLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
                 <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
             </div>
         </section>
         
-        <section id="item-projects">
-            <p class="projectsLabel">Projects -<span class="projectHighlight">Current Focus: GhostGame. Expand project for dev blog.</span></p>
-            
-            <ul class="projectsContainer">
-                <li *ngFor="let project of games">
-                    <app-project-listing [project]="project"></app-project-listing>
-                </li>
-            </ul>
-        </section>
-
         <section id="item-contactMe">
             <p id="contactMeHeader" class=" wow bounceInLeft gradient-border">Contact Me</p>
             <div class="flex-row-container">

@@ -4,6 +4,10 @@
       <iframe src="https://www.youtube.com/embed/3l0N_7o6a_U?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=3l0N_7o6a_U" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
+
+  <div class="nav">
+    <p class="sitename">andrewpodrat.com</p>
+  </div>
   
   <div id="vidtop-content">
     <img class="logoMain" src="assets/res/signature.svg"/>
@@ -11,15 +15,15 @@
     <div class="centeredTop">
       <h1>Hello!</h1>
       <h2>I am Andew Podrat.</h2>
-      <p class="introduction">Welcome to my portfolio. What kind of projects are you here to see?</p>
+      <p class="introduction">Welcome to my portfolio! What kind of projects are you here to see?</p>
     </div>
 
     <ul class="options"> 
-      <li class="hvr-skew-backward">
-        <a [routerLink]="'/games'" routerLinkActive="active"> Games & Mods </a>
+      <li class="hvr-grow big">
+        <a [routerLink]="'/apps'" routerLinkActive="active"> <mat-icon>public</mat-icon> Websites & Apps  </a>
       </li>
-      <li class="hvr-skew-forward">
-        <a [routerLink]="'/apps'" routerLinkActive="active"> Web & Apps  </a>
+      <li class="hvr-grow">
+        <a [routerLink]="'/games'" routerLinkActive="active"> <mat-icon>games</mat-icon> Enthusiast Projects </a>
       </li>
       <!--<li>
         <a [routerLink]="'/art'" routerLinkActive="active"> Art </a>
