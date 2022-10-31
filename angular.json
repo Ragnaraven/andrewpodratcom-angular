@@ -25,19 +25,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.svg",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.svg", "src/assets"],
             "styles": [
               "./node_modules/ngx-lightbox/lightbox.css",
               "./node_modules/animate.css/animate.css",
               "./node_modules/hover.css/scss/hover.scss",
               "src/styles.scss"
             ],
-            "scripts": [
-              "./node_modules/wowjs/dist/wow.js"
-            ],
+            "scripts": ["./node_modules/wowjs/dist/wow.js"],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
@@ -100,13 +95,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },

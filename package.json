@@ -22,7 +22,7 @@
     "animate.css": "^3.7.2",
     "hover.css": "^2.3.2",
     "jquery": "^3.5.1",
-    "ngx-lightbox": "^2.2.2",
+    "ngx-lightbox": "^3.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "three": "^0.143.0",
