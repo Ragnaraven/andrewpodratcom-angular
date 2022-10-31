@@ -2,8 +2,6 @@
 
 /RAW
 
-.angular/*
-
 # compiled output
 /dist
 /tmp
