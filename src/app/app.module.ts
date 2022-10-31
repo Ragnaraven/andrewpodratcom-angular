@@ -23,7 +23,6 @@ import { UnderConstructionComponent } from './under-construction/under-construct
 import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,6 @@ import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
     MatToolbarModule,
 
     MatExpansionModule,
-    AngularStickyThingsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
