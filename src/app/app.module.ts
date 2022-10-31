@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +22,6 @@ import { ShowcaseComponentComponent } from './showcase-component/showcase-compon
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
-import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
 
@@ -50,11 +49,10 @@ import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
     MatSidenavModule,
     MatToolbarModule,
 
-    CrystalLightboxModule,
     MatExpansionModule,
-    AngularStickyThingsModule
+    AngularStickyThingsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
