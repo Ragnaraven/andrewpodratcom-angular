@@ -1,5 +1,69 @@
 @import "./theme/theme.scss";
 
+* {
+  box-sizing: border-box;
+}
+
+.video-background {
+  background: #000;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.video-overlay {
+  position: absolute;
+  background-color: #7878787a;
+  width: 100%;
+  height: 100vh;
+  border: 5px solid red;
+  z-index: 100;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .vid-info {
+    width: 50%;
+    padding: 0.5rem;
+  }
+  .vid-info h1 {
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .vid-info .acronym {
+    display: none;
+  }
+}
+
 #colorStop {
   stop-color: $three;
 }
@@ -174,84 +238,6 @@ section {
     }
   }
 }
-
-#work {
-  background-color: $two;
-  height: 100vh;
-
-  .workItemsContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    //gap: 10px;
-
-    .workItem {
-      position: relative;
-
-      .workImage {
-        margin: auto;
-        max-width: 100%;
-      }
-
-      .workContentWrapper {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-
-        &:hover {
-          opacity: 1;
-          background-color: #d8d8d897;
-        }
-
-        .workContentWrapper {
-          background-color: white;
-          border-radius: 2px;
-          border: 1px solid gray;
-          width: 50%;
-          height: 100%;
-          color: black;
-        }
-      }
-    }
-  }
-}
-
-#games {
-  background-color: $three;
-}
-
 #about {
   background-color: $four;
-}
-
-.palette {
-  box-sizing: border-box;
-  padding: 1em;
-  background-color: black;
-  gap: 1em;
-
-  .cube {
-    height: 250px;
-    width: 250px;
-    border-radius: 4px;
-  }
-
-  .c1 {
-    background-color: map-get($map: $theme, $key: "one");
-  }
-  .c2 {
-    background-color: $two;
-  }
-  .c3 {
-    background-color: $three;
-  }
-  .c4 {
-    background-color: $four;
-  }
 }

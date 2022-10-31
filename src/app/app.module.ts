@@ -3,11 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +15,6 @@ import { AppsComponent } from './home-projects/apps/apps.component';
 import { ProjectListingComponent } from './project-listing/project-listing.component';
 import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
 import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
-
-import { MatExpansionModule } from '@angular/material/expansion';
 import { MacComponent } from './work/mac/mac.component';
 
 @NgModule({
@@ -42,13 +35,6 @@ import { MacComponent } from './work/mac/mac.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule,
-
-    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
