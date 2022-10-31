@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
 //@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -7,7 +7,7 @@
 //@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
 
-$rajdhani: 'Rajdhani', sans-serif;
+$rajdhani: "Rajdhani", sans-serif;
 // 2 - $chakrapetch: 'Chakra Petch', sans-serif;
 // 3 - $opensans: 'Open Sans', sans-serif;
 //$montserrat: 'Montserrat', sans-serif;
@@ -16,7 +16,10 @@ $rajdhani: 'Rajdhani', sans-serif;
 //$unicaone: 'Unica One', cursive;
 //$josefin: 'Josefin Slab', serif;
 
-@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
+@font-face {
+  font-family: pixel5;
+  src: url("~src/assets/fonts/pixel5.ttf") format("truetype");
+}
 
 $primary: #303841;
 $secondary: #3a4750;
@@ -28,579 +31,596 @@ $primaryDarker2: darken($primary, 20%);
 $primaryLighter: lighten($primary, 20%);
 
 .accentHighlight {
-    color: $accent;
-    font-size: inherit;
-    font-family: inherit;
+  color: $accent;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 @mixin font-size($fs-map) {
-    @each $fs-breakpoint, $fs-font-size in $fs-map {
-      @if $fs-breakpoint == null {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    } @else {
+      @media screen and (min-width: $fs-breakpoint) {
         font-size: $fs-font-size;
-      }
-      @else {
-        @media screen and (min-width: $fs-breakpoint) {
-          font-size: $fs-font-size;
-        }
       }
     }
   }
-
-* {
-    font-family: $rajdhani;
 }
 
-a, a:visited {
-    color: $white;
+* {
+  font-family: $rajdhani;
+}
+
+a,
+a:visited {
+  color: $white;
 }
 
 a:hover {
-    color: $accent;
+  color: $accent;
 }
 
 a:active {
-    color: darken($white, 50%);
+  color: darken($white, 50%);
 }
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
 .accentHighlight {
-    color: $accent;
-    font-size: inherit;
-    font-family: inherit;
+  color: $accent;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.bitHeader, .bitLabel {
-    $p-font-sizes-details: (
-        null  : 1em,
-        640px : 1em,
-        1280px: 1em,
-        1920px: 1.1em
-    );
-    @include font-size($p-font-sizes-details);
-    
-    font-family: pixel5;
+.bitHeader,
+.bitLabel {
+  $p-font-sizes-details: (
+    null: 1em,
+    640px: 1em,
+    1280px: 1em,
+    1920px: 1.1em,
+  );
+  @include font-size($p-font-sizes-details);
+
+  font-family: pixel5;
 }
 
 .bitHeader {
-    $p-font-sizes-bitHeader: (
-        null  : 1em,
-        640px : 1em,
-        1280px: 1em,
-        1920px: 1em
-    );
-    @include font-size($p-font-sizes-bitHeader);
+  $p-font-sizes-bitHeader: (
+    null: 1em,
+    640px: 1em,
+    1280px: 1em,
+    1920px: 1em,
+  );
+  @include font-size($p-font-sizes-bitHeader);
 }
 
 .bitLabel {
-    font-size: 0.75em;
+  font-size: 0.75em;
 }
 
 .flex-row-container {
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-    .flex-row-item {
-        flex: 1 1;
-    }
+  .flex-row-item {
+    flex: 1 1;
+  }
 }
 /******************
         PAGE
 *******************/
 mat-sidenav-container {
-    background-color: $primary;
+  background-color: $primary;
+  color: $white;
+  min-height: 100vh;
+
+  mat-sidenav {
+    width: 20vw;
+
+    min-width: 350px;
+    max-width: 500px;
+
+    background-color: $primaryDarker;
     color: $white;
-    min-height: 100vh;
+    padding: 0;
 
-    mat-sidenav {
-        width: 20vw;
-        
-        min-width: 350px;
-        max-width: 500px;
-        
-        background-color: $primaryDarker;
-        color: $white;
-        padding: 0;
-        
-        .closeIcon {
-            float: right;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 1.5em;
+    .closeIcon {
+      float: right;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+
+    #menuHeader {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5vh;
+
+      padding-left: 15px;
+
+      #logoSide {
+        max-width: 50%;
+        display: block;
+
+        -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+        filter: invert(100%);
+      }
+
+      #identification {
+        margin-top: 10px;
+
+        p {
+          letter-spacing: 0.5ch;
+          margin: 0;
+          padding: 0;
         }
 
-        #menuHeader {
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 5vh;
-
-            padding-left: 15px;
-            
-            #logoSide {
-                max-width: 50%;
-                display: block;
-
-                -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
-                filter: invert(100%);
-            }
-
-            #identification {
-                margin-top: 10px;
-
-                p {
-                    letter-spacing: 0.5ch;
-                    margin: 0;
-                    padding: 0;
-                }
-
-                #nameSide {
-                    font-size: 1.25em;
-                }
-
-                #professionSide {
-                    font-size: 0.8em;
-                }
-            }
+        #nameSide {
+          font-size: 1.25em;
         }
 
-        #navList {
-            max-width: 80%;
+        #professionSide {
+          font-size: 0.8em;
+        }
+      }
+    }
 
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
+    #navList {
+      max-width: 80%;
 
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+
+      list-style-type: none;
+      padding-left: 15px;
+
+      li {
+        padding: 0.75em;
+        padding-left: 0;
+        margin: 0;
+
+        a {
+          padding: 0;
+          margin: 0;
+
+          cursor: pointer;
+        }
+
+        .projectListingNavItem {
+          margin-left: 1.5em;
+        }
+      }
+
+      @media only screen and (max-width: 1280px) {
+        li {
+          padding: 0.15em;
+          padding-left: 0;
+
+          a {
+            font-size: 0.9em;
+
+            margin: 0;
+            padding: 5px 0;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .sideNavResumeContainer {
+      padding-top: 10px;
+      width: 100%;
+
+      display: flex;
+      justify-items: center;
+
+      #sideNavResume {
+        margin-left: auto;
+        margin-right: auto;
+
+        text-decoration: none;
+
+        font-size: 2em;
+        padding: 0.2em 0.5em;
+
+        &:active {
+          background: #ccc !important;
+          text-shadow: none;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      @media only screen and (max-width: 1280px) {
+        #sideNavResume {
+          font-size: 1.4em;
+        }
+      }
+    }
+
+    .sidenavLinksWrapper {
+      position: absolute;
+      bottom: 0;
+
+      box-sizing: border-box;
+      padding: 10px;
+
+      .sidenavLink {
+        $p-font-sizes-links: (
+          null: 0.5em,
+          640px: 0.6em,
+          1280px: 0.8em,
+          1920px: 1em,
+        );
+        @include font-size($p-font-sizes-links);
+
+        flex: 0;
+        text-decoration: underline;
+        margin: 1em;
+      }
+    }
+
+    @media only screen and (max-width: 1280px) {
+      .sidenav-bar {
+        width: 250px;
+        min-width: 250px;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .sidenav-content {
+    mat-toolbar {
+      padding: 10px;
+      position: fixed;
+      background-color: $primaryLighter;
+      height: 50px;
+      z-index: 10000;
+
+      span {
+        margin-right: 2em;
+      }
+
+      .icon {
+        margin-right: 1em;
+        cursor: pointer;
+      }
+
+      .name {
+        font-size: 20px;
+      }
+
+      .work {
+        font-size: 14px;
+      }
+    }
+
+    .logoContainerToolbar {
+    }
+
+    .logoContainer {
+      margin-top: 50px;
+
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $secondary;
+
+      .logoMain {
+        filter: invert(100);
+        width: 15vw;
+      }
+
+      .logoRight {
+        margin-left: 14vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .name {
+        font-size: 2.5em;
+        letter-spacing: 0.5ch;
+      }
+
+      .work {
+        font-size: 1.2em;
+        letter-spacing: 0.5ch;
+      }
+    }
+
+    #item-welcome {
+      padding: 80px;
+
+      #greeting {
+        $p-font-sizes-greeting: (
+          null: 1em,
+          640px: 1em,
+          1280px: 1em,
+          1920px: 1.5em,
+        );
+        @include font-size($p-font-sizes-greeting);
+
+        font-size: 1.5em;
+        padding: 0.5em;
+        display: inline-block;
+        margin: 0;
+      }
+
+      #pickupLine {
+        $p-font-sizes-pickupLine: (
+          null: 1em,
+          640px: 1em,
+          1280px: 1em,
+          1920px: 1.5em,
+        );
+        @include font-size($p-font-sizes-pickupLine);
+
+        font-size: 1.5em;
+        margin-top: 40px;
+      }
+      @media only screen and (max-width: 1280px) {
+        #greeting {
+          margin: 20px;
+          margin-bottom: 0;
+        }
+        #pickupLine {
+          padding: 0 20px;
+        }
+      }
+
+      #bigThree {
+        $p-font-sizes-bigThree: (
+          null: 1em,
+          640px: 1em,
+          1280px: 1em,
+          1920px: 1.25em,
+        );
+        @include font-size($p-font-sizes-bigThree);
+
+        .flex-row-item {
+          padding-right: 40px;
+
+          min-width: 250px;
+          margin-top: 40px;
+
+          .introDivImg {
+            min-width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+          }
+
+          ul {
+            padding-left: 1em;
+            margin: 0;
             list-style-type: none;
-            padding-left: 15px;
 
             li {
-                padding: 0.75em;
-                padding-left: 0;
-                margin: 0;
-
-                a {
-                    padding: 0;
-                    margin: 0;
-                }
-                
-                .projectListingNavItem {
-                    margin-left: 1.5em;
-                }
+              font-size: 0.75em;
             }
 
-            @media only screen and (max-width: 1280px) {
-                li {
-                    padding: 0.15em;
-                    padding-left: 0;
-
-                    a {
-                        font-size: 0.9em;
-                        
-                        margin: 0;
-                        padding: 5px 0;
-                        height: auto;
-                    }
-                }
+            li::before {
+              margin-left: -10px;
+              padding: 0;
+              margin: 0;
+              content: "■";
+              font-family: "Arial Black";
+              color: $accent;
+              font-weight: bold; /* If you want it to be bold */
+              display: inline-block; /* Needed to add space between the bullet and the text */
+              width: 1em; /* Also needed for space (tweak if needed) */
+              margin-left: -1em; /* Also needed for space (tweak if needed) */
             }
+          }
         }
 
-        .sideNavResumeContainer {
-            padding-top: 10px;
-            width: 100%;
-
-            display: flex;
-            justify-items: center;
-
-            #sideNavResume {
-                margin-left: auto;
-                margin-right: auto;
-
-                text-decoration: none;
-
-                font-size: 2em;
-                padding: 0.2em 0.5em;
-
-                &:active {
-                    background: #ccc!important;
-                    text-shadow: none;
-                }
-        
-                &:hover {
-                    color: white;
-                }
-            }
-
-            @media only screen and (max-width: 1280px) {
-                #sideNavResume {
-                    font-size: 1.4em;
-                }
-            }
-        }
-
-        .sidenavLinksWrapper {
-            position: absolute;
-            bottom: 0;
-
-            box-sizing: border-box;
-            padding: 10px;  
-
-            .sidenavLink {                
-                $p-font-sizes-links: (
-                    null  : 0.5em,
-                    640px : 0.6em,
-                    1280px: 0.8em,
-                    1920px: 1em
-                );
-                @include font-size($p-font-sizes-links);
-
-                flex: 0;
-                text-decoration: underline;
-                margin: 1em;
-            }
+        #additionalContentLargeScreenOnly {
         }
 
         @media only screen and (max-width: 1280px) {
-            .sidenav-bar {
-                width: 250px;
-                min-width: 250px;
-                font-size: 0.9em;
-            }
-        }
-    }
+          .introDiv {
+            min-width: 275px;
+          }
 
-    .sidenav-content {
-        mat-toolbar {
-            padding: 10px;
-            position: fixed;
-            background-color: $primaryLighter;
-            height: 50px;
-            z-index: 10000;
-
-            span {
-                margin-right: 2em;
-            }
-
-            .icon {
-                margin-right: 1em;
-                cursor: pointer;
-            }
-
-            .name {
-                font-size: 20px;                
-            }
-
-            .work {
-                font-size: 14px;
-            }
-        }
-
-        .logoContainer {
-            margin-top: 50px;
-            
-            padding-top: 5vh;
-            padding-bottom: 5vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background-color: $secondary;
-
-            .logoMain {
-                filter: invert(100);
-                width: 15vw;
-            }
-
-            .logoRight {
-                margin-left: 14vw;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-            }
-                
-            .name {
-                font-size: 2.5em;
-                letter-spacing: 0.5ch;
-            }
-
-            .work {
-                font-size: 1.2em;
-                letter-spacing: 0.5ch;
-            }
-        }
-
-        #item-welcome {
-            padding: 80px;
-
-            #greeting {
-                $p-font-sizes-greeting: (
-                    null  : 1em,
-                    640px : 1em,
-                    1280px: 1em,
-                    1920px: 1.5em
-                );
-                @include font-size($p-font-sizes-greeting);
-
-                font-size: 1.5em;
-                padding: 0.5em;            
-                display: inline-block;
-                margin: 0;    
-            }
-
-            #pickupLine {
-                $p-font-sizes-pickupLine: (
-                    null  : 1em,
-                    640px : 1em,
-                    1280px: 1em,
-                    1920px: 1.5em
-                );
-                @include font-size($p-font-sizes-pickupLine);
-
-                font-size: 1.5em;   
-                margin-top: 40px;
-            }
-            @media only screen and (max-width: 1280px) {
-                #greeting {
-                    margin: 20px;
-                    margin-bottom: 0;
-                }
-                #pickupLine {
-                    padding: 0 20px;
-                }
-            }
-
-            #bigThree{
-                $p-font-sizes-bigThree: (
-                    null  : 0.8em,
-                    640px : 0.8em,
-                    1280px: 1em,
-                    1920px: 1.25em
-                );
-                @include font-size($p-font-sizes-bigThree);
-        
-                    .flex-row-item {
-                        padding-right: 40px;
-
-                        min-width: 250px;
-                        margin-top: 40px;
-
-                        .introDivImg {
-                            min-width: 100px;
-                            height: 100px;
-                            margin-bottom: 20px;
-                        }
-
-                        ul {
-                            padding-left: 1em;
-                            margin: 0;
-                            list-style-type: none;
-
-                            li {
-                                font-size: 0.75em;
-                            }
-
-                            li::before { 
-                                margin-left: -10px; 
-                                padding: 0;
-                                margin: 0;
-                                content: "■"; 
-                                font-family:"Arial Black";
-                                color: $accent;
-                                font-weight: bold; /* If you want it to be bold */
-                                display: inline-block; /* Needed to add space between the bullet and the text */
-                                width: 1em; /* Also needed for space (tweak if needed) */
-                                margin-left: -1em; /* Also needed for space (tweak if needed) */
-                            }
-                        }
-                    }
-
-                    #additionalContentLargeScreenOnly {
-
-                    }
-
-                    @media only screen and (max-width: 1280px) {
-                        .introDiv{
-                            min-width: 275px;
-                        }
-
-                        #additionalContentLargeScreenOnly  {
-                            display: none;
-                        }
-                    }
-            }
-     
-            .textLinksWrapper {
-                display: flex;
-                flex-direction: row;
-                align-content: flex-end;
-
-                padding: 20px;  
-
-                .textLink {
-                    font-size: 1.25em;
-                    margin: 20px 40px;  
-                    display: inline-block;
-                    text-decoration: underline;
-                }
-
-                #mainResume {
-                    margin-right: 40px;
-                    font-size: 1.5em;
-                    padding: 0em 1em;
-
-                    text-decoration: none;
-
-                    &:active {
-                        background: #ccc!important;
-                        text-shadow: none;
-                    }
-
-                    &:hover {
-                        color: white;
-                    }
-                }
-            }
-
-        }
-        @media only screen and (max-width: 1280px) {
-            #item-welcome {
-                padding: 20px;
-            }
-        }
-
-        #item-projects {
-
-            .projectsLabel {
-                $p-font-sizes-projectsLabel: (
-                    null  : 1em,
-                    640px : 1.5em,
-                    1280px: 2.5em,
-                    1920px: 4em
-                );
-                @include font-size($p-font-sizes-projectsLabel);
-        
-
-                font-size: 4em;
-                margin-left: 0.5em;
-            }
-
-            .projectsContainer {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-            }
-        }
-
-        #item-contactMe {
-            padding: 50px;
-            background-color: $secondary;
-
-            #contactMeHeader {
-                z-index: 100;
-                font-size: 2em;
-                display: inline-block;
-                padding: 0.25em 0.5em;
-                margin-bottom: 50px;
-            }
-
-            .flex-row-container {
-                #fakeLinkedInWrapper {
-                    text-decoration: none;
-                    align-items: stretch;
-
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .flex-row-item {
-
-                    text-decoration: none;
-
-                    .contactIcon {
-                        display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-
-                        width: 75%; 
-                    }
-
-                    #fakeLinkedIn {
-                        background-color: $accent;
-                        color: $primary;
-
-                        font-size: 140px;
-                        line-height: 160px;
-
-                        font-family: sans-serif;
-
-                        width: 150px;
-                        height: 150px;
-
-                        border-radius: 30px;
-
-                        display: block;
-
-                        text-align: center;
-
-                        margin-left: auto;
-                        margin-right: auto;
-                        margin-bottom: auto;
-                        margin-top: auto;
-                    }      
-                    @media only screen and (max-width: 1280px) {
-                        #fakeLinkedIn {
-                            width: 100px;
-                            height: 100px;
-                            font-size: 100px;
-                            line-height: 110px;
-                        }
-                    }                        
-
-                    a, p {
-                        margin: 0;
-                        display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-                        text-align: center;
-
-                        font-size: 1.25em;
-                    }
-                }
-            }
-        }
-        
-        footer {
+          #additionalContentLargeScreenOnly {
             display: none;
+          }
+        }
+      }
 
-            box-sizing: border-box;
-            border: 1px solid transparent;
-            margin: none;
-            padding: 10px;
-            background-color: $secondary;
+      .textLinksWrapper {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
 
-            #oldSite {
-                display: block;
-                margin-left: 20px;
-                margin-bottom: 20px;
-                color: #aaa;
-            }
+        padding: 20px;
+
+        .textLink {
+          font-size: 1.25em;
+          margin: 20px 40px;
+          display: inline-block;
+          text-decoration: underline;
         }
 
+        #mainResume {
+          margin-right: 40px;
+          font-size: 1.5em;
+          padding: 0em 1em;
+
+          text-decoration: none;
+
+          &:active {
+            background: #ccc !important;
+            text-shadow: none;
+          }
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
+    @media only screen and (max-width: 1280px) {
+      #item-welcome {
+        padding: 20px;
+      }
+    }
+
+    #item-projects {
+      .projectsLabel {
+        $p-font-sizes-projectsLabel: (
+          null: 0.5em,
+          640px: 0.5em,
+          1280px: 2.5em,
+          1920px: 4em,
+        );
+        @include font-size($p-font-sizes-projectsLabel);
+
+        font-size: 4em;
+        margin-left: 0.5em;
+      }
+
+      .projectHighlight {
+        margin-left: 0.5em;
+      }
+
+      .projectsContainer {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    }
+
+    #item-contactMe {
+      padding: 50px;
+      background-color: $secondary;
+
+      #contactMeHeader {
+        z-index: 100;
+        font-size: 2em;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        margin-bottom: 50px;
+      }
+
+      .flex-row-container {
+        align-items: stretch;
+
+        #fakeLinkedInWrapper {
+          text-decoration: none;
+
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .flex-row-item {
+          text-decoration: none;
+
+          margin: 15px;
+          width: 20%;
+          max-width: 20%;
+          min-width: 200px;
+
+          display: flex;
+          flex-direction: column;
+          align-content: flex-end;
+
+          .contactIcon {
+            flex: 1;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 75%;
+          }
+
+          #fakeLinkedIn {
+            background-color: $accent;
+            color: $primary;
+
+            font-size: 140px;
+            line-height: 160px;
+
+            font-family: sans-serif;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 30px;
+
+            display: block;
+
+            text-align: center;
+
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: auto;
+          }
+          @media only screen and (max-width: 1280px) {
+            #fakeLinkedIn {
+              width: 100px;
+              height: 100px;
+              font-size: 100px;
+              line-height: 110px;
+            }
+          }
+
+          a,
+          p {
+            margin: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            $p-font-sizes-text: (
+              null: 1em,
+              640px: 1em,
+              1280px: 1em,
+              1920px: 1.25em,
+            );
+            @include font-size($p-font-sizes-text);
+
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+
+    footer {
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      margin: none;
+      padding: 10px;
+      background-color: $primaryDarker;
+      width: 100%;
+    }
+  }
 }
 
 /**ANIMS**/
@@ -628,11 +648,11 @@ mat-sidenav-container {
     height: calc(100% + var(--border-width) * 2);
     background: linear-gradient(
       60deg,
-      rgb(48,56,65),
-      rgb(0,173,181),
-      rgb(238,238,238)
+      rgb(48, 56, 65),
+      rgb(0, 173, 181),
+      rgb(238, 238, 238)
     );
-    
+
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: calc(2 * var(--border-width));
@@ -641,26 +661,25 @@ mat-sidenav-container {
 }
 
 .gradient-bg {
-  
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
 
-    border-radius: 5px;
-  
-    background: linear-gradient(
-        60deg,
-        rgb(48,56,65),
-        rgb(0,173,181),
-        rgb(207, 207, 207)
-    );
+  border-radius: 5px;
 
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    animation: moveGradient 4s alternate infinite;
-  }
+  background: linear-gradient(
+    60deg,
+    rgb(48, 56, 65),
+    rgb(0, 173, 181),
+    rgb(207, 207, 207)
+  );
+
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  animation: moveGradient 4s alternate infinite;
+}
 
 @keyframes moveGradient {
   50% {
@@ -669,20 +688,20 @@ mat-sidenav-container {
 }
 
 .resumeAnim {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    // Required, since we're setting absolute on pseudo-elements
-    position: relative;
-    vertical-align: middle;
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
 
-    cursor: pointer;
-  
-    transition: color 0.25s;
+  cursor: pointer;
+
+  transition: color 0.25s;
 
   &::before,
   &::after {
     box-sizing: inherit;
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;
@@ -705,7 +724,7 @@ mat-sidenav-container {
     top: 0;
     left: 0;
   }
-  
+
   &:hover {
     text-shadow: 0 0.05em 0.05em #111;
   }
@@ -720,21 +739,21 @@ mat-sidenav-container {
   &:hover::before {
     border-top-color: white; // Make borders visible
     border-right-color: white;
-    transition:
-      width 0.25s ease-out, // Width expands first
+    transition: width 0.25s ease-out,
+      // Width expands first
       height 0.25s ease-out 0.25s; // And then height
   }
 
   &:hover::after {
     border-bottom-color: white; // Make borders visible
     border-left-color: white;
-    transition:
-      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
-      width 0.25s ease-out 0.5s, // And then exanding width
+    transition: border-color 0s ease-out 0.5s,
+      // Wait for ::before to finish before showing border
+      width 0.25s ease-out 0.5s,
+      // And then exanding width
       height 0.25s ease-out 0.75s; // And finally height
 
-      transition: // Animate height first, then width
-        height 0.25s ease-out,
-        width 0.25s ease-out 0.25s;
+    transition: // Animate height first, then width
+      height 0.25s ease-out, width 0.25s ease-out 0.25s;
   }
 }

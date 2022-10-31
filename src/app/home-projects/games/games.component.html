@@ -1,7 +1,12 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [opened]="true" fixedInViewport="true" mode="side">
+  <mat-sidenav
+    #sidenav
+    [opened]="!smallScreenCheck()"
+    fixedInViewport="true"
+    mode="side"
+  >
     <span
-      *ngIf="mobileCheck()"
+      *ngIf="smallScreenCheck()"
       class="closeIcon"
       (click)="sidenav.opened = false"
       >[X]</span
@@ -11,7 +16,7 @@
       <img id="logoSide" src="assets/res/signature_legacy.svg" />
       <div id="identification">
         <p id="nameSide">Andrew Podrat</p>
-        <p id="professionSide">Game Designer & Developer</p>
+        <p id="professionSide">Game Developer and Designer</p>
       </div>
     </div>
 
@@ -33,7 +38,7 @@
       <a
         id="sideNavResume"
         class="gradient-bg resumeAnim noselect"
-        href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing"
+        href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing"
         target="_blank"
         >Resume</a
       >
@@ -55,35 +60,50 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="sidenav-content">
-    <mat-toolbar *ngIf="mobileCheck()">
+    <mat-toolbar *ngIf="smallScreenCheck()">
       <img
         class="icon"
         src="assets/res/material.io/menu-white-18dp.svg"
         (click)="sidenav.opened = !sidenav.opened"
       />
       <span class="name">Andrew M. Podrat</span>
-      <span class="work">Game Designer & Developer</span>
+      <span class="work">Game Developer and Designer</span>
     </mat-toolbar>
 
     <section class="logoContainer">
       <img class="logoMain" src="assets/res/signature.svg" />
       <div class="logoRight">
         <span class="name">Andrew M. Podrat</span>
-        <span class="work">Game Designer & Developer</span>
+        <span class="work">Game Developer and Designer</span>
       </div>
     </section>
 
+    <section id="item-projects">
+      <p class="projectsLabel">
+        Projects -<span class="projectHighlight"
+          >Current Focus: Ragnaraven. Expand project for dev blog.</span
+        >
+      </p>
+
+      <ul class="projectsContainer">
+        <li *ngFor="let project of games">
+          <app-project-listing [project]="project"></app-project-listing>
+        </li>
+      </ul>
+    </section>
+
     <section id="item-welcome">
-      <p class="gradient-border" id="greeting">Hey there!</p>
+      <p class="gradient-border" id="greeting">Hello there!</p>
       <p id="pickupLine">
         <span style="color: white; font-weight: 500; font-size: 1.25em"
           >I'm Andrew.</span
         ><br />
-        I am a highly motivated designer and developer with an always expanding
-        and versatile technical skillset.<br />
-        I like to keep my code and designs both clean and highly reusable.<br />
-        I am diplomatic team player who is not afraid to take initiative or work
-        independently.
+        I am a highly motivated game designer and developer with an always
+        expanding and versatile technical skillset. <br />
+        I am looking to create, develop and learn from and with
+        professionals.<br />
+        I am avid learner and diplomatic team player who loves take initiative
+        and lead by example.
       </p>
       <div id="bigThree" class="flex-row-container">
         <div class="flex-row-item">
@@ -94,7 +114,7 @@
           </p>
           <p class="introDivParagraph">
             I enjoy dreaming up scenarios and then bringing them to life.
-            Mechanics and gameplay are often the focus of my design.
+            Mechanics and gameplay my favorite focus areas.
           </p>
           <p class="introDivParagraph">My work extends beyond games however!</p>
           <p class="introDivParagraph">
@@ -115,7 +135,7 @@
         <div class="flex-row-item">
           <img class="introDivImg" src="assets/res/passions/developer.svg" />
           <p class="introDivHeader bitHeader">
-            As a <span class="accentHighlight">software developer</span> many
+            As a <span class="accentHighlight">software developer</span>, many
             programs, skills and languages are at my disposal.
           </p>
           <p class="introDivParagraph">
@@ -149,10 +169,6 @@
               Bitbucket
             </li>
             <li>
-              <span class="bitLabel">Communication:</span>Slack, MS Teams, Zoom,
-              Skype, Discord
-            </li>
-            <li>
               <span class="bitLabel">Graphic Design:</span>Photoshop,
               Illustrator, Inkscape
             </li>
@@ -182,6 +198,9 @@
             include:
           </p>
           <ul>
+            <li>
+              <span class="bitLabel">Story:</span>The Last of Us Part I & II
+            </li>
             <li>
               <span class="bitLabel">Adventure:</span> Zelda, Uncharted, Halo,
               Pokemon
@@ -236,7 +255,7 @@
         <a
           id="mainResume"
           class="gradient-bg resumeAnim noselect"
-          href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing"
+          href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing"
           target="_blank"
           >Resume</a
         >
@@ -248,15 +267,6 @@
         >
         <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
       </div>
-    </section>
-
-    <section id="item-projects">
-      <p class="projectsLabel">Projects</p>
-      <ul class="projectsContainer">
-        <li *ngFor="let project of games">
-          <app-project-listing [project]="project"></app-project-listing>
-        </li>
-      </ul>
     </section>
 
     <section id="item-contactMe">
@@ -273,6 +283,7 @@
         </a>
         <a
           class="flex-row-item noselect hvr-float"
+          id="fakeLinkedInWrapper"
           href="https://www.linkedin.com/in/andrewpodrat/"
         >
           <p class="noselect" id="fakeLinkedIn">in</p>
@@ -299,7 +310,14 @@
     </section>
 
     <footer>
-      <!--<a id="oldSite" class="wow fadeInUp" data-wow-delay="0.5s" href="https://andrewpodrat.com/lagacy.html">Looking for the old site?</a>-->
+      <h4>Changelog:</h4>
+      <ul>
+        <li>2/27/2021: Added a new MainMenu showcase to GhostGame.</li>
+        <li>
+          3/23/2021: Added a new AI, Inventory, Data-driven gameplay showcase to
+          GhostGame.
+        </li>
+      </ul>
     </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -11,7 +11,7 @@ export class HomeProjectsComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.router.navigate(['games']);
+    //this.router.navigate(['games']);
   }
 
 }

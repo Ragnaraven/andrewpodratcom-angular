@@ -35,6 +35,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ShowcaseComponentComponent,
     UnderConstructionComponent,
     ObjViewerComponent,
+    ProjectListingMACComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProjectListingComponent } from '../../project-listing/project-listing.component';
-import { GAMES } from '../../data/projects/games/project-games-list';
-//import { DeviceDetectorService } from 'ngx-device-detector';
+import { GAMES } from '../../data/projects/project-games-list';
 
 @Component({
   selector: 'app-games',
@@ -32,5 +31,13 @@ export class GamesComponent implements OnInit {
   mobileCheck() {
     return false;
     // return this.deviceService.isMobile();
+  }
+
+  smallScreenCheck() {
+    return false; /*(
+      this.deviceService.isMobile() ||
+      window.innerWidth < 800 ||
+      window.innerHeight < 500
+    );*/
   }
 }

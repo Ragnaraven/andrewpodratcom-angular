@@ -1,0 +1,82 @@
+<mat-expansion-panel hideToggle #mep="matExpansionPanel" 
+                     [id]="project.link">
+    <mat-expansion-panel-header>
+    <div 
+        [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'" 
+        [id]=" project.style === 'customImageWrapper' ? project.customStyleData : '' "
+        [ngStyle]= "mobileCheck()
+                    ? project.style === 'customImageWrapper' 
+                        ? {}
+                        : {'background-image': 'url(' + project.fallbackImage + ')'}
+                    : project.style === 'standard' 
+                        ? {'background-image': 'url(' + project.imageOrMovieBGPath + ')'} 
+                        : {}">
+
+        <div class="projectContent" id="item-{{project.link}}">    
+            <div id="bgWrapper">                         
+                <div id="cloudBG">
+                    <svg id="sunRays" width="60" height="75vh">
+                        <rect width="60px" height="100vh" style="fill:rgb(0,0,0);"/>
+                </svg>
+
+                <div id="suns">
+                    <img id="sunBack" src="assets/res/projects/modernalarmclock/sun.svg" alt="sunBg"/>
+                    <img id="sunFront" src="assets/res/projects/modernalarmclock/sun.svg" alt="sun"/>
+                </div>  
+
+                    <img id="hillsThree" src="assets/res/projects/modernalarmclock/hill3.svg" alt="hill3"/>
+                    <img id="hillsTwo" src="assets/res/projects/modernalarmclock/hill2.svg" alt="hill2"/>
+                    <img id="hillsOne" src="assets/res/projects/modernalarmclock/hill1.svg" alt="hill1" />
+
+                    <div id="cloudWrapper">
+                        <img class='cloud' id="cloud1" src='assets/res/projects/modernalarmclock/cloud1.svg' alt='cloud'/>
+                        <img class='cloud' id="cloud2" src='assets/res/projects/modernalarmclock/cloud2.svg' alt='cloud'/>
+                        <img class='cloud' id="cloud3" src='assets/res/projects/modernalarmclock/cloud3.svg' alt='cloud'/>
+                        <img class='cloud' id="cloud4" src='assets/res/projects/modernalarmclock/cloud4.svg' alt='cloud'/>
+                        <img class='cloud' id="cloud5" src='assets/res/projects/modernalarmclock/cloud5.svg' alt='cloud'/>
+                    </div>
+                </div>
+                <div id="animationIn"> 
+                    <div id="three" class="wow slideOutLeft" data-wow-delay="0.5s"></div>
+                    <div id="two"   class="wow slideOutLeft" data-wow-delay="0.3s"></div>
+                    <div id="one"   class="wow slideOutLeft"></div>
+                </div> 
+            </div>
+            
+            <h3 class="projectNameShowcase wow slideInleft" data-wow-delay="0.5s">{{project.name}}</h3>
+            <div class="projectDetailsWrapper">
+                <div class="projectDetailsContent">
+                    <h3 class="projectNameHeader wow fadeInRight" data-wow-delay="0.7s">{{project.name}}</h3>
+                    <p class="projectDate wow fadeInRight" data-wow-delay="0.95s">{{project.date}}</p>
+                    <p class="projectDescription wow fadeInRight" data-wow-delay="1.1s">{{project.description}}</p>
+                    <span *ngIf="project.showcases.length > 0" class="toggleShowcase wow fadeIn" data-wow-delay="1.75s">showcase</span>
+                    <a *ngIf="project.showcases.length == 0 && project.linkTo != ''" class="wow fadeIn detailsLink" data-wow-delay="1.75s" href="{{project.linkTo}}">Visit Site</a>
+                    <a *ngIf="project.showcases.length == 0 && project.source != ''" class="wow fadeIn detailsLink right" data-wow-delay="1.75s" href="{{project.source}}">Source Code (GitHub)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </mat-expansion-panel-header>
+        
+    <!--SHOWCASES-->
+    <div *ngIf="project.showcases.length > 0" class="projectShowcaseContainer">
+        <div class="projectShowcaseContainerContent"> <!-- gradient-border-sides -->
+            <div class="showcaseMenu">
+                <span class="projectNameShowcaseLabel">{{project.name}} <span class="bitHighligherStroke">Showcase</span></span>
+                <div class="closeWrapper">
+                    <span class="toggleShowcase" (click)="mep.expanded = !mep.expanded" style="font-size: 1.5em;">hide</span>
+                </div>
+            </div>
+
+            <div class="showcasesContainer">
+                <app-showcase-component *ngFor="let showcase of project.showcases" [showcase]="showcase"></app-showcase-component>
+            </div>
+
+            <div class="links">
+                <a *ngIf="project.source != ''" class="source" href="{{ project.source }}">{{ project.sourceText }}</a>
+                <a *ngIf="project.linkTo != ''" class="linkTo" href="{{ project.linkTo }}">{{ project.linkToText }}</a>
+            </div>
+        </div>
+    </div>
+
+</mat-expansion-panel>

@@ -1,4 +1,4 @@
-@font-face { font-family: pixel5;  src: url("/assets/fonts/pixel5.ttf") format("truetype"); }
+@font-face { font-family: pixel5;  src: url("~src/assets/fonts/pixel5.ttf") format("truetype"); }
 
 $primary: #303841;
 $secondary: #3a4750;
@@ -15,6 +15,23 @@ CUSTOM IDS FOR SPECIFIC PROJECTS
     background: rgb(183,248,237); 
     background: radial-gradient(circle, rgba(183,248,237,1) 0%, rgba(44,205,177,1) 12%, rgba(34,129,113,1) 28%, rgba(51,52,82,1) 45%, rgba(53,60,89,1) 71%, rgba(25,29,44,1) 100%);
 }
+
+#apcom {
+    background: $accent; 
+
+    img {
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        filter: invert(100%);
+    }
+}
+
+#ssi {
+    background: $primaryDarker; 
+}
+
+
 
 @mixin font-size($fs-map) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -62,9 +79,28 @@ a:active {
     }
 }
 
+.detailsLink {
+    cursor: pointer;
+    pointer-events: all;
+
+    -webkit-touch-callout: inherit; /* iOS Safari */
+      -webkit-user-select: inherit; /* Safari */
+       -khtml-user-select: inherit; /* Konqueror HTML */
+         -moz-user-select: inherit; /* Old versions of Firefox */
+          -ms-user-select: inherit; /* Internet Explorer/Edge */
+              user-select: inherit; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.right {
+    float: right;
+}
+
 mat-expansion-panel {
     padding: 0;
     margin: 0;
+
+    pointer-events: none;
 
     mat-expansion-panel-header {
         padding: 0;
@@ -83,6 +119,7 @@ mat-expansion-panel {
             background-repeat:   no-repeat;
             background-position: center center;
         }
+        
 
         .projectContainerAAOff {
             image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
@@ -201,9 +238,9 @@ mat-expansion-panel {
                         
                         $p-font-sizes-date: (
                             null  : 0.7rem,
-                            640px : 0.7rem,
-                            1280px: 0.7rem,
-                            1920px: 0.8rem
+                            640px : 0.8rem,
+                            1280px: 0.8rem,
+                            1920px: 0.9rem
                         );
 
                         @include font-size($p-font-sizes-date);
@@ -217,10 +254,13 @@ mat-expansion-panel {
         }        
     }
     .projectShowcaseContainer {
+        pointer-events: all;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         background-color: $primaryLighter;
+        
 
         margin:  0px -30px -30px -30px;
         padding-top: 10px;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjectGame } from '../data/projects/games/project-game';
+import { Project } from '../data/projects/project';
 
 @Component({
   selector: 'app-project-showcase',
@@ -8,7 +8,7 @@ import { ProjectGame } from '../data/projects/games/project-game';
 })
 export class ProjectShowcaseComponent implements OnInit {
 
-  @Input() project: ProjectGame;
+  @Input() project: Project;
 
   constructor() { }
 

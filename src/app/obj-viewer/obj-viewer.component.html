@@ -1,6 +1,6 @@
 <div #objWindow class="modelPreviewContainer">
 
-    <div class="hud">
+    <div *ngIf="!mobileCheck()" class="hud">
         <ul>
             <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Left Click" rotate</li>
             <li [ngClass]="{'modelHiddenTip': tipsHidden}">"Right Click" pan</li>
@@ -20,5 +20,5 @@
         </div>
     </div>
 
-    <button *ngIf="mobileCheck()" class="loadModel" (click)="startPreview()">Load Model</button>
+    <button *ngIf="mobileCheck() && !pressed" class="loadModel" (click)="startPreview()">Load Model</button>
 </div>

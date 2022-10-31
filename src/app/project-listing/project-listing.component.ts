@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectGame } from '../data/projects/games/project-game';
+import { Project } from '../data/projects/project';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-project-listing',
@@ -8,10 +9,23 @@ import { ProjectGame } from '../data/projects/games/project-game';
 })
 export class ProjectListingComponent implements OnInit {
 
-  @Input() project: ProjectGame;  
+  @Input() project: Project;  
 
-  constructor() { }
+  deviceInfo = null;
+
+  constructor(private deviceService: DeviceDetectorService) {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+  }
 
   ngOnInit(): void {
   }
+
+  mobileCheck () {
+    return this.deviceService.isMobile();
+  }
+
+  smallScreenCheck () {
+    return this.deviceService.isMobile() || window.innerWidth < 800 || window.innerHeight < 500;
+  }
+
 }
