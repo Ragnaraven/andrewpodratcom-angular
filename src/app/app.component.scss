@@ -1,26 +1,257 @@
-/* https://uxdesign.cc/dark-mode-ui-design-the-definitive-guide-part-1-color-53dcfaea5129
-*/
-/*
-$c50:  #f5f7fa;// - black
-$c100: #e4e7eb;// - black
-$c200: #cbd2d9;// - black
-$c300: #7b8794;// - black
-$c500: #616e7c;// - white
-$c600: #52606d;// - white
-$c700: #3e4c59;// - white
-$c800: #232f4b;// - white
-$c900: #1f2933;// - white
-$c1000: black;// - white
+@import "./theme/theme.scss";
 
-//Warm gray
-$c50:  #faf9f7;// - black
-$c100: #e8e6e1;// - black
-$c200: #d3cec4;// - black
-$c300: #b8b2a7;// - black
-$c400: #a39e93;// - black
-$c500: #857f72;// - white
-$c600: #625d52;// - white
-$c700: #504a40;// - white
-$c800: #423d33;// - white
-$c900: #27241d;// - white
-$c1000: #1b1914;// - white*/
+#colorStop {
+  stop-color: $three;
+}
+
+* {
+  /*
+  border: 1px solid red;
+  box-sizing: border-box;*/
+}
+.logo {
+  height: 75px;
+
+  @media only screen and (max-width: 600px) {
+    &.nav {
+      display: none;
+    }
+  }
+}
+
+section {
+  min-height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+.mainLogo,
+.projectLogo {
+  $width: 5;
+  $offset: 400;
+
+  .fake {
+    fill: none;
+    stroke: white;
+    stroke-width: $width;
+    stroke-linecap: round;
+
+    stroke-dasharray: $offset;
+    animation: draw 2s linear reverse;
+  }
+
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: $offset;
+    }
+  }
+}
+
+#home {
+  height: 100vh;
+
+  a {
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  nav {
+    box-sizing: border-box;
+    margin: 20px 10%;
+    gap: 1rem;
+
+    .endCap {
+      //width: 100px;
+    }
+
+    a {
+      border-bottom: 4px solid $four;
+      display: inline-block;
+      gap: 10px;
+      font-weight: bold;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+
+      &:hover {
+        border-color: $three;
+      }
+    }
+  }
+
+  .content {
+    margin: auto 10%;
+
+    .left {
+      h1,
+      .tip {
+        margin: 0;
+        padding: 0;
+      }
+
+      .tip {
+        font-size: 12pt;
+        font-weight: 100;
+        letter-spacing: 0.2ch;
+        text-align: right;
+      }
+
+      h1 {
+        border-top: 4px solid $four;
+        border-bottom: 4px solid $four;
+
+        font-size: 40pt;
+        font-weight: 400;
+        margin: 0.5rem 0;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        text-align: justify;
+        font-size: 16pt;
+        max-width: 468px;
+      }
+
+      a {
+        border-bottom: 1px solid $four;
+        float: right;
+        font-size: 1rem;
+        margin-top: 5px;
+      }
+    }
+
+    .right {
+    }
+  }
+
+  .footer {
+    height: 100px;
+    margin: 20px auto;
+
+    a {
+      border-top: 2px solid $four;
+      font-size: 14pt;
+      margin: 0 auto 1rem auto;
+      padding-top: 4px;
+      text-decoration: none;
+
+      animation-duration: 1.5s;
+      animation-name: bob;
+      animation-iteration-count: infinite;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+        border-color: $three;
+        color: $three;
+
+        svg {
+          fill: $three;
+        }
+      }
+
+      svg {
+        fill: $four;
+        position: relative;
+        display: block;
+        margin: auto;
+        height: 48px;
+        width: 48px;
+      }
+    }
+  }
+
+  @keyframes bob {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+#work {
+  background-color: $two;
+  height: 100vh;
+
+  .workItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //gap: 10px;
+
+    .workItem {
+      position: relative;
+
+      .workImage {
+        margin: auto;
+        max-width: 100%;
+      }
+
+      .workContentWrapper {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+
+        &:hover {
+          opacity: 1;
+          background-color: #d8d8d897;
+        }
+
+        .workContentWrapper {
+          background-color: white;
+          border-radius: 2px;
+          border: 1px solid gray;
+          width: 50%;
+          height: 100%;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+#games {
+  background-color: $three;
+}
+
+#about {
+  background-color: $four;
+}
+
+.palette {
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: black;
+  gap: 1em;
+
+  .cube {
+    height: 250px;
+    width: 250px;
+    border-radius: 4px;
+  }
+
+  .c1 {
+    background-color: map-get($map: $theme, $key: "one");
+  }
+  .c2 {
+    background-color: $two;
+  }
+  .c3 {
+    background-color: $three;
+  }
+  .c4 {
+    background-color: $four;
+  }
+}

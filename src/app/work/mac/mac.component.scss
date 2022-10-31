@@ -1,0 +1,229 @@
+$primary: #303841;
+$secondary: #3a4750;
+$accent: #00adb5;
+$white: #eeeeee;
+
+$primaryDarker: darken($primary, 10%);
+$primaryLighter: lighten($primary, 10%);
+
+#bgWrapper {
+  position: absolute;
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  #animationIn {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    /*For the launch animation*/
+    #one,
+    #two,
+    #three {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      z-index: 5;
+      animation-fill-mode: forwards;
+    }
+
+    #one {
+      background-color: #03a9f4;
+    }
+
+    #two {
+      background-color: #30649f;
+    }
+
+    #three {
+      background-color: #ffd740;
+    }
+  }
+
+  #cloudBG {
+    z-index: 10;
+    position: relative;
+    width: 100%;
+
+    #suns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      margin-top: 40px;
+      margin-left: 40px;
+    }
+
+    #sunFront,
+    #sunBack {
+      position: absolute;
+      animation-iteration-count: infinite;
+    }
+
+    #sunFront {
+      width: 100px;
+      height: 100px;
+      filter: invert(90%) sepia(50%) saturate(619%) hue-rotate(340deg)
+        brightness(100%) contrast(103%);
+
+      animation-name: spin;
+      animation-duration: 5000ms;
+      animation-timing-function: linear;
+    }
+
+    #sunBack {
+      width: 80px;
+      height: 80px;
+      filter: invert(61%) sepia(75%) saturate(472%) hue-rotate(353deg)
+        brightness(92%) contrast(97%);
+
+      animation-name: spinBack;
+      animation-duration: 2500ms;
+      animation-timing-function: ease;
+    }
+
+    #sunRays {
+      position: absolute;
+      margin-top: 100px;
+      margin-left: 60px;
+
+      filter: invert(100%);
+      opacity: 0.1;
+
+      transform-origin: top left;
+      transform: rotate(-15deg);
+    }
+
+    #cloudWrapper {
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      .cloud {
+        position: absolute;
+        width: 100px;
+        margin-left: -250px;
+
+        animation-name: slideRight;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        font-size: 1rem;
+        z-index: 5 !important;
+      }
+
+      #cloud1 {
+        margin-top: 1vh;
+        animation-delay: 1000ms;
+        animation-duration: 20000ms;
+      }
+
+      #cloud2 {
+        margin-top: 3vh;
+        animation-delay: 2500ms;
+        animation-duration: 26000ms;
+      }
+
+      #cloud3 {
+        margin-top: 5vh;
+        animation-delay: 3000ms;
+        animation-duration: 24000ms;
+      }
+
+      #cloud4 {
+        margin-top: 7vh;
+        animation-delay: 6000ms;
+        animation-duration: 28000ms;
+      }
+
+      #cloud5 {
+        margin-top: 9vh;
+        animation-delay: 4600ms;
+        animation-duration: 32000ms;
+      }
+    }
+
+    #hillsOne,
+    #hillsTwo,
+    #hillsThree {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+
+    #hillsOne {
+      filter: invert(87%) sepia(28%) saturate(678%) hue-rotate(40deg)
+        brightness(94%) contrast(95%);
+      height: 25%;
+    }
+
+    #hillsTwo {
+      filter: invert(93%) sepia(16%) saturate(1286%) hue-rotate(32deg)
+        brightness(91%) contrast(88%);
+      height: 30%;
+    }
+
+    #hillsThree {
+      filter: invert(79%) sepia(14%) saturate(1422%) hue-rotate(44deg)
+        brightness(90%) contrast(86%);
+      height: 35%;
+    }
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 150%;
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinBack {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}

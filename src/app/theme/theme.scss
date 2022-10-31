@@ -1,0 +1,28 @@
+$one: var(--one);
+$two: var(--two);
+$three: var(--three);
+$four: var(--four);
+
+$textLight: var(--text-light);
+$textDark: var(--text-dark);
+
+$theme: (
+  one: var(--one),
+  two: var(--two),
+  three: var(--three),
+  four: var(--four),
+  textLight: var(--text-light),
+  textDark: var(--text-dark),
+);
+
+//Probably needs fixing
+/*
+@mixin theme($key) {
+  #{'one'}: $one;
+  #{'two'}: $two;
+  #{'three'}: $three;
+  #{'four'}: $four;
+
+  #{'text.light'}: $textLight;
+  #{'text.dark'}: $textDark;
+}*/
