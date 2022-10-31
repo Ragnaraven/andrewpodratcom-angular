@@ -14,7 +14,7 @@ import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
 import { ProjectListingComponent } from './project-listing/project-listing.component';
 import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
-import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
+import { ObjViewerComponent } from './home-projects/components/obj-viewer/obj-viewer.component';
 import { MacComponent } from './work/mac/mac.component';
 
 @NgModule({

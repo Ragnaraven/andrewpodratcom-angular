@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProjectListingComponent } from '../../project-listing/project-listing.component';
 import { APPS } from '../../data/projects/project-apps-list';
+import { ThemeService } from 'src/app/theme/theme.service';
 
 @Component({
   selector: 'app-apps',
@@ -9,11 +10,11 @@ import { APPS } from '../../data/projects/project-apps-list';
   styleUrls: ['./apps.component.scss'],
 })
 export class AppsComponent implements OnInit {
-  apps = APPS;
+  APPS = APPS;
 
   deviceInfo = null;
 
-  constructor() {
+  constructor(public themeService: ThemeService) {
     //private deviceService: DeviceDetectorService) {
     //this.deviceInfo = this.deviceService.getDeviceInfo();
   }
