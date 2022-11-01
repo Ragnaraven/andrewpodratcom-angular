@@ -1,4 +1,4 @@
-<section id="apps">
+<section id="apps" class="flexCol">
   <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
     <span class="material-symbols-outlined"> info </span>
     <div class="notice">
@@ -14,6 +14,7 @@
         class="project flex flexRow alignItemsCenter"
         [style.background]="project.background"
         [style.background-color]="project.backgroundColor"
+        [style.cursor]="project.link != null ? 'pointer' : 'inherit'"
       >
         <!--Image options-->
         <img
@@ -21,17 +22,11 @@
           class="workImage width100"
           src="{{ project.displayMediaPath }}"
         />
-        <app-ssi
-          *ngIf="project.type == 'SSI'"
-          class="workImage width100 height100"
-        ></app-ssi>
-        <app-mac
-          *ngIf="project.type == 'MAC'"
-          class="workImage width100 height100"
-        ></app-mac>
+        <app-ssi *ngIf="project.type == 'SSI'" class="workImage"></app-ssi>
+        <app-mac *ngIf="project.type == 'MAC'" class="workImage"></app-mac>
         <app-anim-signature
           *ngIf="project.type == 'signature'"
-          class="workImage width100"
+          class="workImage"
         ></app-anim-signature>
 
         <!--Content-->
@@ -39,6 +34,12 @@
           <h3 class="workHeader">{{ project.name }}</h3>
           <div class="workDate">{{ project.date }}</div>
           <div class="workDesc">{{ project.description }}</div>
+          <a
+            class="workLink"
+            *ngIf="project.link != null"
+            href="{{ project.link }}"
+            >go to project</a
+          >
         </div>
       </li>
     </ng-container>

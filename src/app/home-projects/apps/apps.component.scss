@@ -16,8 +16,9 @@
   box-sizing: border-box;
   background-color: $one;
   color: $textLight;
+  position: relative;
 
-  max-height: 100vh;
+  min-height: 100vh;
 
   .noticeContainer {
     padding: 1rem 0.25rem;
@@ -37,19 +38,23 @@ ul.projectsContainer {
   height: 100%;
   margin: 0;
   display: flex;
+  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
 
   li.project {
     flex: 1;
-    min-height: 100%;
     min-width: 250px;
     position: relative;
+    overflow: hidden;
     width: 25%;
 
     .workImage {
+      height: 100%;
       margin: auto;
-      max-width: 100%;
+      object-fit: cover;
+      position: absolute;
+      width: 100%;
     }
 
     .workContentWrapper {
@@ -64,18 +69,31 @@ ul.projectsContainer {
       width: 100%;
       z-index: 1000;
 
-      &:hover {
-        opacity: 1;
-        background-color: #d8d8d897;
+      .workHeader {
+      }
+      .workDate {
+        opacity: 0;
+      }
+      .workDesc {
+        opacity: 0;
+      }
+      .workLink {
+        opacity: 0;
       }
 
-      .workContentWrapper {
-        background-color: white;
-        border-radius: 2px;
-        border: 1px solid gray;
-        width: 50%;
-        height: 100%;
-        color: black;
+      &:hover {
+        background-color: #646464ab;
+        .workHeader {
+        }
+        .workDate {
+          opacity: 1;
+        }
+        .workDesc {
+          opacity: 1;
+        }
+        .workLink {
+          opacity: 1;
+        }
       }
     }
   }

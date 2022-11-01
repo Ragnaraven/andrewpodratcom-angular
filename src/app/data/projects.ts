@@ -8,8 +8,7 @@ export interface Project {
   description: string;
   source?: string;
   sourceText?: string;
-  linkTo?: string;
-  linkToText?: string;
+  link?: string;
 
   id: number;
   aaOff?: boolean;
@@ -62,8 +61,7 @@ export const APPS: Project[] = [
     type: 'SSI',
     source: 'https://github.com/Ragnaraven/siegestartericons.com',
     sourceText: 'Source (GitHub)',
-    linkTo: 'https://siegestartericons.com/',
-    linkToText: 'Link',
+    link: 'https://siegestartericons.com/',
     date: 'Since Mar 2017',
     aaOff: false,
     displayMediaPath: 'assets/res/projects/ssi/ssi.png',
@@ -278,8 +276,7 @@ export const GAMES: Project[] = [
     source:
       'https://github.com/SubliminallySublime/-MCMOD-1.12.2-Not-Enough-Combat',
     sourceText: 'Source Files (GitHub)',
-    linkTo: 'https://www.curseforge.com/minecraft/mc-mods/not-enough-combat',
-    linkToText: 'Link to Mod Page (CurseForge)',
+    link: 'https://www.curseforge.com/minecraft/mc-mods/not-enough-combat',
     date: 'Aug 2018 - Mar 2020',
     aaOff: true,
     fallbackImage: 'assets/res/projects/nec/eo.gif',
