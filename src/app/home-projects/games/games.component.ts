@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjectListingComponent } from '../../project-listing/project-listing.component';
-import { GAMES } from '../../data/projects/project-games-list';
+import { GAMES } from '@data/projects';
 
 @Component({
   selector: 'app-games',

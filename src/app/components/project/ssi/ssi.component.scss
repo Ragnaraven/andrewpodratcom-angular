@@ -1,0 +1,25 @@
+.ssiContainer {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.next {
+  display: block;
+  margin-top: -100%;
+
+  &.animate {
+    animation: slideDown;
+    animation-duration: 2s;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    margin-top: -100%;
+  }
+  50%,
+  100% {
+    margin-top: 0;
+  }
+}

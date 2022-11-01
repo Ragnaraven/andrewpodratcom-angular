@@ -1,0 +1,26 @@
+.animLogo {
+  $width: 5;
+  $offset: 400;
+  overflow: hidden;
+
+  .fake {
+    fill: none;
+    stroke: white;
+    stroke-width: $width;
+    stroke-linecap: round;
+
+    stroke-dasharray: $offset;
+    animation: draw 2s linear reverse;
+
+    &.loop {
+      animation-iteration-count: infinite;
+      animation-delay: 200ms;
+    }
+  }
+
+  @keyframes draw {
+    100% {
+      stroke-dashoffset: $offset;
+    }
+  }
+}

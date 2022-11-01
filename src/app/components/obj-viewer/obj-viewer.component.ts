@@ -7,7 +7,7 @@ import {
   ViewChild,
   AfterViewInit,
 } from '@angular/core';
-import { Model3D } from '../../../data/projects/models/model3d';
+import { Model3D } from '@data/models/model3d';
 //import { DeviceDetectorService } from 'ngx-device-detector';
 
 import * as THREE from 'three';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjectListingComponent } from '../../project-listing/project-listing.component';
-import { APPS } from '../../data/projects/project-apps-list';
 import { ThemeService } from 'src/app/theme/theme.service';
+
+import { APPS } from '@data/projects';
 
 @Component({
   selector: 'app-apps',
@@ -12,12 +12,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 export class AppsComponent implements OnInit {
   APPS = APPS;
 
-  deviceInfo = null;
-
-  constructor(public themeService: ThemeService) {
-    //private deviceService: DeviceDetectorService) {
-    //this.deviceInfo = this.deviceService.getDeviceInfo();
-  }
+  constructor(public themeService: ThemeService) {}
 
   ngOnInit(): void {}
 
@@ -28,13 +23,5 @@ export class AppsComponent implements OnInit {
       block: 'start',
       inline: 'nearest',
     });
-  }
-
-  mobileCheck() {
-    return false; //this.deviceService.isMobile();
-  }
-
-  smallScreenCheck() {
-    return false; //this.deviceService.isMobile() || window.innerWidth < 800 || window.innerHeight < 500;
   }
 }

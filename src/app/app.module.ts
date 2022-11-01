@@ -12,10 +12,13 @@ import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
-import { ProjectListingComponent } from './project-listing/project-listing.component';
-import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
-import { ObjViewerComponent } from './home-projects/components/obj-viewer/obj-viewer.component';
-import { MacComponent } from './work/mac/mac.component';
+import { ProjectListingComponent } from './components/project-listing/project-listing.component';
+import { ShowcaseComponentComponent } from './components/showcase-component/showcase-component.component';
+import { ObjViewerComponent } from './components/obj-viewer/obj-viewer.component';
+import { MacComponent } from './components/project/mac/mac.component';
+import { AnimSignatureComponent } from './components/anim-signature/anim-signature.component';
+import { SsiComponent } from './components/project/ssi/ssi.component';
+import { SsiIconComponent } from './components/project/ssi/ssi-icon/ssi-icon.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { MacComponent } from './work/mac/mac.component';
     ShowcaseComponentComponent,
     ObjViewerComponent,
     MacComponent,
+    AnimSignatureComponent,
+    SsiComponent,
+    SsiIconComponent,
   ],
   imports: [
     AppRoutingModule,

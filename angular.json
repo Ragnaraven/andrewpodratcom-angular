@@ -32,6 +32,9 @@
               "./node_modules/hover.css/scss/hover.scss",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/theme/"]
+            },
             "scripts": ["./node_modules/wowjs/dist/wow.js"],
             "vendorChunk": true,
             "extractLicenses": false,
