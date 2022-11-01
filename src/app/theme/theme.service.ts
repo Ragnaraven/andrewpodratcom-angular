@@ -52,10 +52,12 @@ export class ThemeService {
     let objKeys = Object.keys(obj);
     objKeys.forEach((objKey: string) => {
       let val = obj[objKey];
-      let key = prefix == undefined ? objKey : `${prefix}.${objKey}`;
+      let key = prefix == undefined ? objKey : `${prefix}-${objKey}`;
 
       if (val instanceof Object) this.setKeys(key, val);
-      else document.documentElement.style.setProperty(`--${objKey}`, val);
+      else {
+        document.documentElement.style.setProperty(`--${key}`, val);
+      }
     });
   }
 }

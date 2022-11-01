@@ -1,9 +1,11 @@
 <section id="apps">
-  <div>
-    <img />
-    Note: This site is for my public projects. You can read my work history on
-    my
-    <a href="#">resume</a>.
+  <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
+    <span class="material-symbols-outlined"> info </span>
+    <div class="notice">
+      This site is only for my personal projects and an introduction. You can
+      read my professional work history on my
+      <a href="#">resume</a>.
+    </div>
   </div>
   <ul class="projectsContainer">
     <ng-container *ngFor="let project of APPS">
@@ -21,7 +23,7 @@
         />
         <app-ssi
           *ngIf="project.type == 'SSI'"
-          class="workImage width100 height100 maxHeight100"
+          class="workImage width100 height100"
         ></app-ssi>
         <app-mac
           *ngIf="project.type == 'MAC'"

@@ -15,6 +15,6 @@ export class SsiIconComponent {
     this.imageRef.nativeElement.classList.remove('spinner');
     setTimeout(() => {
       this.imageRef.nativeElement.classList.add('spinner');
-    }, 0);
+    }, 50);
   }
 }

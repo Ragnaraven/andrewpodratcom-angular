@@ -1,13 +1,15 @@
 .ssiContainer {
+  height: 500px;
   box-sizing: border-box;
-  overflow: hidden;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  overflow-anchor: none;
 }
 
 .next {
-  display: block;
-  margin-top: -100%;
-
   &.animate {
     animation: slideDown;
     animation-duration: 2s;

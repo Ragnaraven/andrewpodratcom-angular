@@ -18,7 +18,7 @@ export class SsiComponent implements OnInit, OnDestroy {
 
   @ViewChild('next') next: SsiIconComponent;
 
-  readonly count = 15;
+  readonly count = 5;
 
   nextActive: string = '';
   active: string[] = [];
@@ -42,16 +42,18 @@ export class SsiComponent implements OnInit, OnDestroy {
   }
 
   cycleSSI() {
-    this.active.unshift(this.nextActive);
-    this.active.splice(this.count - 1);
-    this.nextActive =
-      this.allImages[Math.floor(Math.random() * this.allImages.length)];
     this.next.elref.nativeElement.style.animation = null;
     this.next.elref.nativeElement.classList.remove('animate');
     setTimeout(() => {
+      this.active.unshift(this.nextActive);
+      this.active = this.active.slice(0, this.count);
+
+      this.nextActive =
+        this.allImages[Math.floor(Math.random() * this.allImages.length)];
+
       this.next.elref.nativeElement.classList.add('animate');
       this.next.playSpin();
-    }, 0);
+    }, 50);
   }
 
   ngOnDestroy() {
