@@ -21,7 +21,7 @@
   min-height: 100vh;
 
   .noticeContainer {
-    padding: 1rem 0.25rem;
+    padding: 1.5rem 0.25rem;
 
     .material-symbols-outlined {
       color: $four;
@@ -100,11 +100,22 @@ ul.projectsContainer {
           }
 
           .workLink {
+            font-size: 0.8rem;
             color: inherit;
             height: 0;
             opacity: 0;
             transition: all 0.3s;
           }
+
+          /*.activeTriangle {
+            background-color: red; //$one;
+            border-radius: 4px;
+            display: block;
+            height: 24px;
+            margin-top: 48px;
+            transform: rotate(45deg);
+            width: 24px;
+          }*/
         }
 
         .workDesc {
@@ -121,7 +132,7 @@ ul.projectsContainer {
         .workContentContainer {
           .workContentWrapper {
             .workLink {
-              height: 1rem;
+              height: 1.25rem;
               opacity: 1;
             }
           }
