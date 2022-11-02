@@ -36,6 +36,10 @@ body {
   //font-family: "Teko", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  //color: $textLight;
+}
+
+a {
   color: $textLight;
 }
 
@@ -46,6 +50,13 @@ body {
   //font-family: "Josefin Sans", sans-serif;
   //font-family: "Bebas Neue", cursive;
   font-family: "Abril Fatface", cursive;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
 }
 
 .flexRow {

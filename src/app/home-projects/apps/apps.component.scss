@@ -44,6 +44,7 @@ ul.projectsContainer {
 
   li.project {
     flex: 1;
+    min-height: 50vh;
     min-width: 250px;
     position: relative;
     overflow: hidden;
@@ -57,43 +58,105 @@ ul.projectsContainer {
       width: 100%;
     }
 
-    .workContentWrapper {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      position: absolute;
-      padding: 12px;
-      top: 0;
-      width: 100%;
+    .workContentBg {
       z-index: 1000;
 
-      .workHeader {
-      }
-      .workDate {
-        opacity: 0;
-      }
-      .workDesc {
-        opacity: 0;
-      }
-      .workLink {
-        opacity: 0;
-      }
+      .workContentContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        position: absolute;
+        top: 40%;
+        width: 100%;
 
-      &:hover {
-        background-color: #646464ab;
-        .workHeader {
+        .workContentWrapper {
+          border-radius: 4px;
+          opacity: 0.95;
+          padding: 1rem;
+          position: relative;
+          width: 100%;
+
+          .workHeader {
+            color: inherit;
+            font-size: 1.25rem;
+          }
+
+          .workDate {
+            align-items: center;
+            display: flex;
+
+            .material-symbols-outlined {
+              font-size: 0.8rem;
+              margin-right: 4px;
+            }
+
+            color: inherit;
+            font-size: 0.8rem;
+            //opacity: 0;
+          }
+
+          .workLink {
+            color: inherit;
+            //opacity: 0;
+          }
         }
-        .workDate {
-          opacity: 1;
-        }
+
         .workDesc {
-          opacity: 1;
+          padding: 1rem;
+          color: inherit;
+          font-size: 1rem;
+          text-align: justify;
+          opacity: 0;
+          transition: opacity 400ms 0ms;
         }
-        .workLink {
-          opacity: 1;
+
+        &:hover {
+          .workDesc {
+            opacity: 1;
+          }
         }
+      }
+    }
+
+    &:nth-of-type(1) > .workContentBg {
+      .workContentWrapper {
+        background-color: $one;
+      }
+      color: $textLight;
+      &:hover {
+        background-color: $two;
+        opacity: 0.95;
+      }
+    }
+    &:nth-of-type(2) > .workContentBg {
+      .workContentWrapper {
+        background-color: $two;
+      }
+      color: $textLight;
+      &:hover {
+        background-color: $three;
+        opacity: 0.95;
+      }
+    }
+    &:nth-of-type(3) > .workContentBg {
+      .workContentWrapper {
+        background-color: $three;
+      }
+      color: $textLight;
+      &:hover {
+        background-color: $four;
+        opacity: 0.95;
+      }
+    }
+    &:nth-of-type(4) > .workContentBg {
+      .workContentWrapper {
+        background-color: $four;
+        color: $textDark;
+      }
+      &:hover {
+        background-color: $one;
+        color: $textLight;
+        opacity: 0.95;
       }
     }
   }

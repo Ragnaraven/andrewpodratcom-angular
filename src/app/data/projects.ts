@@ -26,10 +26,12 @@ export const APPS: Project[] = [
     name: 'JustAJelly.com',
     source: 'https://github.com/Ragnaraven/justajellycom',
     sourceText: 'Source Code (GitHub)',
+    link: 'https://justajelly.com/',
     date: 'Aug 2022',
     displayMediaPath: 'assets/res/projects/justajelly/justajelly.gif',
     backgroundColor: '#070420',
-    description: '',
+    description:
+      "A musical web portfolio site for Aidan McKenna's original music library.",
     showcases: [],
   },
 
@@ -70,7 +72,7 @@ export const APPS: Project[] = [
       'linear-gradient(rgb(135, 135, 135) 1%, rgb(71, 71, 71) 79%, rgb(30, 30, 30) 100%)',
     fallbackImage: 'assets/res/projects/ssi/ssi.png',
     description:
-      "SiegeStarterIcons.com was my first website that allows users to make basic Uplay icons for Ubisoft's Tom Clany's Rainbow Six: Siege. Created with HTML, CSS, and JS and jQuery.",
+      "SiegeStarterIcons.com was my first released website. It allows users to make basic user profile pictures for Ubisoft's Tom Clany's Rainbow Six: Siege. Created with HTML, CSS, and JS and jQuery.",
     showcases: [],
   },
 
@@ -82,8 +84,7 @@ export const APPS: Project[] = [
     sourceText: 'Source Code (GitHub)',
     date: 'Since Feb 2021',
     backgroundColor: 'black',
-    description:
-      "You're here! AndrewPodrat.com is written with Angular 14, a bit of jQuery and a few libraries to bring together all of the projects displayed here. Angular packages used include lightbox, 3js, gh-pages.",
+    description: "You're here! AndrewPodrat.com is written with Angular 14.",
     showcases: [],
   },
 ];

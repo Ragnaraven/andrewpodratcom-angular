@@ -1,17 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { ThemeService } from './theme/theme.service';
 
-import { Project } from './projects';
-import { projects } from './projects';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  PROJECTS = projects;
-
   routes = ['Apps & Web', 'Games'];
   route: undefined | 'Apps & Web' | 'Games' = undefined;
 

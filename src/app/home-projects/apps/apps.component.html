@@ -11,10 +11,11 @@
     <ng-container *ngFor="let project of APPS">
       <!--Normal-->
       <li
-        class="project flex flexRow alignItemsCenter"
+        class="project flex flexRow"
         [style.background]="project.background"
         [style.background-color]="project.backgroundColor"
         [style.cursor]="project.link != null ? 'pointer' : 'inherit'"
+        (onclick)="redirect(project.link)"
       >
         <!--Image options-->
         <img
@@ -30,18 +31,31 @@
         ></app-anim-signature>
 
         <!--Content-->
-        <div class="workContentWrapper width100">
-          <h3 class="workHeader">{{ project.name }}</h3>
-          <div class="workDate">{{ project.date }}</div>
-          <div class="workDesc">{{ project.description }}</div>
-          <a
-            class="workLink"
-            *ngIf="project.link != null"
-            href="{{ project.link }}"
-            >go to project</a
-          >
+        <div class="workContentBg width100">
+          <div class="workContentContainer width100">
+            <div class="workContentWrapper flexCol alignItemsEnd width100">
+              <h3 class="workHeader">{{ project.name }}</h3>
+              <div class="workDate">
+                <span class="material-symbols-outlined"> event </span
+                ><em>{{ project.date }}</em>
+              </div>
+              <a
+                class="workLink"
+                *ngIf="project.link != null"
+                href="{{ project.link }}"
+                >go to project</a
+              >
+            </div>
+            <div class="workDesc">{{ project.description }}</div>
+          </div>
         </div>
       </li>
     </ng-container>
   </ul>
+  <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
+    <span class="material-symbols-outlined"> info </span>
+    <div class="notice">
+      Hover a project to view more, or, click the project to see the result.
+    </div>
+  </div>
 </section>

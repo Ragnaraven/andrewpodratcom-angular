@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 
 import { APPS } from '@data/projects';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apps',
@@ -12,7 +13,7 @@ import { APPS } from '@data/projects';
 export class AppsComponent implements OnInit {
   APPS = APPS;
 
-  constructor(public themeService: ThemeService) {}
+  constructor(public themeService: ThemeService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -23,5 +24,10 @@ export class AppsComponent implements OnInit {
       block: 'start',
       inline: 'nearest',
     });
+  }
+
+  redirect(url: string) {
+    console.log(url);
+    this.router.navigate([url]);
   }
 }

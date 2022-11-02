@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Project } from '../projects';
-import { projects } from '../projects';
 import { ThemeService } from '../theme/theme.service';
 
 @Component({
@@ -11,8 +9,6 @@ import { ThemeService } from '../theme/theme.service';
   styleUrls: ['./home-projects.component.scss'],
 })
 export class HomeProjectsComponent implements OnInit {
-  PROJECTS = projects;
-
   constructor(public themeService: ThemeService) {}
 
   ngOnInit(): void {

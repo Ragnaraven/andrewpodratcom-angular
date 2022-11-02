@@ -74,6 +74,7 @@ section {
 }
 
 #home {
+  color: $textLight;
   height: 100vh;
 
   a {
@@ -84,7 +85,14 @@ section {
   nav {
     box-sizing: border-box;
     margin: 20px 10%;
+    flex-wrap: wrap;
     gap: 1rem;
+
+    @media only screen and (max-width: 550px) {
+      .removeSmall {
+        display: none;
+      }
+    }
 
     .endCap {
       //width: 100px;
