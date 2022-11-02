@@ -15,7 +15,7 @@
         [style.background]="project.background"
         [style.background-color]="project.backgroundColor"
         [style.cursor]="project.link != null ? 'pointer' : 'inherit'"
-        (onclick)="redirect(project.link)"
+        (click)="redirect(project.link)"
       >
         <!--Image options-->
         <img
@@ -39,11 +39,17 @@
                 <span class="material-symbols-outlined"> event </span
                 ><em>{{ project.date }}</em>
               </div>
-              <a
+              <!--<a
                 class="workLink"
                 *ngIf="project.link != null"
                 href="{{ project.link }}"
-                >go to project</a
+                >click to go to project</a
+              >-->
+              <a
+                class="workLink"
+                *ngIf="project.link != null"
+                href="{{ project.source }}"
+                >{{ project.sourceText }}</a
               >
             </div>
             <div class="workDesc">{{ project.description }}</div>
@@ -55,7 +61,7 @@
   <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
     <span class="material-symbols-outlined"> info </span>
     <div class="notice">
-      Hover a project to view more, or, click the project to see the result.
+      Hover a project to view more or click on a project to see the result.
     </div>
   </div>
 </section>

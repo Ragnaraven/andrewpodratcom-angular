@@ -27,7 +27,10 @@ export class AppsComponent implements OnInit {
   }
 
   redirect(url: string) {
-    console.log(url);
-    this.router.navigate([url]);
+    if (url != null) {
+      window.location.href = url;
+      /*console.log(url);
+    this.router.navigate([url]);*/
+    }
   }
 }
