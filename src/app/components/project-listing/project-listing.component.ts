@@ -9,20 +9,17 @@ import { Project } from '@data/projects';
 export class ProjectListingComponent implements OnInit {
   @Input() project: Project;
 
-  // deviceInfo = null;
+  constructor() {}
 
-  constructor() {
-    //private deviceService: DeviceDetectorService) {
-    //this.deviceInfo = this.deviceService.getDeviceInfo();
-  }
+  ngOnInit(): void {
+    let parent = document.querySelector('.menu').parentElement;
 
-  ngOnInit(): void {}
-
-  mobileCheck() {
-    return false; //return this.deviceService.isMobile();
-  }
-
-  smallScreenCheck() {
-    return false; //return this.deviceService.isMobile() || window.innerWidth < 800 || window.innerHeight < 500;
+    while (parent) {
+      const hasOverflow = getComputedStyle(parent).overflow;
+      if (hasOverflow !== 'visible') {
+        console.log(hasOverflow, parent);
+      }
+      parent = parent.parentElement;
+    }
   }
 }

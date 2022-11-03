@@ -6,7 +6,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./expandable-container.component.scss'],
 })
 export class ExpandableContainerComponent implements OnInit {
-  @Input() @Output() opened = false;
+  @Input() @Output() opened = true;
 
   constructor() {}
 

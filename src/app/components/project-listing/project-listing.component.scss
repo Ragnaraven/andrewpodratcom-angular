@@ -1,3 +1,5 @@
+@import "theme.scss";
+
 .ep {
   .ep-header {
     $headerHeight: 60vh;
@@ -51,35 +53,63 @@
         .toggleShowcase {
         }
         .detailsLink {
-          text-decoration: underline;
         }
       }
     }
+    .projectContainer,
+    .projectContainerAAOff {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .projectContainerAAOff {
+      image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
+      image-rendering: -moz-crisp-edges; /* Firefox                        */
+      image-rendering: -o-crisp-edges; /* Opera                          */
+      image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+      image-rendering: pixelated; /* Chrome */
+      image-rendering: optimize-contrast; /* CSS3 Proposed                  */
+      -ms-interpolation-mode: nearest-neighbor; /* IE8+      */
+    }
+
+    #pdc-nec {
+      background: radial-gradient(
+        circle,
+        rgba(51, 52, 82, 1) 0%,
+        rgba(53, 60, 89, 1) 60%,
+        rgba(25, 29, 44, 1) 100%
+      );
+    }
   }
-}
 
-.projectContainer,
-.projectContainerAAOff {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+  .ep-body {
+    .menu {
+      background-color: $one;
+      border-bottom: 3px solid $four;
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10000;
 
-.projectContainerAAOff {
-  image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
-  image-rendering: -moz-crisp-edges; /* Firefox                        */
-  image-rendering: -o-crisp-edges; /* Opera                          */
-  image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-  image-rendering: pixelated; /* Chrome */
-  image-rendering: optimize-contrast; /* CSS3 Proposed                  */
-  -ms-interpolation-mode: nearest-neighbor; /* IE8+      */
-}
+      .showcaseLabel {
+        margin-right: 2rem;
 
-#pdc-nec {
-  background: radial-gradient(
-    circle,
-    rgba(51, 52, 82, 1) 0%,
-    rgba(53, 60, 89, 1) 60%,
-    rgba(25, 29, 44, 1) 100%
-  );
+        em {
+          color: $four;
+          opacity: 0.8;
+        }
+
+        span {
+          margin-left: 8px;
+          margin-right: 2rem;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .showcasesContainer {
+      padding: 0 5%;
+    }
+  }
 }

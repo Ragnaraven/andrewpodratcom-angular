@@ -4,7 +4,7 @@
 
   .body {
     max-height: 0;
-    overflow: hidden;
+    contain: paint;
     transition: all 1s;
 
     &.open {
