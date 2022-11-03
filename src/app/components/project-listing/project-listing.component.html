@@ -68,7 +68,10 @@
   <div *ngIf="project.showcases.length > 0" class="ep-body">
     <div class="menu flexRow alignItemsCenter">
       <div class="showcaseLabel">
-        <em>Viewing Showcase</em> <span>{{ project.name }}</span>
+        <em>Viewing Showcase</em>
+      </div>
+      <div class="showcaseLabel">
+        <span>{{ project.name }}</span>
       </div>
       <div class="flexGrow"></div>
       <div class="closeWrapper pointer underline" (click)="ec.toggle()">
