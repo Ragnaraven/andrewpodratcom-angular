@@ -6,20 +6,8 @@ import { Project } from '@data/projects';
   templateUrl: './project-listing.component.html',
   styleUrls: ['./project-listing.component.scss'],
 })
-export class ProjectListingComponent implements OnInit {
+export class ProjectListingComponent {
   @Input() project: Project;
 
   constructor() {}
-
-  ngOnInit(): void {
-    let parent = document.querySelector('.menu').parentElement;
-
-    while (parent) {
-      const hasOverflow = getComputedStyle(parent).overflow;
-      if (hasOverflow !== 'visible') {
-        console.log(hasOverflow, parent);
-      }
-      parent = parent.parentElement;
-    }
-  }
 }

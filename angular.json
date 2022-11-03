@@ -28,8 +28,8 @@
             "assets": ["src/favicon.svg", "src/assets"],
             "styles": [
               "./node_modules/ngx-lightbox/lightbox.css",
-              "./node_modules/animate.css/animate.css",
               "./node_modules/hover.css/scss/hover.scss",
+              "src/app/animations/hover.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {

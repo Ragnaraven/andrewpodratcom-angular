@@ -31,6 +31,7 @@
     .projectContent {
       background-position: center;
       height: $headerHeight;
+      overflow: hidden;
       position: relative;
       z-index: 1000;
 

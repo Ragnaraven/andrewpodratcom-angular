@@ -1,0 +1,10 @@
+.hover-grow {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.hover-grow:hover {
+  transform: scale(1.1);
+}

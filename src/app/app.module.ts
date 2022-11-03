@@ -12,6 +12,7 @@ import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
+
 import { ProjectListingComponent } from './components/project-listing/project-listing.component';
 import { ShowcaseComponentComponent } from './components/showcase-component/showcase-component.component';
 import { ObjViewerComponent } from './components/obj-viewer/obj-viewer.component';
@@ -20,6 +21,9 @@ import { AnimSignatureComponent } from './components/anim-signature/anim-signatu
 import { SsiComponent } from './components/project/ssi/ssi.component';
 import { SsiIconComponent } from './components/project/ssi/ssi-icon/ssi-icon.component';
 import { ExpandableContainerComponent } from './components/expandable-container/expandable-container.component';
+import { LightboxModule } from 'ngx-lightbox';
+import { LightboxDirective } from './directives/lightbox.directive';
+import { LightboxGroupDirective } from './directives/lightbox-group.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { ExpandableContainerComponent } from './components/expandable-container/
     SsiComponent,
     SsiIconComponent,
     ExpandableContainerComponent,
+    LightboxDirective,
+    LightboxGroupDirective,
   ],
   imports: [
     AppRoutingModule,
@@ -43,7 +49,9 @@ import { ExpandableContainerComponent } from './components/expandable-container/
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    LightboxModule,
   ],
+  exports: [LightboxModule],
   providers: [],
   bootstrap: [AppComponent],
 })

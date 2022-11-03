@@ -1,59 +1,117 @@
 <div class="showcaseContainer">
+  <p class="showcaseHeader">{{ showcase.header }}</p>
 
-    <p class="showcaseHeader">{{ showcase.header }}</p>
+  <div *ngIf="showcase.mediaHeader != ''" class="showcaseMediaHeaderContainer">
+    <img class="showcaseMediaHeaderImage" src="{{ showcase.mediaHeader }}" />
+  </div>
 
-    <div *ngIf="showcase.mediaHeader != ''" class="showcaseMediaHeaderContainer">
-        <img class="showcaseMediaHeaderImage" src="{{ showcase.mediaHeader  }}"/>
-    </div>
+  <div
+    *ngIf="showcase.textAbove != ''"
+    class="showcaseText"
+    [innerHTML]="showcase.textAbove"
+  ></div>
 
-    <div *ngIf="showcase.textAbove != ''" class="showcaseText" [innerHTML]="showcase.textAbove"></div>
+  <div
+    *ngIf="showcase.type == 'images'"
+    class="showcaseImageContainer"
+    lightbox-group
+  >
+    <img
+      *ngFor="let media of showcase.media"
+      class="showcaseImage hover-grow"
+      src="{{ media }}"
+      lightbox
+    />
+  </div>
 
-    <div *ngIf="showcase.type == 'images'" class="showcaseImageContainer" lightbox-group>
-        <img *ngFor="let media of showcase.media" class="showcaseImage hvr-grow" src="{{ media }}" lightbox />
-    </div>
-    
+  <!--moviegrid-->
+  <div *ngIf="showcase.type == 'moviegrid'" class="projectMovieContainer">
     <!--moviegrid-->
-    <div *ngIf="showcase.type == 'moviegrid'" class="projectMovieContainer">
-        <!--moviegrid-->
-        <video *ngFor="let media of showcase.media" class="mediaMovie" autoplay playsinline controls loop muted onloadedmetadata="this.muted = true" autoplay>
-            <source src="{{ media }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <video
+      *ngFor="let media of showcase.media"
+      class="mediaMovie"
+      autoplay
+      playsinline
+      controls
+      loop
+      muted
+      onloadedmetadata="this.muted = true"
+      autoplay
+    >
+      <source src="{{ media }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <!-- movie-->
-    <div *ngIf="showcase.type.includes('singlemovie') && !showcase.type.includes('notMuted')" class="projectMovieContainer">
-        <!--movie-->
-        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" playsinline loop muted onloadedmetadata="this.muted = true" controls autoplay>
-            <source src="{{ media }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-        
-    <!-- unmuted movie -->
-    <div *ngIf="showcase.type.includes('singlemovie') && showcase.type.includes('notMuted') " class="projectMovieContainer">
-        <video *ngFor="let media of showcase.media" [ngClass]="{'mediaMovieBig': showcase.type.includes('singlemovie'), 'heightLimited': showcase.type.includes('heightLimited') }" controls>
-            <source src="{{ media }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+  <!-- movie-->
+  <div
+    *ngIf="
+      showcase.type.includes('singlemovie') &&
+      !showcase.type.includes('notMuted')
+    "
+    class="projectMovieContainer"
+  >
+    <!--movie-->
+    <video
+      *ngFor="let media of showcase.media"
+      [ngClass]="{
+        mediaMovieBig: showcase.type.includes('singlemovie'),
+        heightLimited: showcase.type.includes('heightLimited')
+      }"
+      playsinline
+      loop
+      muted
+      onloadedmetadata="this.muted = true"
+      controls
+      autoplay
+    >
+      <source src="{{ media }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <!--youtube video -->
-    <div *ngIf="showcase.type == 'youtube'" class="projectMovieContainer">
-        <youtube-player 
-            videoId="{{ showcase.media[0] }}" 
-            suggestedQuality="medium" 
-            class="youtubeFrame">
-        </youtube-player>
-    </div>
-    
-    
-    <!-- 3d model ONLY VIEWS FIRST IN LIST!-->
-    <div *ngIf="showcase.type == '3dmodel'" class="projectModelContainer">
-        <app-obj-viewer [model3Ds]="showcase.extras" class="projectModelObj"></app-obj-viewer> 
-    </div>
+  <!-- unmuted movie -->
+  <div
+    *ngIf="
+      showcase.type.includes('singlemovie') &&
+      showcase.type.includes('notMuted')
+    "
+    class="projectMovieContainer"
+  >
+    <video
+      *ngFor="let media of showcase.media"
+      [ngClass]="{
+        mediaMovieBig: showcase.type.includes('singlemovie'),
+        heightLimited: showcase.type.includes('heightLimited')
+      }"
+      controls
+    >
+      <source src="{{ media }}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-    <div *ngIf="showcase.textBelow != ''" class="showcaseText" [innerHTML]="showcase.textBelow"></div>
+  <!--youtube video -->
+  <div *ngIf="showcase.type == 'youtube'" class="projectMovieContainer">
+    <youtube-player
+      videoId="{{ showcase.media[0] }}"
+      suggestedQuality="medium"
+      class="youtubeFrame"
+    >
+    </youtube-player>
+  </div>
 
+  <!-- 3d model ONLY VIEWS FIRST IN LIST!-->
+  <div *ngIf="showcase.type == '3dmodel'" class="projectModelContainer">
+    <app-obj-viewer
+      [model3Ds]="showcase.extras"
+      class="projectModelObj"
+    ></app-obj-viewer>
+  </div>
+
+  <div
+    *ngIf="showcase.textBelow != ''"
+    class="showcaseText"
+    [innerHTML]="showcase.textBelow"
+  ></div>
 </div>
-
