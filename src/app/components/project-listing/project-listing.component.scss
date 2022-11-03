@@ -1,4 +1,8 @@
 @import "theme.scss";
+@font-face {
+  font-family: pixel5;
+  src: url("~src/assets/fonts/pixel5.ttf") format("truetype");
+}
 
 .ep {
   .ep-header {
@@ -110,18 +114,23 @@
     }
 
     .showcasesContainer {
+      border-radius: 4px;
+      box-shadow: 0 0 8px #11111199;
+      margin: 0 5%;
       padding: 0 5%;
+      background-color: $one;
     }
   }
 }
 
+/*
 .bitHighligherStroke {
   margin-left: 10px;
   font-family: pixel5;
 
   color: $textLight;
 
-  font-size: 0.55em;
+  font-size: 1rem !important;
 
   -webkit-animation: bitHightlightCycle linear infinite;
   -moz-animation: bitHightlightCycle linear infinite;
@@ -148,14 +157,14 @@
       -1px 1px 0 $one, 1px 1px 0 $one;
   }
   50% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
   100% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
 }
 
@@ -171,14 +180,14 @@
       -1px 1px 0 $one, 1px 1px 0 $one;
   }
   50% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
   100% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
 }
 
@@ -194,13 +203,14 @@
       -1px 1px 0 $one, 1px 1px 0 $one;
   }
   50% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
   100% {
-    -webkit-text-stroke: 1px $two;
-    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
-      -1px 1px 0 $two, 1px 1px 0 $two;
+    -webkit-text-stroke: 1px $three;
+    text-shadow: 3px 3px 0 $three, -1px -1px 0 $three, 1px -1px 0 $three,
+      -1px 1px 0 $three, 1px 1px 0 $three;
   }
 }
+*/
