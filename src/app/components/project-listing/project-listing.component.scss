@@ -114,3 +114,93 @@
     }
   }
 }
+
+.bitHighligherStroke {
+  margin-left: 10px;
+  font-family: pixel5;
+
+  color: $textLight;
+
+  font-size: 0.55em;
+
+  -webkit-animation: bitHightlightCycle linear infinite;
+  -moz-animation: bitHightlightCycle linear infinite;
+  animation: bitHightlightCycle linear infinite;
+
+  -webkit-animation-direction: forwards;
+  -moz-animation-direction: forwards;
+  animation-direction: forwards;
+
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes bitHightlightCycle {
+  0% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  49% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  50% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+  100% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+}
+
+@-moz-keyframes bitHightlightCycle {
+  0% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  49% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  50% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+  100% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+}
+
+@-webkit-keyframes bitHightlightCycle {
+  0% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  49% {
+    -webkit-text-stroke: 1px $one;
+    text-shadow: 3px 3px 0 $one, -1px -1px 0 $one, 1px -1px 0 $one,
+      -1px 1px 0 $one, 1px 1px 0 $one;
+  }
+  50% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+  100% {
+    -webkit-text-stroke: 1px $two;
+    text-shadow: 3px 3px 0 $two, -1px -1px 0 $two, 1px -1px 0 $two,
+      -1px 1px 0 $two, 1px 1px 0 $two;
+  }
+}
