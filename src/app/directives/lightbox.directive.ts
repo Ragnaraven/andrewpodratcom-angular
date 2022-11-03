@@ -1,5 +1,11 @@
 import { outputAst } from '@angular/compiler';
-import { AfterContentInit, Directive, ElementRef, Output } from '@angular/core';
+import {
+  AfterContentInit,
+  Directive,
+  ElementRef,
+  Input,
+  Output,
+} from '@angular/core';
 import { LightboxGroupDirective } from './lightbox-group.directive';
 
 @Directive({
@@ -8,9 +14,17 @@ import { LightboxGroupDirective } from './lightbox-group.directive';
 export class LightboxDirective implements AfterContentInit {
   private parent: LightboxGroupDirective;
 
-  @Output() source: string;
-  @Output() caption: string;
-  @Output() thumb: string;
+  @Input()
+  @Output()
+  source: string;
+
+  @Input()
+  @Output()
+  caption: string;
+
+  @Input()
+  @Output()
+  thumb: string;
 
   constructor(private elRef: ElementRef) {}
 

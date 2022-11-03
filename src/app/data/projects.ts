@@ -93,8 +93,7 @@ export const GAMES: Project[] = [
   {
     id: 1,
     name: 'Ragnaraven',
-    date: 'Since June 2018 ',
-    aaOff: false,
+    date: 'Since June 2018',
     displayMediaPath: 'assets/res/projects/ragnaraven/unity4scene.jpg',
     fallbackImage: 'assets/res/projects/ragnaraven/unity4scene.webp',
     description:

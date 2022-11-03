@@ -13,12 +13,12 @@
 
   <div
     *ngIf="showcase.type == 'images'"
-    class="showcaseImageContainer"
+    class="showcaseLightboxContainer"
     lightbox-group
   >
     <img
       *ngFor="let media of showcase.media"
-      class="showcaseImage hover-grow"
+      class="showcaseLightbox hover-grow"
       src="{{ media }}"
       lightbox
     />

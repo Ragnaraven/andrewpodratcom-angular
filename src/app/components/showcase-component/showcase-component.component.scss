@@ -25,7 +25,7 @@
     max-width: 800px;
   }
 
-  .showcaseImageContainer {
+  .showcaseLightboxContainer {
     width: 100%;
 
     display: flex;
@@ -33,11 +33,12 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    .showcaseImage {
-      width: 25%;
+    .showcaseLightbox {
+      cursor: pointer;
+      flex: 1;
       min-width: 200px;
       overflow: hidden;
-      cursor: pointer;
+      width: 25%;
 
       &:hover {
         z-index: 10;
