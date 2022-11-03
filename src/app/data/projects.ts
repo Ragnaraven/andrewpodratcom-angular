@@ -274,22 +274,25 @@ export const GAMES: Project[] = [
   {
     id: 5,
     name: 'Not Enough Combat',
+    type: 'nec',
     source:
       'https://github.com/SubliminallySublime/-MCMOD-1.12.2-Not-Enough-Combat',
     sourceText: 'Source Files (GitHub)',
     link: 'https://www.curseforge.com/minecraft/mc-mods/not-enough-combat',
-    date: 'Aug 2018 - Mar 2020',
+    date: 'Since Aug 2018',
     aaOff: true,
     fallbackImage: 'assets/res/projects/nec/eo.gif',
     displayMediaPath: 'assets/res/projects/nec/eo.gif',
+    background:
+      'radial-gradient(circle, rgba(183, 248, 237, 1) 0%, rgba(44, 205, 177, 1) 12%, rgba(34, 129, 113, 1) 28%, rgba(51, 52, 82, 1) 45%, rgba(53, 60, 89, 1) 71%, rgba(25, 29, 44, 1) 100%)',
     description:
-      'Not Enough Combat is a mod for Minecraft (versions 1.7.10 - 1.12.2) that adds in armor for other mod added ores. Obsidian and Ender Obsidian armor and tools provide a unique vanilla end game experience.',
+      'Not Enough Combat is a mod for Minecraft (versions 1.7.10 - 1.18.2) that adds in armor for other mod added ores. Obsidian and Ender Obsidian armor and tools provide a unique vanilla end game experience.',
     showcases: [
       {
         header: 'Background',
         mediaHeader: '',
         textAbove:
-          'Written in Java on the back of the Minecraft Forge API, Not Enough Combat (NEC) was my first mod for any game. It was originally designed for my friend who wanted more weapons to craft to give him something else to do. While I was developing the basic tools and armor, I had another idea: a special type of armor that gave you powers like those of the Enderman. Thus, I designed and created Ender Obsidian armor and tools which are a great end-game reward. <br/> <br/> Below is a video walkthrough for the mod that I made for any users.',
+          'Written in Java with the Minecraft Forge API, Not Enough Combat (NEC) was my first mod for any game. It was originally designed for my friend who wanted more weapons to craft to give him something else to do. While I was developing the basic tools and armor, I had another idea: a special type of armor that gave you powers like those of the Enderman. Thus, I designed and created Ender Obsidian armor and tools which are a great end-game reward. <br/> <br/> Below is a video walkthrough for the mod that I made for any users.',
         textBelow: '',
         type: 'youtube',
         media: ['M4dsktHFay4'],

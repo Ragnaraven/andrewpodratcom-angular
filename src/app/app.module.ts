@@ -19,6 +19,7 @@ import { MacComponent } from './components/project/mac/mac.component';
 import { AnimSignatureComponent } from './components/anim-signature/anim-signature.component';
 import { SsiComponent } from './components/project/ssi/ssi.component';
 import { SsiIconComponent } from './components/project/ssi/ssi-icon/ssi-icon.component';
+import { ExpandableContainerComponent } from './components/expandable-container/expandable-container.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SsiIconComponent } from './components/project/ssi/ssi-icon/ssi-icon.com
     AnimSignatureComponent,
     SsiComponent,
     SsiIconComponent,
+    ExpandableContainerComponent,
   ],
   imports: [
     AppRoutingModule,

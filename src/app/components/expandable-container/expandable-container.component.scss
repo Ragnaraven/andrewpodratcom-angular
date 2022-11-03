@@ -1,0 +1,14 @@
+.expandable-container {
+  .header {
+  }
+
+  .body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s;
+
+    &.open {
+      max-height: 1000vh;
+    }
+  }
+}
