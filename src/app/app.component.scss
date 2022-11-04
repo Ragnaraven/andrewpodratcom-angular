@@ -178,7 +178,8 @@ $navHeight: 77px; //include padding below
 
 #home {
   color: $textLight;
-  max-height: CALC(100vh - $navHeight);
+  display: flex;
+  margin-top: -$navHeight !important;
 
   a {
     box-sizing: border-box;
