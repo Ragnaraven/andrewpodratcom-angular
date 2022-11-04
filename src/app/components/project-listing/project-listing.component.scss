@@ -89,7 +89,9 @@
   }
 
   .ep-body {
-    padding: 0 5%;
+    margin: 0 5% 5%;
+    background-color: $three;
+    box-shadow: 0 0 8px #11111199;
 
     .menu {
       background-color: $two;
@@ -112,16 +114,38 @@
           margin-right: 2rem;
           font-size: 2rem;
         }
+
+        @media only screen and (max-width: 800px) {
+          & {
+            margin: 0;
+
+            em {
+              display: 0;
+            }
+
+            span {
+              margin: 0;
+              margin-right: 0.25rem;
+            }
+          }
+        }
       }
     }
 
     .showcasesContainer {
-      background-color: $three;
       border-radius: 4px;
-      box-shadow: 0 0 8px #11111199;
       margin: auto;
       max-width: 1200px;
       padding: 0 5%;
+    }
+
+    .links {
+      padding: 0 24px;
+      padding-bottom: 48px;
+
+      a {
+        font-size: 1.5rem;
+      }
     }
   }
 }

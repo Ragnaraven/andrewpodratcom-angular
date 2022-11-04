@@ -66,7 +66,7 @@
 
   <!--SHOWCASES-->
   <div *ngIf="project.showcases.length > 0" class="ep-body">
-    <div class="menu flexRow alignItemsCenter">
+    <div class="menu flexRow flexWrap alignItemsCenter">
       <div class="showcaseLabel">
         <em>Viewing Showcase</em>
         <!--<span class="bitHighligherStroke">Showcase</span>-->
@@ -87,7 +87,9 @@
       ></app-showcase-component>
     </div>
 
-    <div class="links">
+    <div
+      class="links width100 flexRow flexWrap alignItemsCenter justifyContentCenter"
+    >
       <a
         *ngIf="project.source != ''"
         class="source"
