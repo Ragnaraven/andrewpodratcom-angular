@@ -9,9 +9,11 @@
   </div>
 </div>
 
+<img class="logoFixed" src="assets/res/signature.svg" />
+<a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
+
 <section id="home" class="flexCol">
   <nav class="flexRow alignItemsCenter">
-    <!--<img class="logo endCap nav" src="assets/res/signature.svg" />-->
     <div class="flexGrow removeSmall"></div>
     <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
     <a
@@ -28,7 +30,6 @@
     <a (click)="smoothScrollToAnchor('contact')">Contact</a>
     <a (click)="smoothScrollToAnchor('extras')">Extras</a>
     <div class="flexGrow"></div>
-    <a [href]="resumeService.resumeLink">resume</a>
   </nav>
 
   <div class="content flexRow flexGrow">

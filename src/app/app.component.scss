@@ -72,20 +72,50 @@ section {
   margin: 0;
   width: 100%;
 
-  &:nth-of-type(n + 0) {
-    background-color: $one;
-  }
-
   &:nth-of-type(n + 1) {
-    background-color: $two;
+    background-color: transparent;
   }
 
   &:nth-of-type(n + 2) {
-    background-color: $three;
+    background-color: $one;
   }
 
   &:nth-of-type(n + 3) {
-    background-color: $four;
+    background-color: $two;
+  }
+
+  &:nth-of-type(n + 4) {
+    background-color: $three;
+  }
+}
+
+.logoFixed {
+  filter: invert(100%);
+  position: fixed;
+  left: 24px;
+  top: 20px;
+  width: 48px;
+  z-index: 1000000;
+}
+
+.resumeLink {
+  position: fixed;
+  //position: absolute;
+  right: 24px;
+  top: 20px;
+
+  border-bottom: 4px solid $four;
+  display: inline-block;
+  gap: 10px;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  z-index: 1000000;
+
+  &:hover {
+    border-color: $three;
   }
 }
 
