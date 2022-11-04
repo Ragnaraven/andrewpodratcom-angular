@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { first, firstValueFrom, tap } from 'rxjs';
 import { Theme, ThemeResponse } from './theme';
 
-import * as DEFAULT_THEME from '../../assets/themes/theme1.json';
+import * as DEFAULT_THEME from '../../assets/themes/theme2.json';
 const THEME_DEFAULT = DEFAULT_THEME as unknown as Theme;
 
 @Injectable({

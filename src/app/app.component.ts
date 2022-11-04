@@ -26,13 +26,13 @@ export class AppComponent {
       }
     });
 
-    setTimeout(() => {
+    /*setTimeout(() => {
       let i = 0;
       setInterval(() => {
         i = (i + 1) % themeService.themes.length;
         themeService.setTheme(themeService.themes[i]);
       }, 3000);
-    }, 100);
+    }, 100);*/
   }
 
   smoothScrollToAnchor(anchor: string) {
