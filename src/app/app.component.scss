@@ -1,5 +1,9 @@
 @import "./theme/theme.scss";
 
+:host {
+  overflow-y: scroll;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -89,69 +93,20 @@ section {
   }
 }
 
+$navHeight: 77px; //include padding below
 .followNav {
-  $navColor: #88888888;
-
-  padding: 12px 24px;
+  background-color: $one;
+  display: block;
+  height: $navHeight;
+  padding: 12px 12px;
   pointer-events: none;
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
-  z-index: 1000000;
-
-  .logoFixed,
-  .resumeLink {
-    border-radius: 12px;
-  }
-
-  .logoFixed {
-    background-color: $navColor;
-    padding: 6px;
-    height: 48px;
-  }
-
-  .resumeLink {
-    background-color: $navColor;
-    border-bottom: 4px solid $four;
-    gap: 10px;
-    float: right;
-    font-weight: bold;
-    padding: 12px;
-    pointer-events: all;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease-out;
-
-    &:hover {
-      border-color: $three;
-    }
-  }
-}
-
-.addSmall {
-  display: none;
-}
-
-@media only screen and (max-width: 800px) {
-  .addSmall {
-    display: inline-block;
-  }
-  .removeSmall {
-    display: none;
-  }
-}
-
-#home {
-  color: $textLight;
-  height: 100vh;
-
-  a {
-    box-sizing: border-box;
-    cursor: pointer;
-  }
+  z-index: 100000;
 
   nav {
     box-sizing: border-box;
-    margin: 20px 10%;
     flex-wrap: wrap;
     gap: 1rem;
 
@@ -178,9 +133,60 @@ section {
         border-color: $three;
       }
     }
+
+    .logoFixed,
+    .resumeLink {
+      border-radius: 12px;
+      z-index: 10000000;
+    }
+
+    .logoFixed {
+      height: 48px;
+    }
+
+    .resumeLink {
+      background-color: $two;
+      border-bottom: 4px solid $four;
+      gap: 10px;
+      float: right;
+      font-weight: bold;
+      padding: 12px;
+      pointer-events: all;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        border-color: $three;
+      }
+    }
+  }
+}
+
+.addSmall {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .addSmall {
+    display: inline-block;
+  }
+  .removeSmall {
+    display: none;
+  }
+}
+
+#home {
+  color: $textLight;
+  max-height: CALC(100vh - $navHeight);
+
+  a {
+    box-sizing: border-box;
+    cursor: pointer;
   }
 
   .topLogo {
+    flex: 0;
     max-height: 30vh;
     max-width: 80vw;
     margin: auto;
@@ -238,7 +244,8 @@ section {
       margin-top: 50px;
     }
     .content {
-      margin: 0 auto;
+      align-items: flex-start;
+      margin: 5% auto;
       padding: 0 5%;
     }
   }

@@ -18,6 +18,13 @@ body {
   max-width: 100vw;
 }
 
+html {
+  overflow-y: hidden;
+}
+
+body {
+  overflow-y: scroll;
+}
 .fonts {
   font-family: "Abril Fatface", cursive;
   font-family: "Bebas Neue", cursive;

@@ -10,30 +10,32 @@
 </div>
 
 <div class="followNav">
-  <img class="logoFixed removeSmall" src="assets/res/signature.svg" />
-  <a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
-</div>
-
-<section id="home" class="flexCol">
-  <nav class="flexRow alignItemsCenter">
-    <div class="flexGrow removeSmallNav"></div>
+  <nav class="flexRow flexWrap alignItemsCenter">
+    <img class="logoFixed removeSmallNav" src="assets/res/signature.svg" />
+    <div class="flexGrow"></div>
     <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
     <a
       *ngIf="resumeService.isEmptyOrApps()"
       (click)="smoothScrollToAnchor('apps')"
+      class="removeSmallNav"
       >Apps</a
     >
     <a
       *ngIf="resumeService.isEmptyOrGames()"
       (click)="smoothScrollToAnchor('games')"
+      class="removeSmallNav"
       >Games</a
     >
     <a (click)="smoothScrollToAnchor('about')">About</a>
     <a (click)="smoothScrollToAnchor('contact')">Contact</a>
     <!--<a (click)="smoothScrollToAnchor('extras')">Extras</a>-->
-    <div class="flexGrow"></div>
+    <div class="flexGrow removeSmallNav"></div>
+    <a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
+    <div class="flexGrow addSmall"></div>
   </nav>
+</div>
 
+<section id="home" class="flexCol">
   <div class="topLogo flexGrow flexCol justifyContentCenter addSmall">
     <app-anim-signature id="1" loop="false"></app-anim-signature>
   </div>
