@@ -1,0 +1,13 @@
+{
+  "name": "Two",
+
+  "one": "#16213E",
+  "two": "#0F3460",
+  "three": "#533483",
+  "four": "#E94560",
+
+  "text": {
+    "light": "white",
+    "dark": "black"
+  }
+}

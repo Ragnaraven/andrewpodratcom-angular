@@ -1,0 +1,13 @@
+{
+  "name": "Eight",
+
+  "one": "#082032",
+  "two": "#2C394B",
+  "three": "#334756",
+  "four": "#FF4C29",
+
+  "text": {
+    "light": "white",
+    "dark": "black"
+  }
+}
