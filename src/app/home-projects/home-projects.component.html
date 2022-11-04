@@ -1,4 +1,6 @@
 <div class="homeContainer">
-  <app-apps class="height100"></app-apps>
+  <app-apps></app-apps>
   <app-games></app-games>
+  <app-about-apps *ngIf="!ENVIRONMENT.prioritizeGames"></app-about-apps>
+  <app-about-games *ngIf="ENVIRONMENT.prioritizeGames"></app-about-games>
 </div>

@@ -4,6 +4,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 
 import { APPS } from '@data/projects';
 import { Router } from '@angular/router';
+import { ResumeService } from 'src/app/services/resume.service';
 
 @Component({
   selector: 'app-apps',
@@ -13,7 +14,10 @@ import { Router } from '@angular/router';
 export class AppsComponent implements OnInit {
   APPS = APPS;
 
-  constructor(public themeService: ThemeService, private router: Router) {}
+  constructor(
+    public themeService: ThemeService,
+    public resumeService: ResumeService
+  ) {}
 
   ngOnInit(): void {}
 

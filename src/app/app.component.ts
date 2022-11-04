@@ -5,6 +5,7 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
+import { ResumeService } from './services/resume.service';
 import { ThemeService } from './theme/theme.service';
 
 @Component({
@@ -13,19 +14,10 @@ import { ThemeService } from './theme/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  route: string;
-
-  constructor(public themeService: ThemeService, private router: Router) {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        this.route = event.url;
-      }
-
-      if (event instanceof NavigationError) {
-        this.route = event.url;
-      }
-    });
-
+  constructor(
+    public themeService: ThemeService,
+    public resumeService: ResumeService
+  ) {
     /*setTimeout(() => {
       let i = 0;
       setInterval(() => {

@@ -26,6 +26,8 @@ import { LightboxDirective } from './directives/lightbox.directive';
 import { LightboxGroupDirective } from './directives/lightbox-group.directive';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ContactComponent } from './home-projects/contact/contact.component';
+import { AboutAppsComponent } from './home-projects/apps/about-apps/about-apps.component';
+import { AboutGamesComponent } from './home-projects/games/about-games/about-games.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { ContactComponent } from './home-projects/contact/contact.component';
     LightboxDirective,
     LightboxGroupDirective,
     ContactComponent,
+    AboutAppsComponent,
+    AboutGamesComponent,
   ],
   imports: [
     AppRoutingModule,

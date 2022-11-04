@@ -6,7 +6,10 @@
       <div class="notice">
         This site is only for my personal projects and an introduction. You can
         read my professional work history on my
-        <a href="#">resume</a>.
+        <a
+          href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing"
+          >resume</a
+        >.
       </div>
     </div>
   </div>
@@ -25,92 +28,4 @@
   </div>
 </section>
 
-<section id="about" class="flexCol projectSection">
-  <div class="header flexRow alignItemsCenter justifyContentCenter flexWrap">
-    <h2>About Me</h2>
-  </div>
-  <div class="aboutContainer">
-    <p>Hello!</p>
-    <p>I'm Andrew.</p>
-    <p>
-      I am an aspiring game designer, developer, and gamer (of course)!<br />
-      I love taking initiative and trying new things.<br />
-      Game design and development is my passion; I started game development when
-      I was 12!
-    </p>
-    <h3>My Skills</h3>
-    <div id="bigThree" class="flexRow flexWrap">
-      <div class="three flexGrow">
-        <div class="categoryHeader flexRow alignItemsCenter">
-          <img class="categoryHeaderImg" src="assets/res/passions/design.svg" />
-          <div class="categoryHeaderText">Designer</div>
-        </div>
-        <div class="threeContent">
-          <p>As a game designer, I believe</p>
-        </div>
-      </div>
-      <div class="three flexGrow">
-        <div class="categoryHeader flexRow alignItemsCenter">
-          <img
-            class="categoryHeaderImg"
-            src="assets/res/passions/developer.svg"
-          />
-          <div class="categoryHeaderText">Developer</div>
-        </div>
-        <div class="threeContent">
-          <p class="categoryHeaderHeader">
-            As a <span class="accentHighlight">software developer</span> many
-            programs, skills and languages are at my disposal.
-          </p>
-          <p>I create games in Unreal Engine primarily (projects below).</p>
-          <p class="categoryHeaderParagraph bitLabel">
-            I have had the pleasure of using many
-            <span class="accentHighlight">lanaguages</span>,
-            <span class="accentHighlight">programs</span> and
-            <span class="accentHighlight">tools</span>, including:
-          </p>
-          <ul>
-            <li>
-              <span class="bitLabel">Languages:</span>Java, C#, C++, Blueprint
-              (UE4), HTML, CSS, JS, Angular, Python
-            </li>
-            <li>
-              <span class="bitLabel">Programs:</span>Unreal Engine, Unity,
-              Android Studio
-            </li>
-            <li>
-              <span class="bitLabel">IDEs:</span>Visual Studio, VS Code,
-              JetBrains Suite
-            </li>
-            <li>
-              <span class="bitLabel">Graphic Design:</span>Photoshop,
-              Illustrator, Inkscape
-            </li>
-            <li>
-              <span class="bitLabel">3D Modeling:</span>Blender, 3DS Max, Maya,
-              Quixel Mixer
-            </li>
-            <li><span class="bitLabel">Devops:</span>Azure Devops & Portal</li>
-          </ul>
-        </div>
-      </div>
-      <div class="three flexGrow">
-        <div class="categoryHeader flexRow alignItemsCenter">
-          <img class="categoryHeaderImg" src="assets/res/passions/gamer.svg" />
-          <div class="categoryHeaderText">Gamer</div>
-        </div>
-        <div class="threeContent">
-          <p class="categoryHeaderHeader">
-            Of course, <span class="accentHighlight">I'm a gamer!</span> I play
-            a wide array of genres.
-          </p>
-          <p id="additionalContentLargeScreenOnly">
-            I have been playing games since I was a kid. There is a picture of
-            me when I was 2, playing a PC game sitting on my dad's lap. To date,
-            I have enjoyed most major consoles, as well as PC.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<app-about-games *ngIf="resumeService.isGames()"> </app-about-games>

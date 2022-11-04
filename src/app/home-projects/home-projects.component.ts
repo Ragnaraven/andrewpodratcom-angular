@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Component } from '@angular/core';
 import { ThemeService } from '../theme/theme.service';
+
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home-projects',
   templateUrl: './home-projects.component.html',
   styleUrls: ['./home-projects.component.scss'],
 })
-export class HomeProjectsComponent implements OnInit {
-  constructor(public themeService: ThemeService) {}
+export class HomeProjectsComponent {
+  ENVIRONMENT = environment;
 
-  ngOnInit(): void {
-    //this.router.navigate(['games']);
-  }
+  constructor(public themeService: ThemeService) {}
 }

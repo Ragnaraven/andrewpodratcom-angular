@@ -1,3 +1,10 @@
+@import "theme.scss";
+
+@font-face {
+  font-family: pixel5;
+  src: url("~src/assets/fonts/pixel5.ttf") format("truetype");
+}
+
 .projectSection {
   background-color: $one;
   box-sizing: border-box;
@@ -35,6 +42,106 @@
 
       .notice {
         padding: 0 0.5rem;
+      }
+    }
+  }
+}
+
+#about {
+  min-height: inherit;
+
+  .aboutContainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 5%;
+
+    .accentHighlight {
+      color: $four;
+      text-transform: capitalize;
+    }
+
+    p:nth-of-type(1) {
+      font-size: 3rem;
+    }
+    p:nth-of-type(2) {
+      font-size: 2.25rem;
+    }
+    p:nth-of-type(3) {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      padding: 12px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    #bigThree {
+      margin-bottom: 12px;
+      gap: 12px;
+
+      .three {
+        border-radius: 4px;
+        box-shadow: 0 0 4px #00000044;
+        min-width: 300px;
+
+        .material-symbols-outlined {
+          font-size: 2rem;
+          text-align: center;
+          width: 100%;
+        }
+        .categoryHeader {
+          background-color: #ffffff44;
+          border-radius: 4px;
+
+          .categoryHeaderImg {
+            height: 60px;
+            padding: 12px;
+          }
+
+          .categoryHeaderText {
+            font-family: pixel5;
+            font-size: 1.35rem;
+            text-shadow: 3px 3px $one;
+          }
+        }
+
+        .threeContent {
+          padding: 20px;
+
+          .accentHighlight {
+            font-weight: bold;
+          }
+
+          ul {
+            padding: 0;
+
+            li {
+              margin-left: 16px;
+            }
+          }
+        }
+
+        &:nth-of-type(1) {
+          background-color: $four;
+
+          .accentHighlight {
+            color: $three;
+          }
+        }
+        &:nth-of-type(2) {
+          background-color: $two;
+          .accentHighlight {
+            color: $four;
+          }
+        }
+        &:nth-of-type(3) {
+          background-color: $three;
+          .accentHighlight {
+            color: $four;
+          }
+        }
       }
     }
   }

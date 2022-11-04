@@ -15,12 +15,12 @@
     <div class="flexGrow removeSmall"></div>
     <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
     <a
-      *ngIf="route == '/' || route == 'apps'"
+      *ngIf="resumeService.isEmptyOrApps()"
       (click)="smoothScrollToAnchor('apps')"
       >Apps</a
     >
     <a
-      *ngIf="route == '/' || route == 'games'"
+      *ngIf="resumeService.isEmptyOrGames()"
       (click)="smoothScrollToAnchor('games')"
       >Games</a
     >
@@ -28,10 +28,7 @@
     <a (click)="smoothScrollToAnchor('contact')">Contact</a>
     <a (click)="smoothScrollToAnchor('extras')">Extras</a>
     <div class="flexGrow"></div>
-    <div class="endCap flexRow alignCenter">
-      <div>Git</div>
-      <div>Resume</div>
-    </div>
+    <a [href]="resumeService.resumeLink">resume</a>
   </nav>
 
   <div class="content flexRow flexGrow">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GAMES } from '@data/projects';
+import { ResumeService } from 'src/app/services/resume.service';
 
 @Component({
   selector: 'app-games',
@@ -12,7 +13,7 @@ export class GamesComponent implements OnInit {
 
   deviceInfo = null;
 
-  constructor(/*private deviceService: DeviceDetectorService*/) {
+  constructor(public resumeService: ResumeService) {
     //this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 
