@@ -17,7 +17,7 @@ export interface Project {
   backgroundColor?: string;
   fallbackImage?: string;
 
-  showcases: Showcase[];
+  showcases?: Showcase[];
 }
 
 export const APPS: Project[] = [
@@ -32,7 +32,6 @@ export const APPS: Project[] = [
     backgroundColor: '#070420',
     description:
       "A musical web portfolio site for Aidan McKenna's original music library.",
-    showcases: [],
   },
 
   {
@@ -42,13 +41,13 @@ export const APPS: Project[] = [
     date: 'Since 2014',
     backgroundColor: '#03a9f4',
     description:
-      'Modern Alarm Clock is a Java Android alarm app. This was my first exposure to advanced UI and UX design and I am very happy with the original UI displayed in the showcase.',
+      'Modern Alarm Clock is a Kotlin Android alarm app that contains a unique UI.',
     showcases: [
       {
         header: 'UI Demo',
         mediaHeader: '',
         textAbove:
-          'Below is a simple UI demo for my Android app. All designs, animations and interactions are either original or are provided by default by the Android SDK.',
+          'Simple UI demo for Modern Alarm Clock. All designs, animations and interactions are original.',
         textBelow: '',
         type: 'youtube',
         media: ['lUPHyaaRL30'],
@@ -72,8 +71,7 @@ export const APPS: Project[] = [
       'linear-gradient(rgb(135, 135, 135) 1%, rgb(71, 71, 71) 79%, rgb(30, 30, 30) 100%)',
     fallbackImage: 'assets/res/projects/ssi/ssi.png',
     description:
-      "SiegeStarterIcons.com was my first released website. It allows users to make basic user profile pictures for Ubisoft's Tom Clany's Rainbow Six: Siege. Created with HTML, CSS, and JS and jQuery.",
-    showcases: [],
+      "SiegeStarterIcons.com allows users to make basic user profile pictures for Ubisoft's Tom Clany's Rainbow Six: Siege. Created with HTML, CSS, and JS and jQuery.",
   },
 
   {
@@ -85,7 +83,6 @@ export const APPS: Project[] = [
     date: 'Since Feb 2021',
     backgroundColor: 'black',
     description: "You're here! AndrewPodrat.com is written with Angular 14.",
-    showcases: [],
   },
 ];
 
@@ -97,16 +94,15 @@ export const GAMES: Project[] = [
     displayMediaPath: 'assets/res/projects/ragnaraven/unity4scene.jpg',
     fallbackImage: 'assets/res/projects/ragnaraven/unity4scene.webp',
     description:
-      'Work in progress, open world UE4 game. Set in an alternate, ecoistic world, humankind is threatened by an alien being that is invading the world. Story draft available on request.',
+      'Set in an alternate, ecoistic world, humankind is threatened by an alien being that invades Vallegion. Being created with UE5 and Blender.',
     showcases: [
       {
         header: 'The Yin Yang Wyvern',
         mediaHeader: '',
         textAbove: '',
         textBelow:
-          'A 3D model I created and rigged for the game. Click in the viewport to manipulate the preview.',
+          'A 3D model from Ragnaraven. Click in the viewport to manipulate the preview.',
         type: '3dmodel',
-        media: [],
         extras: WYVERN_MODELS,
       },
       {
@@ -120,22 +116,14 @@ export const GAMES: Project[] = [
           'assets/res/projects/ragnaraven/unity3snow.webp',
           'assets/res/projects/ragnaraven/unity2temple.webp',
         ],
-        extras: [],
       },
       {
         header: 'Shading and Graphics',
-        mediaHeader: '',
-        textAbove: '',
-        textBelow: '',
         type: 'singlemovie',
         media: ['assets/res/projects/ragnaraven/moveShowcase.mp4'],
-        extras: [],
       },
       {
         header: 'Gameplay',
-        mediaHeader: '',
-        textAbove: '',
-        textBelow: '',
         type: 'moviegrid',
         media: [
           'assets/res/projects/ragnaraven/earthProjectile2.mp4',
@@ -147,17 +135,21 @@ export const GAMES: Project[] = [
           'assets/res/projects/ragnaraven/lightningDamage2.mp4',
           'assets/res/projects/ragnaraven/lightningShowcase2.mp4',
         ],
-        extras: [],
+      },
+      {
+        header: 'Story Preview',
+        textAbove:
+          'Ragnaraven is a game about Vallegion, a world where people live and work with nature... or used to.<br/>' +
+          'The Omnis, a being that descended when the comet Nurvia collided with the moon Ominimo, is spreading his' +
+          ' himself accross the world, and with him comes death and destruction.<br/><br/>' +
+          'As an Unchained Vallegionite, will you be able to reconnect with your ancestors and their powers to defeat the Omnis and save Vallegion?',
+        type: 'html',
       },
       {
         header: 'Background',
-        mediaHeader: '',
         textAbove:
-          'My work on Ragnaraven is best described in two parts: Learning and writing. I learned as much of Unreal Engine as I could to start development. That process took about a year. The year after that, I began planning a world, a story and gameplay mechanics. While I am not ready to fully reveal the story, below, you can see the beginnings of my low poly art style and the some of the gameplay mechanics. <br/> <br/> I breifly paused development to create "The Ultimate Zombie Game" to take on the behometh of multiplayer development. When I finished that project, I realized that I care too much about the story to botch the execution of Ragnaraven. I have decided to continue my writing and design so that once I am well experienced I will be able to make Ragnaraven the game it deserves to be. Since then, I have decided to dabble with City Builder and Ghost Game to continue learning and gaining game development wisdom from these smaller scope projects.',
-        textBelow: '',
+          "I've been working on Ragnaraven since my third year of college. I had a nightmare about a black crystal with a being trapped inside (much like a mosquito-in-amber) that spread black, viney chains across the world. Over the years since then, I have written out a story, developed a world, and began to truly develop Ragnaraven into a true open-world, co-op game. It is not close to release quite yet. <br/> <br/> Over the years, Ragnaraven has really blossomed into a beautiful picture. I hope to find a way to bring it realistically to fruition.",
         type: 'html',
-        media: [],
-        extras: [],
       },
     ],
   },
@@ -174,17 +166,13 @@ export const GAMES: Project[] = [
     showcases: [
       {
         header: 'Backstory and Demo',
-        mediaHeader: '',
         textAbove:
           "GhostGame is my most recent project. I wanted to learn about making FP/TP animations and controllers, as well as AI systems and mod support in UE4. For only 2 weeks of work (as of 1/28/2021), there has been substantial progress and the idea is taking on a life of it's own! I have general mechanics implemented as well as basic coop and various lighting systems. Check out the video to see the progress!",
-        textBelow: '',
         type: 'youtube',
         media: ['czVUCb_4Gkg'],
-        extras: [],
       },
       {
         header: '2/27/2021: Main Menu & Light Culling Draft',
-        mediaHeader: '',
         textAbove:
           'I have completed the first draft of the light culling system with great results: 70-120fps(capped). These results are enough for me to move on and return later if improvements are needed.<br/><br/>Below, you can see my progress on a Main Menu draft and a screenshot of the room-based light culling system. <br/><br/>For the main menu, the globe slowly spins and reveal different supernatural sightings that you will be able to pursue. The red dots are real life city locations that are loaded from a database, mapped onto a 3D globe that will soon allow a UI widget to snap to the city location in screen space and provide a glimpse of the mission before a player selects it to reveal more information.<br/><br/>For the culling system, the room analyzes its marked portals and examines the most likely viewing angles to determine what rooms are critical for any given player position in a room. You can also see a glimpse of my future modder-friendly Unreal Engine tool I made to assist with the creation of rooms!',
         textBelow: '[Click to expand]',
@@ -193,22 +181,18 @@ export const GAMES: Project[] = [
           'assets/res/projects/ghostgame/mainmenu.png',
           'assets/res/projects/ghostgame/roomvis.png',
         ],
-        extras: [],
       },
       {
         header: '3/23/2021: Gameplay draft, data-driven mod foundation',
-        mediaHeader: '',
         textAbove:
           'Check out the quick video below to see the new show-off features! Code features are right below that.',
         textBelow:
           'Video notes: <br/><br/>1: Item pickup and control.<br/> 2: Breaking the mask spawns the Oni.<br/> 3: Picture show-off (notice the right HUD update). <br/>4: Video show off (notice video bars, [rec.] and left side HUD.<br/>5: Death demo.<br/>6: Inventory pickup/drop demo.',
         type: 'youtube',
         media: ['uege5QYtA-0'],
-        extras: [],
       },
       {
         header: '3/23/2021: Code Changes',
-        mediaHeader: '',
         textAbove:
           'There was a lot learned during this iteration. A BIG lesson was the unfornate realization of the necessity of big, wide doors and stairways. I always wondered why Naughty dog was so generous with their portals, now I know. <br/><br/> I also had a great chance to express my UE4 UMG knowledge, as show in the first few images below where I implemented a rudimentary gameplay HUD and a dynamic inventory widget that is dynamic by depending on whether or not the player has a bag or not. <br/><br/> Code wise, I rewrote some of the AI features for a better inhertance structure. I implemented a pretty simple scoring system too. <br/><br/> The largest change, however, was the implementation of a data-driven system. I have decided to stick to the idea of <strong>"If you can make edit a spreadsheet, you can make a mod."</strong> I want to make this game as data-driven as possible so that anyone who enjoys it can add more content easily. This is what I have always wanted as a modder and is what is exemplified in the Company of Heroes 2 Mod Tools.',
         textBelow:
@@ -219,7 +203,6 @@ export const GAMES: Project[] = [
           'assets/res/projects/ghostgame/snddm2.png',
           'assets/res/projects/ghostgame/snddm3.png',
         ],
-        extras: [],
       },
     ],
   },
@@ -243,7 +226,6 @@ export const GAMES: Project[] = [
           '<p>The Ultimate Zombie Game is a proof of concept game designed with the following features:</p><ul><li>Data-driven game data; weapons and related are processed and loaded from spreadsheets</li><li>Simultaneous split screen and online Steam Multiplayer</li><li>Drop in, drop out split screen</li><li>Controller support</li><li>Different ballistic mechanics: Hitscan, Travel Time, Travel Time and Drop</li><li>Text chat (Not demonstrated in video, but is visible in bottom right corner)</li><li>Multimap, multi character selection (irrelevant to project, implemented identically from <a href="https://www.youtube.com/watch?v=abmzWUWxy1U&list=PLZlv_N0_O1gYqSlbGQVKsRg6fpxWndZqZ">Epic\'s 24 part web-series)</a></li></ul>',
         type: 'youtube',
         media: ['g1fEk56P0sA'],
-        extras: [],
       },
     ],
   },
@@ -262,10 +244,8 @@ export const GAMES: Project[] = [
         mediaHeader: 'assets/res/projects/gamejams/2020BitBridgeGameJam.png',
         textAbove:
           "This was my first game jam! I acted as co-designer and 3D modeler in a team of 9. <br/> <br/> My largest contribution to this game was the demon you can see below. I modeled, rigged, animated and created the material. Finally, I also added the animation state machine that controls it. There was a small amount of visual scripting, but this was mostly an art role. I elected to this art role because I felt it was a great experience to <em>not</em> code and to learn something new. <br/> <br/>Additionally, I co-drafted the game concept and the way the demon interacts with the player at the brain-storming stage. You can check out the <a href='https://github.com/peck2703/Halloween-GameJam'>source files here</a> and <a href='https://peck2703.itch.io/the-ritual'>the final result here.</a>",
-        textBelow: '',
         type: 'youtube',
         media: ['MAGjUBtF2vw'],
-        extras: [],
       },
     ],
   },
@@ -289,13 +269,10 @@ export const GAMES: Project[] = [
     showcases: [
       {
         header: 'Background',
-        mediaHeader: '',
         textAbove:
           'Written in Java with the Minecraft Forge API, Not Enough Combat (NEC) was my first mod for any game. It was originally designed for my friend who wanted more weapons to craft to give him something else to do. While I was developing the basic tools and armor, I had another idea: a special type of armor that gave you powers like those of the Enderman. Thus, I designed and created Ender Obsidian armor and tools which are a great end-game reward. <br/> <br/> Below is a video walkthrough for the mod that I made for any users.',
-        textBelow: '',
         type: 'youtube',
         media: ['M4dsktHFay4'],
-        extras: [],
       },
     ],
   },
@@ -312,13 +289,10 @@ export const GAMES: Project[] = [
     showcases: [
       {
         header: 'Backstory and Demo',
-        mediaHeader: '',
         textAbove:
           "I am a huge fan of city builders. CityBuilder is a side project I started to reinforce my understanding of multiplayer in UE4, as well as try out a new form of development. Various states and managers use UE4 replication to keep the game in sync. Like GhostGame, CityBuilder has taken on it's own idea, and I have detailed plans for it that would make it a unique city builder complete with elements from games I have enjoyed in the past.",
-        textBelow: '',
         type: 'youtube',
         media: ['xU7SdGuVlNQ'],
-        extras: [],
       },
     ],
   },

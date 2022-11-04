@@ -24,6 +24,7 @@ import { ExpandableContainerComponent } from './components/expandable-container/
 import { LightboxModule } from 'ngx-lightbox';
 import { LightboxDirective } from './directives/lightbox.directive';
 import { LightboxGroupDirective } from './directives/lightbox-group.directive';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { LightboxGroupDirective } from './directives/lightbox-group.directive';
     FormsModule,
     HttpClientModule,
     LightboxModule,
+    YouTubePlayerModule,
   ],
   exports: [LightboxModule],
   providers: [],
