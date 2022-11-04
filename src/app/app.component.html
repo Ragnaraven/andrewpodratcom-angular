@@ -16,7 +16,7 @@
 
 <section id="home" class="flexCol">
   <nav class="flexRow alignItemsCenter">
-    <div class="flexGrow removeSmall"></div>
+    <div class="flexGrow removeSmallNav"></div>
     <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
     <a
       *ngIf="resumeService.isEmptyOrApps()"
@@ -31,21 +31,30 @@
     <a (click)="smoothScrollToAnchor('about')">About</a>
     <a (click)="smoothScrollToAnchor('contact')">Contact</a>
     <a (click)="smoothScrollToAnchor('extras')">Extras</a>
-    <div class="flexGrow"></div>
+    <div class="flexGrow removeSmallNav"></div>
   </nav>
 
+  <div class="flexGrow flexCol justifyContentCenter addSmall">
+    <app-anim-signature id="1" loop="false"></app-anim-signature>
+  </div>
   <div class="content flexRow flexGrow">
-    <div class="left width50 flexCol alignItemsEnd justifyContentCenter">
+    <div class="left flexGrow flexCol alignItemsEnd justifyContentCenter">
       <div class="tip header">AndrewPodrat.com - The tech porfolio of</div>
       <h1 class="heading">Andrew Podrat</h1>
       <div class="intro">
-        Hello. I am Andrew Podrat, a programmer that develops and designs full
-        stack web apps, mobile apps and video games.
+        <span *ngIf="resumeService.isEmptyOrApps()">
+          Hello! I am Andrew Podrat, a developer that enjoys designing and
+          developing full stack web apps, mobile apps and video games.</span
+        >
+        <span *ngIf="resumeService.isGames()">
+          Hello! I am Andrew Podrat, a game developer with a versatile skillset
+          who enjoys creating fun and unique games.</span
+        >
         <a (click)="smoothScrollToAnchor('about')">read more</a>
       </div>
     </div>
-    <div class="right width50 flexCol justifyContentCenter">
-      <app-anim-signature loop="false"></app-anim-signature>
+    <div class="right flexGrow flexCol justifyContentCenter removeSmall">
+      <app-anim-signature id="2" loop="false"></app-anim-signature>
     </div>
   </div>
 
