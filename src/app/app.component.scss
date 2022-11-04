@@ -241,7 +241,8 @@ $navHeight: 77px; //include padding below
   @media only screen and (max-width: 800px) {
     .topLogo {
       margin: 0 auto;
-      margin-top: 50px;
+      margin-top: $navHeight;
+      padding-top: 24px;
     }
     .content {
       align-items: flex-start;
