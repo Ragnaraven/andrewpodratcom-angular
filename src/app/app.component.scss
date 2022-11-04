@@ -289,6 +289,13 @@ $navHeight: 77px; //include padding below
     }
   }
 
+  .version {
+    position: absolute;
+    bottom: 2px;
+    right: 6px;
+    opacity: 0.1;
+  }
+
   @keyframes bob {
     0% {
       transform: translateY(0);
