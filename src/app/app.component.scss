@@ -100,7 +100,7 @@ $navHeight: 77px; //include padding below
   height: $navHeight;
   padding: 12px 12px;
   pointer-events: none;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 100000;
@@ -179,7 +179,6 @@ $navHeight: 77px; //include padding below
 #home {
   color: $textLight;
   display: flex;
-  margin-top: -$navHeight !important;
 
   a {
     box-sizing: border-box;
