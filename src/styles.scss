@@ -45,6 +45,7 @@ html {
 
 a {
   color: $textLight;
+  text-decoration-color: $four;
 }
 
 .heading {
@@ -119,8 +120,7 @@ h3 {
 
 .underline {
   text-decoration: underline;
-}
-
-.displayInlineBlock {
-  border: 1px solid red;
+  line-height: 1.3rem;
+  text-decoration-color: $four;
+  text-underline-offset: 4px;
 }

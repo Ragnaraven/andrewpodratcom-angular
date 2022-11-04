@@ -1,40 +1,7 @@
 @import "./theme/theme.scss";
 
-:host {
-  overflow-y: scroll;
-}
-
 * {
   box-sizing: border-box;
-}
-
-.video-background {
-  background: #000;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -99;
-}
-
-.video-foreground,
-.video-background iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.video-overlay {
-  position: absolute;
-  background-color: #4e4e4ed8;
-  width: 100%;
-  height: 100vh;
-  z-index: 10000;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -90,6 +57,19 @@ section {
 
   &:nth-of-type(n + 4) {
     background-color: $three;
+  }
+}
+
+.addSmall {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .addSmall {
+    display: inline-block;
+  }
+  .removeSmall {
+    display: none;
   }
 }
 
@@ -163,16 +143,33 @@ $navHeight: 77px; //include padding below
   }
 }
 
-.addSmall {
-  display: none;
-}
+.video-background {
+  background: #000;
+  overflow: hidden;
+  position: absolute;
+  top: $navHeight;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
 
-@media only screen and (max-width: 800px) {
-  .addSmall {
-    display: inline-block;
+  &,
+  .video-foreground,
+  iframe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
-  .removeSmall {
-    display: none;
+
+  .video-overlay {
+    position: absolute;
+    background-color: #4e4e4ed8;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
   }
 }
 
@@ -224,6 +221,20 @@ $navHeight: 77px; //include padding below
         text-align: justify;
         font-size: 16pt;
         max-width: 468px;
+      }
+
+      @media only screen and (max-width: 520px) {
+        .tip {
+          font-size: 10pt;
+        }
+
+        h1 {
+          font-size: 28pt;
+        }
+
+        .intro {
+          max-width: 326px;
+        }
       }
 
       a {
