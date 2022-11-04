@@ -183,7 +183,7 @@ section {
   .topLogo {
     max-height: 30vh;
     max-width: 80vw;
-    margin: 5% auto;
+    margin: auto;
   }
 
   .content {
@@ -229,6 +229,16 @@ section {
     }
 
     .right {
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .topLogo {
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    .content {
+      margin: 0 auto;
     }
   }
 
