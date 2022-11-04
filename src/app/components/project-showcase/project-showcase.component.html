@@ -1,0 +1,22 @@
+<div class="projectShowcaseContainer">
+  <div class="projectShowcaseContainerContent">
+    <div class="showcasesContainer">
+      <app-showcase-component
+        *ngFor="let showcase of project.showcases"
+        [showcase]="showcase"
+      ></app-showcase-component>
+    </div>
+
+    <div class="links">
+      <a
+        *ngIf="project.source != ''"
+        class="source"
+        href="{{ project.source }}"
+        >{{ project.sourceText }}</a
+      >
+      <a *ngIf="project.link != ''" class="linkTo" href="{{ project.link }}">{{
+        project.linkText
+      }}</a>
+    </div>
+  </div>
+</div>

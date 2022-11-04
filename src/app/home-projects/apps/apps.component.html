@@ -1,144 +1,77 @@
-<mat-sidenav-container>
-    <mat-sidenav 
-      #sidenav 
-      [opened]="!smallScreenCheck()"
-      fixedInViewport="true" 
-      mode="side"
-    >
-        <span *ngIf="smallScreenCheck()" class="closeIcon" (click)="sidenav.opened = false">[X]</span>
+<section id="apps" class="flexCol projectSection">
+  <div class="header flexRow alignItemsCenter justifyContentCenter flexWrap">
+    <h2>Websites and Apps</h2>
+    <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
+      <span class="material-symbols-outlined"> info </span>
+      <div class="notice">
+        This site is only for my personal projects and an introduction. You can
+        read my professional work history on my
+        <a
+          href="https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=sharing"
+          >resume</a
+        >.
+      </div>
+    </div>
+  </div>
+  <ul class="projectsContainer">
+    <ng-container *ngFor="let project of APPS">
+      <!--Normal-->
+      <li
+        class="project flex flexRow"
+        [style.background]="project.background"
+        [style.background-color]="project.backgroundColor"
+        [style.cursor]="project.link != null ? 'pointer' : 'inherit'"
+        (click)="redirect(project.link)"
+      >
+        <!--Image options-->
+        <img
+          *ngIf="project.type == null"
+          class="workImage width100"
+          src="{{ project.displayMediaPath }}"
+        />
+        <app-ssi *ngIf="project.type == 'SSI'" class="workImage"></app-ssi>
+        <app-mac *ngIf="project.type == 'MAC'" class="workImage"></app-mac>
+        <app-anim-signature
+          *ngIf="project.type == 'signature'"
+          class="workImage"
+        ></app-anim-signature>
 
-        <div id="menuHeader">
-            <img id="logoSide" src="assets/res/signature_legacy.svg"/>
-            <div id="identification">
-                <p id="nameSide">Andrew Podrat</p>
-                <p id="professionSide">Web & App Developer</p>
+        <!--Content-->
+        <div class="workContentBg width100">
+          <div class="workContentContainer width100">
+            <div class="workContentWrapper flexCol alignItemsEnd width100">
+              <h3 class="workHeader">{{ project.name }}</h3>
+              <div class="workDate">
+                <span class="material-symbols-outlined"> event </span
+                ><em>{{ project.date }}</em>
+              </div>
+              <!--<a
+                class="workLink"
+                *ngIf="project.link != null"
+                href="{{ project.link }}"
+                >click to go to project</a
+              >-->
+              <a
+                class="workLink"
+                *ngIf="project.link != null"
+                href="{{ project.source }}"
+                >{{ project.sourceText }}</a
+              >
+              <!--<div class="activeTriangle"></div>-->
             </div>
+            <div class="workDesc">{{ project.description }}</div>
+          </div>
         </div>
-
-        <ul id="navList" class="noselect">
-            <li><a (click)="scrollToElement('welcome')"> Welcome </a></li>
-            <li><a (click)="scrollToElement('projects')"> Projects </a></li>
-            <li *ngFor="let project of apps"><a class="projectListingNavItem" (click)='scrollToElement(project.link)'> {{project.name}} </a></li>
-            <li><a (click)="scrollToElement('contactMe')"> Contact </a></li>
-        </ul>
-     
-        <div class="sideNavResumeContainer noselect">
-            <a id="sideNavResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing" target="_blank">Resume</a>
-        </div>
-
-        <div class="flex-row-container sidenavLinksWrapper">
-            <a class="sidenavLink flex-row-item" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
-            <a class="sidenavLink flex-row-item" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
-            <a class="sidenavLink flex-row-item" href="https://github.com/Ragnaraven">GitHub</a>
-        </div>
-    </mat-sidenav>
-
-    <mat-sidenav-content class="sidenav-content">
-        <mat-toolbar *ngIf="smallScreenCheck()">
-            <img class="icon" src="assets/res/material.io/menu-white-18dp.svg" (click)="sidenav.opened = !sidenav.opened"/>
-            <span class="name">Andrew M. Podrat</span>
-            <span class="work">Web & App Developer</span>
-        </mat-toolbar>
-    
-        <section class="logoContainer">
-            <img class="logoMain" src="assets/res/signature.svg"/>
-            <div class="logoRight">
-                <span class="name">Andrew M. Podrat</span>
-                <span class="work">Web & App Developer</span>
-            </div>
-        </section>
-
-        <section id="item-projects">
-            <p class="projectsLabel">Projects</p>
-            
-            <ul class="projectsContainer">
-                <li *ngFor="let project of apps">
-                    <app-project-listing *ngIf="project.style == 'standard' || project.style == 'customImageWrapper'" [project]="project" ></app-project-listing>
-                    <app-project-listing-mac *ngIf="project.style == 'customMAC'" [project]="project" ></app-project-listing-mac>
-                </li>
-            </ul>
-        </section>
-
-        <section id="item-welcome">
-            <p class="gradient-border" id="greeting">Hello!</p>
-            <p id="pickupLine">
-                <span style="color: white; font-weight: 500; font-size: 1.25em;">I'm Andrew.</span><br/>
-                I am a highly motivated full stack engineer with an always expanding and versatile technical skillset. <br/>
-                I like to keep my code and designs both clean and highly reusable.<br/>
-                I am diplomatic team player who is not afraid to take initiative or work independently.</p>
-            <div id="bigThree" class="flex-row-container">
-                <div class="flex-row-item">
-                    <img class="introDivImg" src="assets/res/passions/developer.svg"/>
-                    <p class="introDivHeader bitHeader">As a <span class="accentHighlight">software developer</span>, many programs, skills and languages are at my disposal.</p>
-                    <p class="introDivParagraph">I create websites and apps mostly in Intellij IDEA, VS Code and Visual Studio</p>
-                    <p class="introDivParagraph bitLabel">I have had the pleasure of using many 
-                        <span class="accentHighlight">lanaguages</span>,
-                        <span class="accentHighlight">programs</span> and 
-                        <span class="accentHighlight">tools</span>, 
-                        including:</p>
-                    <ul>
-                        <li><span class="bitLabel">Languages:</span>Java, C#, C++, HTML, CSS, JS, Python, PHP</li>
-                        <li><span class="bitLabel">Libraries & Frameworks:</span>Angular 8 - 13, JQuery, Bootstrap</li>
-                        <li><span class="bitLabel">IDEs:</span>VS Code, JetBrains Suite, Visual Studio, Android Studio</li>
-                        <li><span class="bitLabel">Tools:</span>Microsoft Office, Google Apps</li>
-                        <li><span class="bitLabel">Source Control:</span>Github, Sourcetree, Bitbucket</li>
-                        <li><span class="bitLabel">Communication:</span>Slack, MS Teams, Zoom, Skype, Discord</li>
-                        <li><span class="bitLabel">Graphic Design:</span>Photoshop, Illustrator, Inkscape</li>
-                        <li><span class="bitLabel">3D Modeling:</span>Blender, 3DS Max, Maya, Quixel Mixer</li>
-                    </ul>
-                </div>
-                <!--<div class="flex-row-item">
-                    <img class="introDivImg" src="assets/res/passions/design.svg"/>
-                    <p class="introDivHeader bitHeader">I am a <span class="accentHighlight">web engineer</span> with skills that extend into many disciplines.</p>
-                    <p class="introDivParagraph">I like to create websites and apps that offer something novel or creative.</p>
-                    <p class="introDivParagraph">My work extends beyond websites and apps however!</p>
-                    <p class="introDivParagraph">
-                        I have created a few mods for favorite games,
-                        I have been a 3D modeler in Blender for just over 10 years,
-                        and I create SVG user profile pictures as a hobby.</p>
-                    <p class="introDivParagraph">Over the years, I have developed the websites below, as well as Java and Android apps. </p>
-                    <p class="introDivParagraph bitLabel">The <span class="accentHighlight">projects below</span> and most of their assets are my <span class="accentHighlight">original designs</span>.</p>
-                                
-                </div>-->
-            </div>
-
-            <div class="textLinksWrapper">
-                <a id="mainResume" class="gradient-bg resumeAnim noselect" href="https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=sharing" target="_blank">Resume</a>
-                <a class="textLink" href="mailto:andrew@andrewpodrat.com">andrew@andrewpodrat.com</a>
-                <a class="textLink" href="https://www.linkedin.com/in/andrewpodrat/">LinkedIn</a>
-                <a class="textLink" href="https://github.com/Ragnaraven">GitHub</a>
-            </div>
-        </section>
-        
-        <section id="item-contactMe">
-            <p id="contactMeHeader" class=" wow bounceInLeft gradient-border">Contact Me</p>
-            <div class="flex-row-container">
-                <a class="flex-row-item noselect" href="mailto:andrew@andrewpodrat.com">
-                    <img class="contactIcon hvr-grow-rotate" src="assets/res/material.io/mail-white-18dp.svg"/>
-                    <p>andrew@andrewpodrat.com</p>
-                </a>
-                <a class="flex-row-item noselect hvr-float"  id="fakeLinkedInWrapper" href="https://www.linkedin.com/in/andrewpodrat/">
-                    <p class="noselect" id="fakeLinkedIn">in</p>
-                    <p>LinkedIn</p>
-                </a>
-                <div class="flex-row-item">
-                    <img class="contactIcon noselect hvr-bob" src="assets/res/material.io/place-white-18dp.svg"/>
-                    <p>Pittsburgh, PA</p>  
-                </div>
-                <a class="flex-row-item noselect hvr-pulse" href="https://github.com/Ragnaraven">
-                    <img class="contactIcon hvr-grow-rotate" src="assets/res/github/github-big.svg"/>
-                    <p>GitHub</p>
-                </a>
-            </div>
-        </section>
-
-        <footer>
-            <!--<h4>Changelog:</h4>
-            <ul>
-                <li>2/27/2021: Added a new MainMenu showcase to GhostGame.</li>
-            </ul>-->
-        </footer>
-
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+      </li>
+    </ng-container>
+  </ul>
+  <div class="footer">
+    <div class="noticeContainer flexRow alignItemsCenter justifyContentCenter">
+      <span class="material-symbols-outlined"> info </span>
+      <div class="notice">
+        Hover a project to view more or click on a project to see the result.
+      </div>
+    </div>
+  </div>
+</section>
+<app-about-apps *ngIf="resumeService.isApps()"></app-about-apps>

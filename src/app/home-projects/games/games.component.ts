@@ -1,38 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjectListingComponent } from '../../project-listing/project-listing.component';
-import { GAMES } from '../../data/projects/project-games-list';
-import { DeviceDetectorService } from 'ngx-device-detector';
-
+import { GAMES } from '@data/projects';
+import { ResumeService } from 'src/app/services/resume.service';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
-  styleUrls: ['./games.component.scss']
+  styleUrls: ['./games.component.scss'],
 })
 export class GamesComponent implements OnInit {
-
   games = GAMES;
 
   deviceInfo = null;
 
-  constructor(private deviceService: DeviceDetectorService) {
-    this.deviceInfo = this.deviceService.getDeviceInfo();
+  constructor(public resumeService: ResumeService) {
+    //this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   scrollToElement($elementName): void {
     var temp = document.getElementById('item-' + $elementName);
-    temp.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    temp.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   }
 
-  mobileCheck () {
-    return this.deviceService.isMobile();
+  mobileCheck() {
+    return false;
+    // return this.deviceService.isMobile();
   }
 
-  smallScreenCheck () {
-    return this.deviceService.isMobile() || window.innerWidth < 800 || window.innerHeight < 500;
+  smallScreenCheck() {
+    return false; /*(
+      this.deviceService.isMobile() ||
+      window.innerWidth < 800 ||
+      window.innerHeight < 500
+    );*/
   }
 }

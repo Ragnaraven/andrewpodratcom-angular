@@ -1,0 +1,16 @@
+.links {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+
+  margin-bottom: 1em;
+
+  .source,
+  .linkTo {
+    flex-grow: 1;
+
+    font-size: 2em;
+    text-align: center;
+  }
+}

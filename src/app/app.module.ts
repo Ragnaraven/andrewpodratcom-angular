@@ -3,12 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,16 +12,22 @@ import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { GamesComponent } from './home-projects/games/games.component';
 import { ArtComponent } from './home-projects/art/art.component';
 import { AppsComponent } from './home-projects/apps/apps.component';
-import { ProjectListingComponent } from './project-listing/project-listing.component';
-import { ShowcaseComponentComponent } from './showcase-component/showcase-component.component';
-import { UnderConstructionComponent } from './under-construction/under-construction.component';
-import { ObjViewerComponent } from './obj-viewer/obj-viewer.component';
 
-import { CrystalLightboxModule } from '@crystalui/angular-lightbox';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { AngularStickyThingsModule } from '@w11k/angular-sticky-things';
-import { YouTubePlayerModule } from "@angular/youtube-player";
-import { ProjectListingMACComponent } from './project-listing-mac/project-listing-mac.component';
+import { ProjectListingComponent } from './components/project-listing/project-listing.component';
+import { ShowcaseComponentComponent } from './components/showcase-component/showcase-component.component';
+import { ObjViewerComponent } from './components/obj-viewer/obj-viewer.component';
+import { MacComponent } from './components/project/mac/mac.component';
+import { AnimSignatureComponent } from './components/anim-signature/anim-signature.component';
+import { SsiComponent } from './components/project/ssi/ssi.component';
+import { SsiIconComponent } from './components/project/ssi/ssi-icon/ssi-icon.component';
+import { ExpandableContainerComponent } from './components/expandable-container/expandable-container.component';
+import { LightboxModule } from 'ngx-lightbox';
+import { LightboxDirective } from './directives/lightbox.directive';
+import { LightboxGroupDirective } from './directives/lightbox-group.directive';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ContactComponent } from './home-projects/contact/contact.component';
+import { AboutAppsComponent } from './home-projects/apps/about-apps/about-apps.component';
+import { AboutGamesComponent } from './home-projects/games/about-games/about-games.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,17 @@ import { ProjectListingMACComponent } from './project-listing-mac/project-listin
     AppsComponent,
     ProjectListingComponent,
     ShowcaseComponentComponent,
-    UnderConstructionComponent,
     ObjViewerComponent,
-    ProjectListingMACComponent,
+    MacComponent,
+    AnimSignatureComponent,
+    SsiComponent,
+    SsiIconComponent,
+    ExpandableContainerComponent,
+    LightboxDirective,
+    LightboxGroupDirective,
+    ContactComponent,
+    AboutAppsComponent,
+    AboutGamesComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -47,18 +56,11 @@ import { ProjectListingMACComponent } from './project-listing-mac/project-listin
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule,
-
-    CrystalLightboxModule,
-    MatExpansionModule,
-    AngularStickyThingsModule,
-    YouTubePlayerModule
+    LightboxModule,
+    YouTubePlayerModule,
   ],
+  exports: [LightboxModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

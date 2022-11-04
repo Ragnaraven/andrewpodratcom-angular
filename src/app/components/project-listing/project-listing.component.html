@@ -1,0 +1,107 @@
+<app-expandable-container class="ep wow fadeInUp" data-wow-delay="0.3s" #ec>
+  <div header class="ep-header width100">
+    <div
+      *ngIf="project.displayMediaPath.endsWith('.mp4')"
+      class="projectMovieContainer"
+    >
+      <video
+        class="projectMovie"
+        autoplay
+        playsinline
+        loop
+        muted
+        onloadedmetadata="this.muted = true"
+        autoplay
+      >
+        <source src="{{ project.displayMediaPath }}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div
+      id="item-{{ project.link }}"
+      class="projectContent flexCol alignItemsEnd justifyContentCenter"
+      [ngClass]="project.aaOff ? 'projectContainerAAOff' : 'projectContainer'"
+      [style.background-image]="'url(' + project.displayMediaPath + ')'"
+      [id]="'bg-' + project.type"
+    >
+      <div
+        class="projectDetailsContent wow fadeInRight"
+        [id]="'pdc-' + project.type"
+      >
+        <h3 class="projectNameHeader wow fadeInRight" data-wow-delay="0.7s">
+          {{ project.name }}
+        </h3>
+        <div class="projectDate wow fadeInRight" data-wow-delay="0.95s">
+          <em>{{ project.date }}</em>
+        </div>
+        <p class="projectDescription wow fadeInRight" data-wow-delay="1.1s">
+          {{ project.description }}
+        </p>
+        <span
+          *ngIf="project.showcases.length > 0"
+          class="pointer detailsLink underline wow fadeIn"
+          data-wow-delay="1.75s"
+          (click)="ec.toggle()"
+        >
+          showcase
+        </span>
+        <a
+          *ngIf="project.showcases.length == 0 && project.link != ''"
+          class="detailsLink"
+          data-wow-delay="1.75s"
+          href="{{ project.link }}"
+          >Visit Site</a
+        >
+        <a
+          *ngIf="project.showcases.length == 0 && project.source != ''"
+          class="detailsLink right"
+          data-wow-delay="1.75s"
+          href="{{ project.source }}"
+          >Source Code (GitHub)</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!--SHOWCASES-->
+  <div *ngIf="project.showcases.length > 0" class="ep-body">
+    <div class="menu flexRow flexWrap alignItemsCenter">
+      <div class="showcaseLabel">
+        <em>Viewing Showcase</em>
+        <!--<span class="bitHighligherStroke">Showcase</span>-->
+      </div>
+      <div class="showcaseLabel">
+        <span>{{ project.name }}</span>
+      </div>
+      <div class="flexGrow"></div>
+      <div class="closeWrapper pointer underline" (click)="ec.toggle()">
+        close showcase
+      </div>
+    </div>
+
+    <div class="showcasesContainer">
+      <app-showcase-component
+        *ngFor="let showcase of project.showcases"
+        [showcase]="showcase"
+      ></app-showcase-component>
+    </div>
+
+    <div
+      class="links width100 flexRow flexWrap alignItemsCenter justifyContentCenter"
+    >
+      <a
+        *ngIf="project.source != ''"
+        class="source"
+        href="{{ project.source }}"
+        >{{ project.sourceText }}</a
+      >
+      <a
+        *ngIf="project.linkTo != ''"
+        class="linkTo"
+        href="{{ project.linkTo }}"
+        >{{ project.linkToText }}</a
+      >
+    </div>
+  </div>
+</app-expandable-container>

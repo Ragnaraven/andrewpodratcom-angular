@@ -1,0 +1,8 @@
+<div class="expandable-container width100 height100">
+  <div class="header width100">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="body width100" [class.open]="opened">
+    <ng-content></ng-content>
+  </div>
+</div>

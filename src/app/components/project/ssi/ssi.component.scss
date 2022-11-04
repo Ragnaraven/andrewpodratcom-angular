@@ -1,0 +1,26 @@
+.ssiContainer {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  overflow-anchor: none;
+}
+
+.next {
+  &.animate {
+    animation: slideDown;
+    animation-duration: 2s;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    margin-top: -100%;
+  }
+  50%,
+  100% {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,14 @@
+.spinner {
+  animation: spinIn;
+  animation-duration: 2s;
+}
+
+@keyframes spinIn {
+  0% {
+    transform: rotate(0deg) scale(1.35);
+  }
+  50%,
+  100% {
+    transform: rotate(1080deg) scale(1);
+  }
+}

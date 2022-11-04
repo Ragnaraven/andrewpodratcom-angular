@@ -1,3 +1,86 @@
-<router-outlet>
-  
-</router-outlet>
+<div class="followNav">
+  <nav class="flexRow flexWrap alignItemsCenter">
+    <img class="logoFixed" src="assets/res/signature.svg" />
+    <div class="flexGrow"></div>
+    <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
+    <a
+      *ngIf="resumeService.isEmptyOrApps()"
+      (click)="smoothScrollToAnchor('apps')"
+      class="removeSmallNav"
+      >Apps</a
+    >
+    <a
+      *ngIf="resumeService.isEmptyOrGames()"
+      (click)="smoothScrollToAnchor('games')"
+      class="removeSmallNav"
+      >Games</a
+    >
+    <a (click)="smoothScrollToAnchor('about')">About</a>
+    <a (click)="smoothScrollToAnchor('contact')">Contact</a>
+    <!--<a (click)="smoothScrollToAnchor('extras')">Extras</a>-->
+    <div class="flexGrow removeSmallNav"></div>
+    <a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
+    <div class="flexGrow addSmall"></div>
+  </nav>
+</div>
+
+<div class="video-background">
+  <div class="video-foreground">
+    <div class="video-overlay"></div>
+    <iframe
+      src="https://www.youtube.com/embed/3l0N_7o6a_U?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=3l0N_7o6a_U"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<section id="home" class="flexCol">
+  <div class="topLogo flexGrow flexCol justifyContentCenter addSmall">
+    <app-anim-signature id="1" loop="false"></app-anim-signature>
+  </div>
+  <div class="content flexRow flexGrow">
+    <div class="left flexGrow flexCol alignItemsEnd justifyContentCenter">
+      <div class="tip header">AndrewPodrat.com - The tech porfolio of</div>
+      <h1 class="heading">Andrew Podrat</h1>
+      <div class="intro">
+        <span *ngIf="resumeService.isEmptyOrApps()">
+          Hello! I am Andrew Podrat, a developer that enjoys designing and
+          developing full stack web apps, mobile apps and video games.</span
+        >
+        <span *ngIf="resumeService.isGames()">
+          Hello! I am Andrew Podrat, a game developer with a versatile skillset
+          who enjoys creating fun and unique games.</span
+        >
+        <a (click)="smoothScrollToAnchor('about')">read more</a>
+      </div>
+    </div>
+    <div class="right flexGrow flexCol justifyContentCenter removeSmall">
+      <app-anim-signature id="2" loop="false"></app-anim-signature>
+    </div>
+  </div>
+
+  <div class="footer flexCol justifyContentEnd">
+    <a (click)="smoothScrollToWork()"
+      >check out my work
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        width="48"
+        fill="white"
+      >
+        <path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
+
+<app-contact></app-contact>
+
+<!--
+<section id="extras"></section>
+-->
+
+<footer></footer>

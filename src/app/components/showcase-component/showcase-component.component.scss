@@ -1,0 +1,86 @@
+.heightLimited {
+  max-height: 500px;
+}
+
+.showcaseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  .showcaseHeader {
+    font-size: 2rem;
+    line-height: 2em;
+    display: block;
+    text-align: center;
+    margin: 0;
+    text-shadow: 3px 3px #111;
+  }
+
+  .showcaseText {
+    display: inline-block;
+    margin: 20px 40px;
+    max-width: 800px;
+  }
+
+  .showcaseLightboxContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .showcaseLightbox {
+      cursor: pointer;
+      flex: 1;
+      min-width: 200px;
+      overflow: hidden;
+      width: 25%;
+
+      &:hover {
+        z-index: 10;
+      }
+    }
+  }
+
+  .projectMovieContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .mediaMovie {
+      width: 50%;
+      min-width: 300px;
+      max-width: 550px;
+    }
+
+    .mediaMovieBig {
+      width: 100%;
+    }
+  }
+
+  .projectModelContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .projectModelObj {
+      width: 100%;
+    }
+  }
+
+  .youtubeFrame {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+}
