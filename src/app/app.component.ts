@@ -1,10 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import {
-  NavigationEnd,
-  NavigationError,
-  NavigationStart,
-  Router,
-} from '@angular/router';
+import { Component } from '@angular/core';
 import { ResumeService } from './services/resume.service';
 import { ThemeService } from './theme/theme.service';
 
@@ -27,12 +21,13 @@ export class AppComponent {
     }, 100);*/
   }
 
-  smoothScrollToAnchor(anchor: string) {
-    document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
+  smoothScrollToWork() {
+    document
+      .getElementById(this.resumeService.isGames() ? 'games' : 'apps')
+      ?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    //this.aspectRatio.onResize(event.target.innerWidth / event.target.innerHeight);
+  smoothScrollToAnchor(anchor: string) {
+    document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
   }
 }

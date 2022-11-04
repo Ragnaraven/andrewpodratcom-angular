@@ -89,33 +89,41 @@ section {
   }
 }
 
-.logoFixed {
-  filter: invert(100%);
+.followNav {
+  $navColor: #88888888;
+
+  padding: 12px 24px;
+  pointer-events: none;
   position: fixed;
-  left: 24px;
-  top: 20px;
-  width: 48px;
-  z-index: 1000000;
-}
-
-.resumeLink {
-  position: fixed;
-  //position: absolute;
-  right: 24px;
-  top: 20px;
-
-  border-bottom: 4px solid $four;
-  display: inline-block;
-  gap: 10px;
-  font-weight: bold;
-  padding: 0.5rem 0;
-  text-transform: uppercase;
-  text-decoration: none;
-
+  width: 100%;
   z-index: 1000000;
 
-  &:hover {
-    border-color: $three;
+  .logoFixed,
+  .resumeLink {
+    border-radius: 12px;
+  }
+
+  .logoFixed {
+    background-color: $navColor;
+    padding: 6px;
+    height: 48px;
+  }
+
+  .resumeLink {
+    background-color: $navColor;
+    border-bottom: 4px solid $four;
+    gap: 10px;
+    float: right;
+    font-weight: bold;
+    padding: 12px;
+    pointer-events: all;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      border-color: $three;
+    }
   }
 }
 
@@ -151,6 +159,7 @@ section {
       font-weight: bold;
       padding: 0.5rem 0;
       text-transform: uppercase;
+      transition: all 0.3s ease-out;
 
       &:hover {
         border-color: $three;

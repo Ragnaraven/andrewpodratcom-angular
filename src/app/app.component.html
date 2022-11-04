@@ -9,8 +9,10 @@
   </div>
 </div>
 
-<img class="logoFixed" src="assets/res/signature.svg" />
-<a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
+<div class="followNav">
+  <img class="logoFixed" src="assets/res/signature.svg" />
+  <a class="resumeLink" [href]="resumeService.resumeLink">resume</a>
+</div>
 
 <section id="home" class="flexCol">
   <nav class="flexRow alignItemsCenter">
@@ -48,7 +50,7 @@
   </div>
 
   <div class="footer flexCol justifyContentEnd">
-    <a (click)="smoothScrollToAnchor('apps')"
+    <a (click)="smoothScrollToWork()"
       >check out my work
       <svg
         xmlns="http://www.w3.org/2000/svg"
