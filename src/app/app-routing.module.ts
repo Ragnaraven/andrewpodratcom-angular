@@ -11,7 +11,7 @@ const routes: Routes = [
 
   { path: 'games', component: GamesComponent },
   { path: 'apps', component: AppsComponent },
-  { path: 'art', component: ArtComponent },
+  //{ path: 'art', component: ArtComponent },
 ];
 
 @NgModule({

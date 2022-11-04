@@ -1,0 +1,25 @@
+@import "theme.scss";
+@import "../home-shared.scss";
+
+.projectSection {
+  min-height: 25vh;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.contactItemsContainer {
+  padding: 24px;
+  gap: 20px;
+
+  .contactContainer {
+    font-size: 1.25rem;
+
+    .contactIcon {
+      height: 50px;
+      margin-right: 12px;
+    }
+  }
+}

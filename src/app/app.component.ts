@@ -1,4 +1,10 @@
 import { Component, HostListener } from '@angular/core';
+import {
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 import { ThemeService } from './theme/theme.service';
 
 @Component({
@@ -7,10 +13,19 @@ import { ThemeService } from './theme/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  routes = ['Apps & Web', 'Games'];
-  route: undefined | 'Apps & Web' | 'Games' = undefined;
+  route: string;
 
-  constructor(public themeService: ThemeService) {
+  constructor(public themeService: ThemeService, private router: Router) {
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.route = event.url;
+      }
+
+      if (event instanceof NavigationError) {
+        this.route = event.url;
+      }
+    });
+
     setTimeout(() => {
       let i = 0;
       setInterval(() => {

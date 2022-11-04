@@ -14,8 +14,16 @@
     <!--<img class="logo endCap nav" src="assets/res/signature.svg" />-->
     <div class="flexGrow removeSmall"></div>
     <!--<a (click)="smoothScrollToAnchor('')">Home</a>-->
-    <a (click)="smoothScrollToAnchor('apps')">Apps</a>
-    <a (click)="smoothScrollToAnchor('games')">Games</a>
+    <a
+      *ngIf="route == '/' || route == 'apps'"
+      (click)="smoothScrollToAnchor('apps')"
+      >Apps</a
+    >
+    <a
+      *ngIf="route == '/' || route == 'games'"
+      (click)="smoothScrollToAnchor('games')"
+      >Games</a
+    >
     <a (click)="smoothScrollToAnchor('about')">About</a>
     <a (click)="smoothScrollToAnchor('contact')">Contact</a>
     <a (click)="smoothScrollToAnchor('extras')">Extras</a>
@@ -58,48 +66,14 @@
 
 <router-outlet></router-outlet>
 
+<!--
 <section id="about"></section>
+-->
 
-<section id="contact">
-  <!-- <p id="contactMeHeader" class="wow bounceInLeft gradient-border">
-    Contact Me
-  </p>
-  <div class="flex-row-container">
-    <a class="flex-row-item noselect" href="mailto:andrew@andrewpodrat.com">
-      <img
-        class="contactIcon hvr-grow-rotate"
-        src="assets/res/material.io/mail-white-18dp.svg"
-      />
-      <p>andrew@andrewpodrat.com</p>
-    </a>
-    <a
-      class="flex-row-item noselect hvr-float"
-      id="fakeLinkedInWrapper"
-      href="https://www.linkedin.com/in/andrewpodrat/"
-    >
-      <p class="noselect" id="fakeLinkedIn">in</p>
-      <p>LinkedIn</p>
-    </a>
-    <div class="flex-row-item">
-      <img
-        class="contactIcon noselect hvr-bob"
-        src="assets/res/material.io/place-white-18dp.svg"
-      />
-      <p>Pittsburgh, PA</p>
-    </div>
-    <a
-      class="flex-row-item noselect hvr-pulse"
-      href="https://github.com/Ragnaraven"
-    >
-      <img
-        class="contactIcon hvr-grow-rotate"
-        src="assets/res/github/github-big.svg"
-      />
-      <p>GitHub</p>
-    </a>
-  </div>-->
-</section>
+<app-contact></app-contact>
 
+<!--
 <section id="extras"></section>
+-->
 
 <footer></footer>

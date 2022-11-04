@@ -1,6 +1,6 @@
 .projectSection {
-  box-sizing: border-box;
   background-color: $one;
+  box-sizing: border-box;
   color: $textLight;
   position: relative;
 
@@ -9,6 +9,19 @@
   .header,
   .footer {
     padding: 1.5rem 0.25rem;
+
+    &:nth-of-type(n + 0) {
+      background-color: $one;
+    }
+    &:nth-of-type(n + 1) {
+      background-color: $two;
+    }
+    &:nth-of-type(n + 2) {
+      background-color: $three;
+    }
+    &:nth-of-type(n + 3) {
+      background-color: $four;
+    }
 
     h2 {
       font-size: 2rem;

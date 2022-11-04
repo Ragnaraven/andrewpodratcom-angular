@@ -25,6 +25,7 @@ import { LightboxModule } from 'ngx-lightbox';
 import { LightboxDirective } from './directives/lightbox.directive';
 import { LightboxGroupDirective } from './directives/lightbox-group.directive';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ContactComponent } from './home-projects/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ExpandableContainerComponent,
     LightboxDirective,
     LightboxGroupDirective,
+    ContactComponent,
   ],
   imports: [
     AppRoutingModule,
