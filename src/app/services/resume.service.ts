@@ -6,9 +6,9 @@ import { NavigationEnd, NavigationError, Router } from '@angular/router';
   providedIn: 'root',
 })
 export class ResumeService {
-  resumeApp =
+  readonly resumeApp =
     'https://drive.google.com/file/d/17x89_CeS7joV8waohG7i66xYca3vpO4c/view?usp=share_link';
-  resumeGame =
+  readonly resumeGame =
     'https://drive.google.com/file/d/1O4ADWBJWAXxdPd4sYMtNKt_Ez0cDDsEy/view?usp=share_link';
 
   @Output() route: string;

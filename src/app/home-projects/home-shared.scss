@@ -129,6 +129,11 @@
           .accentHighlight {
             color: $three;
           }
+
+          * a {
+            text-decoration-color: $one;
+            text-underline-offset: 4px;
+          }
         }
         &:nth-of-type(2) {
           background-color: $two;

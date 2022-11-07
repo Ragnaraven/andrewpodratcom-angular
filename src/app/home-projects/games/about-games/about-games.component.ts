@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeService } from 'src/app/services/resume.service';
 
 @Component({
   selector: 'app-about-games',
@@ -6,5 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../home-shared.scss'],
 })
 export class AboutGamesComponent {
-  constructor() {}
+  constructor(public resumeService: ResumeService) {}
 }
